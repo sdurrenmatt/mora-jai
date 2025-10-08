@@ -7,28 +7,46 @@ import type { CornerPosition, Puzzle } from "../lib/puzzle/types"
 import { useAudio } from "./useAudio"
 
 export function usePuzzleState(initialPuzzle: Puzzle) {
-    const initialPuzzleRef = useRef(initialPuzzle)
     const [puzzle, setPuzzle] = useState(initialPuzzle)
+    const initialRef = useRef(initialPuzzle)
+
+    useEffect(() => {
+        initialRef.current = initialPuzzle
+    }, [initialPuzzle])
 
     const lightSwitchAudio = useAudio(lightSwitchSound)
     const clickAudio = useAudio(clickSound)
     const openingLittleBoxAudio = useAudio(openingLittleBoxSound)
 
     useEffect(() => {
-        if (puzzle.solved) {
-            openingLittleBoxAudio.play()
-        }
+        if (puzzle.solved) openingLittleBoxAudio.play()
     }, [puzzle.solved, openingLittleBoxAudio])
 
     const onCornerClick = useCallback((position: CornerPosition) => {
         lightSwitchAudio.play()
-        setPuzzle(currentPuzzle => pressCorner(currentPuzzle, position, initialPuzzleRef.current))
-    }, [lightSwitchAudio])
+
+        const result = pressCorner(puzzle, position)
+        switch (result.type) {
+            case "updated":
+            case "solved":
+                setPuzzle(result.puzzle)
+                break
+            case "reset":
+                setPuzzle(initialRef.current)
+                break
+        }
+    }, [puzzle, lightSwitchAudio])
 
     const onTileClick = useCallback((i: number, j: number) => {
         clickAudio.play()
-        setPuzzle(currentPuzzle => pressTile(currentPuzzle, i, j))
-    }, [clickAudio])
+
+        const result = pressTile(puzzle, i, j)
+        switch (result.type) {
+            case "updated":
+                setPuzzle(result.puzzle)
+                break
+        }
+    }, [puzzle, clickAudio])
 
     return { puzzle, onCornerClick, onTileClick }
 }
