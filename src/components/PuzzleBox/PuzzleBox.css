@@ -35,7 +35,7 @@
     box-sizing: border-box;
 }
 
-.puzzle-box__puzzle-note {
+.puzzle-box__puzzle-reward {
     display: flex;
     justify-content: center;
     align-items: center;

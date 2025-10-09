@@ -1,10 +1,10 @@
 import PuzzleBox from "./components/PuzzleBox/PuzzleBox"
-import { puzzle1 } from "./data/puzzles/puzzle1"
+import { level1 } from "./data/levels/level1"
 
 function App() {
   return (
     <>
-      <PuzzleBox puzzleData={puzzle1} />
+      <PuzzleBox level={level1} />
     </>
   )
 }

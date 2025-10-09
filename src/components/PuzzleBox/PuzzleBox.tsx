@@ -1,25 +1,25 @@
 import clsx from "clsx"
 import { usePuzzleState } from "../../hooks/usePuzzleState"
-import type { Puzzle } from "../../lib/puzzle/types"
+import type { Level } from "../../types/level"
 import PuzzleCorners from "../PuzzleCorners/PuzzleCorners"
 import PuzzleGrid from "../PuzzleGrid/PuzzleGrid"
-import PuzzleNote from "../PuzzleNote/PuzzleNote"
+import PuzzleReward from "../PuzzleReward/PuzzleReward"
 import "./PuzzleBox.css"
 
 type PuzzleBoxProps = {
-    puzzleData: Puzzle
+    level: Level
 }
 
-function PuzzleBox({ puzzleData }: PuzzleBoxProps) {
-    const { puzzle, onCornerClick, onTileClick } = usePuzzleState(puzzleData)
+function PuzzleBox({ level }: PuzzleBoxProps) {
+    const { puzzle, onCornerClick, onTileClick } = usePuzzleState(level.puzzle)
 
     return (
         <div className="puzzle-box-wrapper">
             <div className={clsx("puzzle-box", puzzle.solved && "puzzle-box--solved", "wood-texture wood-filter--dark")}>
                 <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
                 <div className="puzzle-box__base wood-texture wood-filter--light">
-                    <div className="puzzle-box__puzzle-note">
-                        <PuzzleNote />
+                    <div className="puzzle-box__puzzle-reward">
+                        <PuzzleReward reward={level.reward} />
                     </div>
                     <div className="puzzle-box__puzzle-grid wood-texture wood-filter--dim">
                         <PuzzleGrid tiles={puzzle.tiles} onTileClick={onTileClick} />
