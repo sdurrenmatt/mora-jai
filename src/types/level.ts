@@ -7,6 +7,7 @@ export type Reward = {
 
 export type Level = {
     id: string
+    name: string
     puzzle: Puzzle
     reward: Reward
 }
