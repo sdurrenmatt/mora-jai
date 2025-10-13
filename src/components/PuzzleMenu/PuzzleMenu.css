@@ -27,6 +27,7 @@
 }
 
 .puzzle-menu__item {
+    position: relative;
     display: inline-block;
     text-align: center;
     white-space: nowrap;
@@ -37,10 +38,18 @@
     text-transform: uppercase;
     letter-spacing: 6px;
     color: #c6a14b;
-    border: 1px solid #8c6f2f;
+    border: 1px solid;
+    border-image: linear-gradient(135deg,
+            #1b1408, #3a2b0e, #5c4518, #8c6f2f, #c6a14b, #e0c36a, #f3d87c, #d4b75a, #bfa14a, #8c6f2f, #5c4518) 1;
     border-radius: 6px;
     padding: 0.85rem 1.75rem;
-    background: linear-gradient(145deg, #14100b 0%, #1b160d 100%);
+    background: linear-gradient(145deg,
+            #0f0c09 0%,
+            #14100b 20%,
+            #1a140c 40%,
+            #1b160d 60%,
+            #1e180e 80%,
+            #1b160d 100%);
     box-shadow:
         0 0 12px rgba(198, 161, 75, 0.15),
         inset 0 0 10px rgba(198, 161, 75, 0.15),
@@ -48,4 +57,30 @@
     text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.9),
         0 0 6px rgba(198, 161, 75, 0.25);
+}
+
+.puzzle-menu__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            #1b1408 0%,
+            #3a2b0e 10%,
+            #5c4518 20%,
+            #8c6f2f 30%,
+            #c6a14b 40%,
+            #e0c36a 50%,
+            #f3d87c 60%,
+            #d4b75a 70%,
+            #bfa14a 80%,
+            #8c6f2f 90%,
+            #5c4518 100%);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
 }
