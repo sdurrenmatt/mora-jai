@@ -1,31 +1,3 @@
-.puzzle-menu {
-    flex: 0 0 auto;
-    height: 100%;
-    width: fit-content;
-    min-width: 15vw;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    padding: 1rem;
-    background: rgba(12, 12, 12, 0.45);
-    backdrop-filter: blur(8px);
-    box-shadow:
-        0 0 25px rgba(0, 0, 0, 0.6),
-        inset 0 0 20px rgba(255, 215, 150, 0.05);
-}
-
-.puzzle-menu__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
 @property --border-angle {
     syntax: "<angle>";
     initial-value: 0deg;
@@ -40,6 +12,15 @@
     100% {
         --border-angle: 360deg;
     }
+}
+
+.puzzle-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .puzzle-menu__item {

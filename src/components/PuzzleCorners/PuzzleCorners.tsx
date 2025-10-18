@@ -6,7 +6,7 @@ type PuzzleCornersProps = {
     onCornerClick?: (position: CornerPosition) => void
 }
 
-function PuzzleCorners({ corners, onCornerClick }: PuzzleCornersProps) {
+export default function PuzzleCorners({ corners, onCornerClick }: PuzzleCornersProps) {
     return (
         <>
             {
@@ -23,5 +23,3 @@ function PuzzleCorners({ corners, onCornerClick }: PuzzleCornersProps) {
         </>
     )
 }
-
-export default PuzzleCorners

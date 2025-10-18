@@ -8,7 +8,7 @@ type PuzzleGridProps = {
     onTileClick?: (i: number, j: number) => void
 }
 
-function PuzzleGrid({ tiles, onTileClick }: PuzzleGridProps) {
+export default function PuzzleGrid({ tiles, onTileClick }: PuzzleGridProps) {
     return (
         <div className="puzzle-grid">
             {
@@ -25,5 +25,3 @@ function PuzzleGrid({ tiles, onTileClick }: PuzzleGridProps) {
         </div>
     )
 }
-
-export default PuzzleGrid

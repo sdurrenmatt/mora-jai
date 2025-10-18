@@ -4,10 +4,8 @@ export type PuzzleRewardProps = {
     reward: Reward
 }
 
-function PuzzleReward({ reward }: PuzzleRewardProps) {
+export default function PuzzleReward({ reward }: PuzzleRewardProps) {
     return (
         <img src={reward.image} alt={reward.description} />
     )
 }
-
-export default PuzzleReward

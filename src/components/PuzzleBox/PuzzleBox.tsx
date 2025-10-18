@@ -10,7 +10,7 @@ type PuzzleBoxProps = {
     level: Level
 }
 
-function PuzzleBox({ level }: PuzzleBoxProps) {
+export default function PuzzleBox({ level }: PuzzleBoxProps) {
     const { puzzle, onCornerClick, onTileClick } = usePuzzleState(level.puzzle)
 
     return (
@@ -29,5 +29,3 @@ function PuzzleBox({ level }: PuzzleBoxProps) {
         </div>
     )
 }
-
-export default PuzzleBox

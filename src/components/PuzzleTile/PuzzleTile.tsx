@@ -7,12 +7,10 @@ type PuzzleTileProps = {
     onClick?: () => void
 }
 
-function Tile({ color, onClick }: PuzzleTileProps) {
+export default function Tile({ color, onClick }: PuzzleTileProps) {
     return (
         <div className="puzzle-tile wood-texture wood-filter--light"
             style={{ backgroundColor: ColorHexCodes[color] }}
             onClick={onClick} />
     )
 }
-
-export default Tile

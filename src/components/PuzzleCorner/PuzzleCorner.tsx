@@ -10,7 +10,7 @@ type PuzzleCornerProps = {
     onClick?: () => void
 }
 
-function PuzzleCorner({ position, color, matched, onClick }: PuzzleCornerProps) {
+export default function PuzzleCorner({ position, color, matched, onClick }: PuzzleCornerProps) {
     return (
         <div className={clsx(
             "puzzle-corner",
@@ -23,5 +23,3 @@ function PuzzleCorner({ position, color, matched, onClick }: PuzzleCornerProps) 
             onClick={onClick} />
     )
 }
-
-export default PuzzleCorner
