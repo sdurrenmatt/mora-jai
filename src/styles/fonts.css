@@ -1,25 +1,4 @@
 @font-face {
-    font-family: "Cinzel Decorative";
-    src: url("../assets/fonts/CinzelDecorative/CinzelDecorative-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Cinzel Decorative";
-    src: url("../assets/fonts/CinzelDecorative/CinzelDecorative-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Cinzel Decorative";
-    src: url("../assets/fonts/CinzelDecorative/CinzelDecorative-Black.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
     font-family: "Kaisei Tokumin";
     src: url("../assets/fonts/KaiseiTokumin/KaiseiTokumin-Regular.ttf") format("truetype");
     font-weight: 400;

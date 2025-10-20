@@ -69,7 +69,6 @@
             #bfa14a,
             #e0c36a,
             #f3d87c) border-box;
-    background-clip: padding-box, border-box;
     box-shadow:
         0 0 12px rgba(198, 161, 75, 0.15),
         inset 0 0 8px rgba(255, 230, 180, 0.15),

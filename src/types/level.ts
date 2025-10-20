@@ -1,5 +1,11 @@
 import type { Puzzle } from "../lib/puzzle"
 
+export type World = {
+    id: string,
+    name: string,
+    levels: Level[]
+}
+
 export type Reward = {
     image: string
     description: string
@@ -7,7 +13,7 @@ export type Reward = {
 
 export type Level = {
     id: string
-    name: string
+    name: string,
     puzzle: Puzzle
     reward: Reward
 }

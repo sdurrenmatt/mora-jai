@@ -1,0 +1,26 @@
+.puzzle-map {
+    display: flex;
+    direction: rtl;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+}
+
+.puzzle-map__wall {
+    position: relative;
+    background: linear-gradient(to bottom, #d6b58c 0%, #b18b65 100%);
+    box-shadow:
+        inset 0 0 25px rgba(0, 0, 0, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(0, 0, 0, 0.05);
+    border: 10px solid;
+    border-radius: 6px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 5rem;
+}
+
+.puzzle-map__scrolls {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}

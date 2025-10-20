@@ -1,11 +1,11 @@
 
-import rewardImage from "../../assets/images/rewards/shodou.png"
-import { Colors } from "../../lib/puzzle"
-import type { Level } from "../../types/level"
+import rewardImage from "../../../assets/images/rewards/shodou.png"
+import { Colors } from "../../../lib/puzzle"
+import type { Level } from "../../../types/level"
 
-export const level1: Level = {
-    id: "level1",
-    name: "Level 1",
+export const autumn3: Level = {
+    id: "autumn3",
+    name: "秋3",
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },

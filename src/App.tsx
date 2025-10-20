@@ -1,8 +1,8 @@
 import "./App.css"
-import PuzzleBox from "./components/PuzzleBox/PuzzleBox"
+import PuzzleMap from "./components/PuzzleMap/PuzzleMap"
 import PuzzleMenu from "./components/PuzzleMenu/PuzzleMenu"
 import PuzzleTitle from "./components/PuzzleTitle/PuzzleTitle"
-import { level1 } from "./data/levels/level1"
+import { worlds } from "./data/worlds"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <PuzzleMenu />
       </div>
       <div className="app-main">
-        <PuzzleBox level={level1} />
+        <PuzzleMap worlds={worlds} />
       </div>
     </div>
   )
