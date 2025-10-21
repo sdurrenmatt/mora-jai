@@ -1,5 +1,5 @@
 .puzzle-box-wrapper {
-    perspective: 1000px;
+    perspective: 1200px;
     display: flex;
     align-items: center;
 }
