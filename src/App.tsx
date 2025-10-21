@@ -1,21 +1,21 @@
 import "./App.css"
+import PuzzleBox from "./components/PuzzleBox/PuzzleBox"
 import PuzzleMap from "./components/PuzzleMap/PuzzleMap"
 import PuzzleMenu from "./components/PuzzleMenu/PuzzleMenu"
 import PuzzleTitle from "./components/PuzzleTitle/PuzzleTitle"
 import { worlds } from "./data/worlds"
 
-function App() {
+export default function App() {
   return (
-    <div className="app-layout">
-      <div className="app-sidebar">
+    <div className="app">
+      <div className="app__sidebar">
         <PuzzleTitle />
         <PuzzleMenu />
       </div>
-      <div className="app-main">
-        <PuzzleMap worlds={worlds} />
+      <div className="app__main">
+        <div className="app__puzzle-box"><PuzzleBox level={worlds[0].levels[0]} /></div>
+        <div className="app__puzzle-map"><PuzzleMap worlds={worlds} /></div>
       </div>
     </div>
   )
 }
-
-export default App
