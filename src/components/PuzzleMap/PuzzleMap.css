@@ -1,7 +1,5 @@
 .puzzle-map {
     position: relative;
-    overflow: auto;
-    scroll-behavior: smooth;
     padding: 0 5rem;
 }
 

@@ -5,7 +5,7 @@ import type { Level } from "../../../types/level"
 
 export const winter3: Level = {
     id: "winter3",
-    name: "冬3",
+    name: "3",
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },

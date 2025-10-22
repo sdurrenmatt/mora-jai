@@ -50,13 +50,16 @@ body,
 
 .app__main {
     flex: 1 1 auto;
-    height: 90%;
-    margin: 5%;
+    display: grid;
+    grid-template-columns: 67% 33%;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "puzzle-box puzzle-map"
+        "puzzle-box puzzle-level";
+    height: 95%;
+    margin: 2.5%;
     background: rgba(240, 235, 220, 0.6);
     backdrop-filter: blur(4px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     box-shadow:
         0 8px 20px rgba(0, 0, 0, 0.3),
         inset 0 0 8px rgba(255, 255, 255, 0.4);
@@ -65,17 +68,25 @@ body,
 }
 
 .app__puzzle-box {
-    flex: 1 1 67%;
-    height: 100%;
+    grid-area: puzzle-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .app__puzzle-map {
-    flex: 1 1 33%;
-    height: 100%;
+    grid-area: puzzle-map;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    z-index: 1;
+}
+
+.app__puzzle-level {
+    grid-area: puzzle-level;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
