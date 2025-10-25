@@ -13,19 +13,6 @@ body,
     justify-content: flex-start;
     height: 100vh;
     width: 100vw;
-    background-image: url("assets/images/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.app::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 0;
 }
 
 .app__sidebar {
@@ -79,6 +66,7 @@ body,
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .app__puzzle-level {
