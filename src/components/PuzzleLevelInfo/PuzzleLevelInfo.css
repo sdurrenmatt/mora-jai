@@ -1,7 +1,7 @@
 .puzzle-level-info {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     column-gap: 24px;
     row-gap: 32px;
