@@ -94,10 +94,6 @@
     animation-delay: 0.22s;
 }
 
-.puzzle-level-info__letter:nth-child(2n) {
-    transform: translateY(0.5px);
-}
-
 @keyframes letter-wave {
     0% {
         transform: translateY(1.5px);
