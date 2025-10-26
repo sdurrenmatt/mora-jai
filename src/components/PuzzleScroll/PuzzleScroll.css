@@ -1,3 +1,15 @@
+@keyframes scroll-sway {
+
+    0%,
+    100% {
+        transform: rotate(-0.35deg);
+    }
+
+    50% {
+        transform: rotate(0.35deg);
+    }
+}
+
 .puzzle-scroll {
     position: relative;
     margin-bottom: 2rem;
@@ -5,13 +17,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(180deg, #f7e9c2 0%, #e3c994 100%);
+    background: linear-gradient(180deg, #e9d6a4 0%, #d7b87a 100%);
     box-shadow:
         inset 0 2px 4px rgba(0, 0, 0, 0.15),
         inset -4px 0 6px rgba(0, 0, 0, 0.08),
         inset 0 0 15px rgba(0, 0, 0, 0.05),
         0 8px 20px rgba(0, 0, 0, 0.15),
         0 3px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top center;
+}
+
+.puzzle-scroll:nth-child(1) {
+    animation: scroll-sway 6s ease-in-out 0s infinite;
+}
+
+.puzzle-scroll:nth-child(2) {
+    animation: scroll-sway 5.5s ease-in-out 0.2s infinite;
+}
+
+.puzzle-scroll:nth-child(3) {
+    animation: scroll-sway 6.2s ease-in-out 0.1s infinite;
+}
+
+.puzzle-scroll:nth-child(4) {
+    animation: scroll-sway 5.8s ease-in-out 0.3s infinite;
 }
 
 .puzzle-scroll::after {
@@ -95,6 +124,8 @@
 
 .puzzle-scroll__content {
     position: relative;
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgba(190, 160, 130, 0.1);
     box-shadow:
         inset 0 1px 2px rgba(255, 255, 255, 0.4),
@@ -130,21 +161,85 @@
     margin: 2rem 0;
     writing-mode: vertical-rl;
     text-orientation: upright;
+    align-self: center;
 }
 
 .puzzle-scroll__levels {
     list-style: none;
-    padding: 0;
+    padding: 0.1rem;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 0.1rem;
 }
 
 .puzzle-scroll__level {
-    margin: 0.5rem 0;
     font-family: "Kaisei Tokumin", serif;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: center;
+    padding: 0.25rem 0.5rem;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.puzzle-scroll__level:hover {
+    filter: brightness(0.6);
+}
+
+.puzzle-scroll__level:focus {
+    outline: 2px solid rgba(255, 215, 100, 0.8);
+    outline-offset: 2px;
+}
+
+.puzzle-scroll--spring .puzzle-scroll__level {
+    background: rgba(248, 225, 215, 0.8);
+    border: 1px solid rgba(230, 200, 185, 0.6);
+}
+
+.puzzle-scroll--summer .puzzle-scroll__level {
+    background: rgba(170, 210, 140, 0.8);
+    border: 1px solid rgba(150, 190, 120, 0.6);
+}
+
+.puzzle-scroll--autumn .puzzle-scroll__level {
+    background: rgba(210, 140, 70, 0.8);
+    border: 1px solid rgba(190, 120, 50, 0.6);
+}
+
+.puzzle-scroll--winter .puzzle-scroll__level {
+    background: rgba(245, 250, 255, 0.8);
+    border: 1px solid rgba(220, 230, 245, 0.6);
+}
+
+.puzzle-scroll .puzzle-scroll__level--selected {
+    filter: brightness(0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05) translate(-0.5px, 0.5px);
+    z-index: 1;
+}
+
+.puzzle-scroll--spring .puzzle-scroll__level--selected {
+    border: 2px solid rgba(230, 200, 185, 0.5);
+}
+
+.puzzle-scroll--summer .puzzle-scroll__level--selected {
+    border: 2px solid rgba(150, 190, 120, 0.5);
+}
+
+.puzzle-scroll--autumn .puzzle-scroll__level--selected {
+    border: 2px solid rgba(190, 120, 50, 0.5);
+}
+
+.puzzle-scroll--winter .puzzle-scroll__level--selected {
+    border: 2px solid rgba(220, 230, 245, 0.5);
+}
+
+.puzzle-scroll .puzzle-scroll__level--solved {
+    background: rgba(217, 184, 92, 0.6);
+    border: 1px solid rgba(180, 150, 60, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }

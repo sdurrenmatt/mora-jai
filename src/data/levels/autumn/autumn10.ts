@@ -3,10 +3,10 @@ import rewardImage from "../../../assets/images/rewards/shodou.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
-export const spring2: Level = {
-    id: "spring2",
-    name: "二",
-    difficulty: "Easy",
+export const autumn10: Level = {
+    id: "autumn10",
+    name: "十",
+    difficulty: "Extreme",
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },

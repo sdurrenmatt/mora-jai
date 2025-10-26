@@ -3,6 +3,7 @@
     width: 90px;
     height: 90px;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .puzzle-corner::after {

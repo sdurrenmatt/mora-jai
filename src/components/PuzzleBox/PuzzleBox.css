@@ -12,7 +12,8 @@
     transform: rotateX(30deg) translateY(-10px);
 }
 
-.puzzle-box--solved {
+.puzzle-box--solved * {
+    cursor: none;
     pointer-events: none;
 }
 

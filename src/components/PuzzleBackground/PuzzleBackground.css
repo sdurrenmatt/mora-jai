@@ -19,7 +19,6 @@
     inset: 0;
     overflow: hidden;
     z-index: 0;
-    pointer-events: none;
 }
 
 .puzzle-background__petal {

@@ -5,7 +5,7 @@ import type { Level } from "../../../types/level"
 
 export const spring1: Level = {
     id: "spring1",
-    name: "1",
+    name: "一",
     difficulty: "Easy",
     puzzle: {
         corners: {
