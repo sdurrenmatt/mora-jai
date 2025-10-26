@@ -9,17 +9,15 @@ type PuzzleCornersProps = {
 export default function PuzzleCorners({ corners, onCornerClick }: PuzzleCornersProps) {
     return (
         <>
-            {
-                Object.values(CornerPositions).map(position => (
-                    <PuzzleCorner
-                        key={position}
-                        position={position}
-                        color={corners[position].color}
-                        matched={corners[position].matched}
-                        onClick={onCornerClick ? () => onCornerClick(position) : undefined}
-                    />
-                ))
-            }
+            {Object.values(CornerPositions).map(position => (
+                <PuzzleCorner
+                    key={position}
+                    position={position}
+                    color={corners[position].color}
+                    matched={corners[position].matched}
+                    onClick={onCornerClick ? () => onCornerClick(position) : undefined}
+                />
+            ))}
         </>
     )
 }

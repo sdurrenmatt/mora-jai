@@ -1,0 +1,113 @@
+.puzzle-level-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+    row-gap: 32px;
+    padding: 24px;
+}
+
+.puzzle-level-info>* {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kaisei Tokumin", serif;
+    padding: 1.5rem;
+    background: linear-gradient(135deg,
+            #12100e 0%,
+            #1a1917 50%,
+            #12100e 100%);
+    box-shadow:
+        0 0 8px rgba(191, 161, 74, 0.1),
+        inset 0 0 6px rgba(255, 230, 180, 0.1),
+        0 1px 6px rgba(0, 0, 0, 0.6);
+    color: #d9b85c;
+    text-align: center;
+    text-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.7),
+        0 0 4px rgba(243, 216, 124, 0.2);
+}
+
+.puzzle-level-info>*::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.3),
+            rgba(217, 184, 92, 0.9) 45%,
+            rgba(0, 0, 0, 0.3));
+}
+
+.puzzle-level-info>*::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.15),
+            rgba(217, 184, 92, 0.6) 55%,
+            rgba(0, 0, 0, 0.15));
+}
+
+.puzzle-level-info__world {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.puzzle-level-info__level {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    white-space: pre;
+}
+
+.puzzle-level-info__difficulty {
+    grid-column: 1 / span 2;
+    padding: 1rem 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.puzzle-level-info__letter {
+    display: inline-block;
+    animation: letter-wave 1.5s ease-in-out infinite alternate;
+}
+
+.puzzle-level-info__letter:nth-child(3n+1) {
+    animation-delay: 0s;
+}
+
+.puzzle-level-info__letter:nth-child(3n+2) {
+    animation-delay: 0.12s;
+}
+
+.puzzle-level-info__letter:nth-child(3n+3) {
+    animation-delay: 0.22s;
+}
+
+.puzzle-level-info__letter:nth-child(2n) {
+    transform: translateY(0.5px);
+}
+
+@keyframes letter-wave {
+    0% {
+        transform: translateY(1.5px);
+    }
+
+    50% {
+        transform: translateY(-2.5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

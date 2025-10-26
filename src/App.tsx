@@ -1,7 +1,7 @@
 import "./App.css"
 import PuzzleBackground from "./components/PuzzleBackground/PuzzleBackground"
 import PuzzleBox from "./components/PuzzleBox/PuzzleBox"
-import PuzzleLevel from "./components/PuzzleLevel/PuzzleLevel"
+import PuzzleLevelInfo from "./components/PuzzleLevelInfo/PuzzleLevelInfo"
 import PuzzleMap from "./components/PuzzleMap/PuzzleMap"
 import PuzzleMenu from "./components/PuzzleMenu/PuzzleMenu"
 import PuzzleTitle from "./components/PuzzleTitle/PuzzleTitle"
@@ -18,10 +18,11 @@ export default function App() {
                 <div className="app__main">
                     <div className="app__puzzle-box"><PuzzleBox level={worlds[0].levels[0]} /></div>
                     <div className="app__puzzle-map"><PuzzleMap worlds={worlds} /></div>
-                    <div className="app__puzzle-level">
-                        <PuzzleLevel
-                            worldName={worlds[0].name}
-                            levelName={worlds[0].levels[0].name}
+                    <div className="app__puzzle-level-info">
+                        <PuzzleLevelInfo
+                            world={worlds[0].name}
+                            level={worlds[0].levels[0].name}
+                            difficulty={worlds[0].levels[0].difficulty}
                         />
                     </div>
                 </div>

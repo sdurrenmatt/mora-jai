@@ -34,24 +34,26 @@ body,
 }
 
 .app__main {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     display: grid;
-    grid-template-columns: 67% 33%;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
         "puzzle-box puzzle-map"
-        "puzzle-box puzzle-level";
-    height: 95%;
-    margin: 2.5%;
+        "puzzle-level-info puzzle-map";
+    height: 100%;
+    width: auto;
+    margin: auto;
+    gap: 1rem;
+    background: rgba(12, 12, 12, 0.45);
+    backdrop-filter: blur(4px);
+    box-shadow:
+        0 0 12px rgba(0, 0, 0, 0.3),
+        inset 0 0 10px rgba(255, 215, 150, 0.05);
 }
 
 .app__main>* {
-    background: rgba(240, 235, 220, 0.6);
-    backdrop-filter: blur(4px);
-    margin: 1rem;
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.3),
-        inset 0 0 8px rgba(255, 255, 255, 0.4);
+    margin: 0 1rem;
 }
 
 .app__puzzle-box {
@@ -59,6 +61,7 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 100px;
 }
 
 .app__puzzle-map {
@@ -66,12 +69,12 @@ body,
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    overflow: hidden;
 }
 
-.app__puzzle-level {
-    grid-area: puzzle-level;
+.app__puzzle-level-info {
+    grid-area: puzzle-level-info;
     display: flex;
+    height: fit-content;
     justify-content: center;
     align-items: center;
 }

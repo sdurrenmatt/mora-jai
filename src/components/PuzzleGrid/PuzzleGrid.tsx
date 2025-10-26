@@ -11,17 +11,15 @@ type PuzzleGridProps = {
 export default function PuzzleGrid({ tiles, onTileClick }: PuzzleGridProps) {
     return (
         <div className="puzzle-grid">
-            {
-                tiles.flatMap((row, i) =>
-                    row.map((tile, j) => (
-                        <PuzzleTile
-                            key={`${i}-${j}`}
-                            color={tile.color}
-                            onClick={onTileClick ? () => onTileClick(i, j) : undefined}
-                        />
-                    ))
-                )
-            }
+            {tiles.flatMap((row, i) =>
+                row.map((tile, j) => (
+                    <PuzzleTile
+                        key={`${i}-${j}`}
+                        color={tile.color}
+                        onClick={onTileClick ? () => onTileClick(i, j) : undefined}
+                    />
+                ))
+            )}
         </div>
     )
 }

@@ -20,6 +20,7 @@ export default function PuzzleCorner({ position, color, matched, onClick }: Puzz
             "wood-filter--light"
         )}
             style={{ backgroundColor: ColorHexCodes[color] }}
-            onClick={onClick} />
+            onClick={onClick}
+        />
     )
 }
