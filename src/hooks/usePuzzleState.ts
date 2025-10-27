@@ -1,52 +1,67 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import clickSound from "../assets/sounds/click.mp3"
 import lightSwitchSound from "../assets/sounds/light-switch.mp3"
 import openingLittleBoxSound from "../assets/sounds/opening-little-box.mp3"
+import { AppContext } from "../context/AppContext"
 import { pressCorner, pressTile } from "../lib/puzzle"
 import type { CornerPosition, Puzzle } from "../lib/puzzle/types"
-import { useAudio } from "./useAudio"
 
-export function usePuzzleState(initialPuzzle: Puzzle) {
-    const [puzzle, setPuzzle] = useState(initialPuzzle)
-    const initialRef = useRef(initialPuzzle)
+function usePuzzleAudio() {
+    const clickAudio = new Audio(clickSound)
+    const lightSwitchAudio = new Audio(lightSwitchSound)
+    const openingLittleBoxAudio = new Audio(openingLittleBoxSound)
+
+    const playTileClick = useCallback(() => clickAudio.play(), [clickAudio])
+    const playCornerClick = useCallback(() => lightSwitchAudio.play(), [lightSwitchAudio])
+    const playSolved = useCallback(() => openingLittleBoxAudio.play(), [openingLittleBoxAudio])
+
+    return { playTileClick, playCornerClick, playSolved }
+}
+
+export function usePuzzleState() {
+    const { currentLevel, addSolvedPuzzle } = useContext(AppContext)
+    const levelId = currentLevel.id
+
+    const [puzzle, setPuzzle] = useState<Puzzle>(structuredClone(currentLevel.puzzle))
 
     useEffect(() => {
-        initialRef.current = initialPuzzle
-    }, [initialPuzzle])
+        setPuzzle(structuredClone(currentLevel.puzzle))
+    }, [currentLevel])
 
-    const lightSwitchAudio = useAudio(lightSwitchSound)
-    const clickAudio = useAudio(clickSound)
-    const openingLittleBoxAudio = useAudio(openingLittleBoxSound)
+    const { playTileClick, playCornerClick, playSolved } = usePuzzleAudio()
 
-    useEffect(() => {
-        if (puzzle.solved) openingLittleBoxAudio.play()
-    }, [puzzle.solved, openingLittleBoxAudio])
+    const onCornerClick = useCallback(
+        (position: CornerPosition) => {
+            playCornerClick()
+            const result = pressCorner(puzzle, position)
 
-    const onCornerClick = useCallback((position: CornerPosition) => {
-        lightSwitchAudio.play()
+            switch (result.type) {
+                case "updated":
+                    setPuzzle(result.puzzle)
+                    break
+                case "solved":
+                    setPuzzle(result.puzzle)
+                    addSolvedPuzzle(levelId)
+                    playSolved()
+                    break
+                case "reset":
+                    setPuzzle(structuredClone(currentLevel.puzzle))
+                    break
+            }
+        },
+        [puzzle, levelId, currentLevel.puzzle, addSolvedPuzzle, playCornerClick, playSolved]
+    )
 
-        const result = pressCorner(puzzle, position)
-        switch (result.type) {
-            case "updated":
-            case "solved":
+    const onTileClick = useCallback(
+        (i: number, j: number) => {
+            playTileClick()
+            const result = pressTile(puzzle, i, j)
+            if (result.type === "updated") {
                 setPuzzle(result.puzzle)
-                break
-            case "reset":
-                setPuzzle(initialRef.current)
-                break
-        }
-    }, [puzzle, lightSwitchAudio])
-
-    const onTileClick = useCallback((i: number, j: number) => {
-        clickAudio.play()
-
-        const result = pressTile(puzzle, i, j)
-        switch (result.type) {
-            case "updated":
-                setPuzzle(result.puzzle)
-                break
-        }
-    }, [puzzle, clickAudio])
+            }
+        },
+        [puzzle, playTileClick]
+    )
 
     return { puzzle, onCornerClick, onTileClick }
 }

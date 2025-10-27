@@ -5,28 +5,27 @@ import PuzzleLevelInfo from "./components/PuzzleLevelInfo/PuzzleLevelInfo"
 import PuzzleLevelMap from "./components/PuzzleLevelMap/PuzzleLevelMap"
 import PuzzleMenu from "./components/PuzzleMenu/PuzzleMenu"
 import PuzzleTitle from "./components/PuzzleTitle/PuzzleTitle"
-import { worlds } from "./data/worlds"
+import { AppContext, useGameState } from "./context/AppContext"
+
 
 export default function App() {
+    const contextValue = useGameState()
+
     return (
         <PuzzleBackground>
-            <div className="app">
-                <div className="app__sidebar">
-                    <PuzzleTitle />
-                    <PuzzleMenu />
-                </div>
-                <div className="app__main">
-                    <div className="app__puzzle-box"><PuzzleBox level={worlds[0].levels[0]} /></div>
-                    <div className="app__puzzle-level-map"><PuzzleLevelMap worlds={worlds} /></div>
-                    <div className="app__puzzle-level-info">
-                        <PuzzleLevelInfo
-                            world={worlds[0].name}
-                            level={worlds[0].levels[0].name}
-                            difficulty={worlds[0].levels[0].difficulty}
-                        />
+            <AppContext value={contextValue}>
+                <div className="app">
+                    <div className="app__sidebar">
+                        <PuzzleTitle />
+                        <PuzzleMenu />
+                    </div>
+                    <div className="app__main">
+                        <div className="app__puzzle-box"><PuzzleBox /></div>
+                        <div className="app__puzzle-level-map"><PuzzleLevelMap /></div>
+                        <div className="app__puzzle-level-info"><PuzzleLevelInfo /></div>
                     </div>
                 </div>
-            </div>
+            </AppContext>
         </PuzzleBackground>
     )
 }

@@ -1,12 +1,8 @@
-import type { World } from "../../types/level"
+import { worlds } from "../../data/worlds"
 import PuzzleScroll from "../PuzzleScroll/PuzzleScroll"
 import "./PuzzleLevelMap.css"
 
-type PuzzleLevelMapProps = {
-    worlds: World[]
-}
-
-export default function PuzzleLevelMap({ worlds }: PuzzleLevelMapProps) {
+export default function PuzzleLevelMap() {
     return (
         <div className="puzzle-level-map">
             <div className="puzzle-level-map__scrolls">

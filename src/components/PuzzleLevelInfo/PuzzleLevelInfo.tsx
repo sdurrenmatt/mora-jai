@@ -1,10 +1,6 @@
+import { useContext } from "react"
+import { AppContext } from "../../context/AppContext"
 import "./PuzzleLevelInfo.css"
-
-type PuzzleLevelInfoProps = {
-    world: string
-    level: string
-    difficulty: string
-}
 
 const AnimatedText = ({ text }: { text: string }) => (
     <>
@@ -19,19 +15,21 @@ const AnimatedText = ({ text }: { text: string }) => (
     </>
 )
 
-export default function PuzzleLevelInfo({ world, level, difficulty }: PuzzleLevelInfoProps) {
+export default function PuzzleLevelInfo() {
+    const { currentWorld, currentLevel } = useContext(AppContext)
+
     return (
         <div className="puzzle-level-info">
             <div className="puzzle-level-info__world">
-                <AnimatedText text={world} />
+                <AnimatedText text={currentWorld.name} />
             </div>
 
             <div className="puzzle-level-info__level">
-                <AnimatedText text={`Level ${level}`} />
+                <AnimatedText text={`Level ${currentLevel.name}`} />
             </div>
 
             <div className="puzzle-level-info__difficulty">
-                <AnimatedText text={difficulty} />
+                <AnimatedText text={currentLevel.difficulty} />
             </div>
         </div>
     )

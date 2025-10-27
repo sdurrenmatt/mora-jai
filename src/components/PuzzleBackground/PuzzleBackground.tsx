@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import "./PuzzleBackground.css";
+import type { ReactNode } from "react"
+import "./PuzzleBackground.css"
 
 type PuzzleBackgroundProps = {
     children?: ReactNode
@@ -15,5 +15,5 @@ export default function PuzzleBackground({ children }: PuzzleBackgroundProps) {
             </div>
             {children}
         </div>
-    );
+    )
 }
