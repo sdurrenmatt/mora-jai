@@ -1,9 +1,9 @@
-.puzzle-map {
+.puzzle-level-map {
     position: relative;
     padding: 0 5rem;
 }
 
-.puzzle-map__scrolls {
+.puzzle-level-map__scrolls {
     display: flex;
     direction: rtl;
     flex-direction: row;

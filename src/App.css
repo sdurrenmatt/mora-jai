@@ -32,7 +32,6 @@ body,
     box-shadow:
         0 0 25px rgba(0, 0, 0, 0.6),
         inset 0 0 20px rgba(255, 215, 150, 0.05);
-    z-index: 2;
 }
 
 .app__main {
@@ -41,9 +40,8 @@ body,
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
     grid-template-areas:
-        "puzzle-box puzzle-map"
-        "puzzle-level-info puzzle-map";
-    height: 100%;
+        "puzzle-box puzzle-level-map"
+        "puzzle-box puzzle-level-info";
     width: auto;
     margin: auto;
     gap: 1rem;
@@ -66,8 +64,8 @@ body,
     padding: 0 100px;
 }
 
-.app__puzzle-map {
-    grid-area: puzzle-map;
+.app__puzzle-level-map {
+    grid-area: puzzle-level-map;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;

@@ -1,15 +1,15 @@
 import type { World } from "../../types/level"
 import PuzzleScroll from "../PuzzleScroll/PuzzleScroll"
-import "./PuzzleMap.css"
+import "./PuzzleLevelMap.css"
 
-type PuzzleMapProps = {
+type PuzzleLevelMapProps = {
     worlds: World[]
 }
 
-export default function PuzzleMap({ worlds }: PuzzleMapProps) {
+export default function PuzzleLevelMap({ worlds }: PuzzleLevelMapProps) {
     return (
-        <div className="puzzle-map">
-            <div className="puzzle-map__scrolls">
+        <div className="puzzle-level-map">
+            <div className="puzzle-level-map__scrolls">
                 {worlds.map((world) => (
                     <PuzzleScroll key={world.id} world={world} />
                 ))}
