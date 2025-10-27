@@ -24,7 +24,7 @@ export const AppContext = createContext<AppContextType>({
 export function useGameState() {
     const [currentWorld, setCurrentWorld] = useLocalStorage<World>("currentWorld", worlds[0])
     const [currentLevel, setCurrentLevel] = useLocalStorage<Level>("currentLevel", worlds[0].levels[0])
-    const [solvedPuzzles, setSolvedPuzzles] = useLocalStorage<Set<string>>('solvedPuzzles', new Set(), {
+    const [solvedPuzzles, setSolvedPuzzles] = useLocalStorage<Set<string>>("solvedPuzzles", new Set(), {
         serializer: (value) => JSON.stringify([...value]),
         deserializer: (value) => new Set(JSON.parse(value)),
     })
@@ -44,8 +44,5 @@ export function useGameState() {
         currentWorld,
         currentLevel,
         solvedPuzzles,
-        setCurrentWorld,
-        setCurrentLevel,
-        addSolvedPuzzle,
     ])
 }
