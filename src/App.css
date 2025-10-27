@@ -52,10 +52,6 @@ body,
         inset 0 0 10px rgba(255, 215, 150, 0.05);
 }
 
-.app__main>* {
-    margin: 0 1rem;
-}
-
 .app__puzzle-box {
     grid-area: puzzle-box;
     display: flex;

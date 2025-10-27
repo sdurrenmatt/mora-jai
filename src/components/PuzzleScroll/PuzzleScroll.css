@@ -12,7 +12,6 @@
 
 .puzzle-scroll {
     position: relative;
-    margin-bottom: 2rem;
     padding: 4.5rem 0 3rem;
     display: flex;
     flex-direction: column;
