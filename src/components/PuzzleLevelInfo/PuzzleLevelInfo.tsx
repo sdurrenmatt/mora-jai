@@ -21,7 +21,7 @@ export default function PuzzleLevelInfo() {
     return (
         <div className="puzzle-level-info">
             <div className="puzzle-level-info__world">
-                <AnimatedText text={currentWorld.name} />
+                <AnimatedText text={currentWorld} />
             </div>
 
             <div className="puzzle-level-info__level">

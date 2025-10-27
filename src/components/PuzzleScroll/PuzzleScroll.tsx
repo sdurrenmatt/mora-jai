@@ -12,7 +12,7 @@ export default function PuzzleScroll({ world }: PuzzleScrollProps) {
     const { currentLevel, solvedPuzzles, setCurrentWorld, setCurrentLevel } = useContext(AppContext)
 
     const handleLevelClick = useCallback((level: Level) => {
-        setCurrentWorld(world)
+        setCurrentWorld(world.name)
         setCurrentLevel(level)
     }, [world, setCurrentWorld, setCurrentLevel])
 
