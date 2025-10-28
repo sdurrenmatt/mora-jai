@@ -18,7 +18,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1200px;
     padding: 0 100px;
+}
+
+.puzzle-page__puzzle-box--lift-appear {
+    transform-origin: center center;
+    transform: rotateX(50deg) translateY(-2px) translateZ(-120px);
+}
+
+.puzzle-page__puzzle-box--lift-appear-active {
+    transform: rotateX(30deg) translateY(-4px) translateZ(0);
+    transition: transform 3s cubic-bezier(0.11, 0.95, 0.24, 1);
+}
+
+.puzzle-page__puzzle-box--lift-appear-done {
+    transform: rotateX(30deg) translateY(-4px) translateZ(0);
 }
 
 .puzzle-page__puzzle-level-map {

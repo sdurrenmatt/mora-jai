@@ -1,15 +1,7 @@
-.puzzle-box-wrapper {
-    perspective: 1200px;
-    display: flex;
-    align-items: center;
-}
-
 .puzzle-box {
     position: relative;
     padding: 45px;
     clip-path: polygon(45px 0%, calc(100% - 45px) 0%, 100% 45px, 100% calc(100% - 45px), calc(100% - 45px) 100%, 45px 100%, 0% calc(100% - 45px), 0% 45px);
-    transform-origin: center center;
-    transform: rotateX(30deg) translateY(-10px);
 }
 
 .puzzle-box--solved * {

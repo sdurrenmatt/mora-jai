@@ -26,17 +26,7 @@
 .puzzle-menu__item {
     position: relative;
     display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    font-family: "Kaisei Tokumin";
-    font-weight: 800;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    color: #c6a14b;
     border-radius: 6px;
-    padding: 0.85rem 1.75rem;
     border: 2px solid transparent;
     background:
         linear-gradient(135deg,
@@ -47,40 +37,46 @@
             #141210 80%,
             #12110f 100%) padding-box,
         conic-gradient(from var(--border-angle),
-            #f3d87c,
-            #e0c36a,
-            #bfa14a,
-            #8c6f2f,
-            #5c4518,
-            #3b2d0f,
-            #5c4518,
-            #8c6f2f,
-            #bfa14a,
-            #e0c36a,
-            #f3d87c,
-            #f3d87c,
-            #e0c36a,
-            #bfa14a,
-            #8c6f2f,
-            #5c4518,
-            #3b2d0f,
-            #5c4518,
-            #8c6f2f,
-            #bfa14a,
-            #e0c36a,
-            #f3d87c) border-box;
+            #f3d87c, #e0c36a, #bfa14a, #8c6f2f, #5c4518, #3b2d0f,
+            #5c4518, #8c6f2f, #bfa14a, #e0c36a, #f3d87c, #f3d87c,
+            #e0c36a, #bfa14a, #8c6f2f, #5c4518, #3b2d0f, #5c4518,
+            #8c6f2f, #bfa14a, #e0c36a, #f3d87c) border-box;
     box-shadow:
         0 0 12px rgba(198, 161, 75, 0.15),
         inset 0 0 8px rgba(255, 230, 180, 0.15),
         0 2px 8px rgba(0, 0, 0, 0.8);
-    text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.9),
-        0 0 6px rgba(198, 161, 75, 0.25);
-    z-index: 1;
-    transition: filter 0.3s, box-shadow 0.3s;
 }
 
 .puzzle-menu__list>li:first-child {
-    animation: border-rotate 2.5s linear infinite;
     margin-bottom: 3rem;
+}
+
+.puzzle-menu__list:not(:has(.active))>li:first-child {
+    animation: border-rotate 2.5s linear infinite;
+}
+
+.puzzle-menu__link {
+    display: block;
+    padding: 0.85rem 1.75rem;
+    cursor: pointer;
+    pointer-events: auto;
+    color: #c6a14b;
+    font-family: "Kaisei Tokumin";
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 0 6px rgba(198, 161, 75, 0.25);
+    white-space: nowrap;
+    letter-spacing: 6px;
+}
+
+.puzzle-menu__link:hover,
+.puzzle-menu__link:focus,
+.puzzle-menu__link.active {
+    color: #ffd780;
 }
