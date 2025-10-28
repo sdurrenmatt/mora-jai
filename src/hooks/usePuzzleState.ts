@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect, useState } from "react"
 import clickSound from "../assets/sounds/click.mp3"
 import lightSwitchSound from "../assets/sounds/light-switch.mp3"
 import openingLittleBoxSound from "../assets/sounds/opening-little-box.mp3"
-import { AppContext } from "../context/AppContext"
+import { GameContext } from "../context/GameContext"
 import { pressCorner, pressTile } from "../lib/puzzle"
 import type { CornerPosition, Puzzle } from "../lib/puzzle/types"
 
@@ -19,7 +19,7 @@ function usePuzzleAudio() {
 }
 
 export function usePuzzleState() {
-    const { currentLevel, addSolvedPuzzle } = useContext(AppContext)
+    const { currentLevel, addSolvedPuzzle } = useContext(GameContext)
     const levelId = currentLevel.id
 
     const [puzzle, setPuzzle] = useState<Puzzle>(structuredClone(currentLevel.puzzle))

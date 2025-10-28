@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { useContext } from "react"
-import { AppContext } from "../../context/AppContext"
+import { GameContext } from "../../context/GameContext"
 import { usePuzzleState } from "../../hooks/usePuzzleState"
 import PuzzleCorners from "../PuzzleCorners/PuzzleCorners"
 import PuzzleGrid from "../PuzzleGrid/PuzzleGrid"
@@ -8,7 +8,7 @@ import PuzzleReward from "../PuzzleReward/PuzzleReward"
 import "./PuzzleBox.css"
 
 export default function PuzzleBox() {
-    const { currentLevel } = useContext(AppContext)
+    const { currentLevel } = useContext(GameContext)
     const { puzzle, onCornerClick, onTileClick } = usePuzzleState()
 
     return (

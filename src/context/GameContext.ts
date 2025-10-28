@@ -3,7 +3,7 @@ import { useLocalStorage } from "usehooks-ts"
 import { worlds } from "../data/worlds"
 import type { Level } from "../types/level"
 
-export type AppContextType = {
+export type GameContextType = {
     currentWorld: string
     currentLevel: Level
     solvedPuzzles: Set<string>
@@ -12,7 +12,7 @@ export type AppContextType = {
     addSolvedPuzzle: (levelId: string) => void
 }
 
-export const AppContext = createContext<AppContextType>({
+export const GameContext = createContext<GameContextType>({
     currentWorld: worlds[0].name,
     currentLevel: worlds[0].levels[0],
     solvedPuzzles: new Set(),

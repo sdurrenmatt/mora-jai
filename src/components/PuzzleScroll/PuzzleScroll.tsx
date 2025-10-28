@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { useCallback, useContext } from "react"
-import { AppContext } from "../../context/AppContext"
+import { GameContext } from "../../context/GameContext"
 import type { Level, World } from "../../types/level"
 import "./PuzzleScroll.css"
 
@@ -9,7 +9,7 @@ type PuzzleScrollProps = {
 }
 
 export default function PuzzleScroll({ world }: PuzzleScrollProps) {
-    const { currentLevel, solvedPuzzles, setCurrentWorld, setCurrentLevel } = useContext(AppContext)
+    const { currentLevel, solvedPuzzles, setCurrentWorld, setCurrentLevel } = useContext(GameContext)
 
     const handleLevelClick = useCallback((level: Level) => {
         setCurrentWorld(world.name)
