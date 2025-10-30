@@ -22,6 +22,6 @@ export const winter1: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "書道 (Shodō)",
+        description: "書道 (Shodou)",
     }
 }

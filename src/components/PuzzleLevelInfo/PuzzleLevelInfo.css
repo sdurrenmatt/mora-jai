@@ -76,34 +76,3 @@
     font-style: italic;
     letter-spacing: 3px;
 }
-
-.puzzle-level-info__letter {
-    display: inline-block;
-    animation: letter-wave 1.5s ease-in-out infinite alternate;
-}
-
-.puzzle-level-info__letter:nth-child(3n+1) {
-    animation-delay: 0s;
-}
-
-.puzzle-level-info__letter:nth-child(3n+2) {
-    animation-delay: 0.12s;
-}
-
-.puzzle-level-info__letter:nth-child(3n+3) {
-    animation-delay: 0.22s;
-}
-
-@keyframes letter-wave {
-    0% {
-        transform: translateY(1.5px);
-    }
-
-    50% {
-        transform: translateY(-2.5px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}

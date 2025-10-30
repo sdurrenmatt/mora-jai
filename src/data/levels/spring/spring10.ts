@@ -22,6 +22,6 @@ export const spring10: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "書道 (Shodō)",
+        description: "書道 (Shodou)",
     }
 }

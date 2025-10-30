@@ -1,0 +1,10 @@
+.puzzle-reward {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    max-height: 225px;
+}
+
+.puzzle-reward--locked {
+    filter: grayscale(100%) brightness(0.1) blur(4px);
+}

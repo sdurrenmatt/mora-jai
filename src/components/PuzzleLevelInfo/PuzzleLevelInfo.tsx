@@ -1,19 +1,7 @@
 import { useContext } from "react"
 import { GameContext } from "../../context/GameContext"
+import AnimatedText from "../common/AnimatedText/AnimatedText"
 import "./PuzzleLevelInfo.css"
-
-const AnimatedText = ({ text }: { text: string }) => (
-    <>
-        {text.split("").map((char, index) => (
-            <span
-                key={index}
-                className="puzzle-level-info__letter"
-            >
-                {char}
-            </span>
-        ))}
-    </>
-)
 
 export default function PuzzleLevelInfo() {
     const { currentWorld, currentLevel } = useContext(GameContext)

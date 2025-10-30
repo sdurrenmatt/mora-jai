@@ -1,0 +1,173 @@
+.puzzle-gallery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2.5rem 1.25rem;
+    gap: 1.25rem;
+    background: linear-gradient(135deg,
+            #12100e 0%,
+            #1a1917 50%,
+            #12100e 100%);
+    box-shadow:
+        0 0 20px rgba(215, 181, 107, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.55),
+        inset 0 0 10px rgba(230, 195, 106, 0.08),
+        inset 0 1px 4px rgba(255, 255, 255, 0.05);
+}
+
+.puzzle-gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.3),
+            rgba(217, 184, 92, 0.9) 45%,
+            rgba(0, 0, 0, 0.3));
+}
+
+.puzzle-gallery::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.15),
+            rgba(217, 184, 92, 0.6) 55%,
+            rgba(0, 0, 0, 0.15));
+}
+
+.puzzle-gallery__world {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.puzzle-gallery__world-name {
+    font-family: "Kaisei Tokumin", serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #e6c36a;
+    text-shadow: 0 0 8px rgba(230, 195, 106, 0.3);
+    padding: 0 1rem;
+}
+
+.puzzle-gallery__button {
+    background: transparent;
+    border: none;
+    color: #e6c36a;
+    font-family: "Kaisei Tokumin", serif;
+    font-size: 2.1rem;
+    font-weight: 800;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+    text-shadow: 0 0 8px rgba(230, 195, 106, 0.3);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.puzzle-gallery__button:hover {
+    color: #fff3d4;
+    transform: scale(1.05);
+}
+
+.puzzle-gallery__button:active {
+    transform: scale(0.95);
+}
+
+.puzzle-gallery__rewards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    padding-top: 1.25rem 0;
+    justify-content: center;
+    align-items: start;
+}
+
+.puzzle-gallery__reward {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puzzle-gallery__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    font-family: "Kaisei Tokumin", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #d7b56b;
+    text-shadow:
+        0 0 6px rgba(215, 181, 107, 0.35),
+        0 0 12px rgba(215, 181, 107, 0.25);
+    letter-spacing: 0.15rem;
+}
+
+.puzzle-gallery__reward--pop-in-appear {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+}
+
+.puzzle-gallery__reward--pop-in-appear-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+.puzzle-gallery__reward--pop-in-appear-done {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+.puzzle-gallery__reward--pop-in-appear:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(4) {
+    transition-delay: 300ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(5) {
+    transition-delay: 400ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(6) {
+    transition-delay: 150ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(7) {
+    transition-delay: 250ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(8) {
+    transition-delay: 350ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(9) {
+    transition-delay: 450ms;
+}
+
+.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(10) {
+    transition-delay: 550ms;
+}
