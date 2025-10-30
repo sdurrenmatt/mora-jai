@@ -8,7 +8,7 @@ export default function AnimatedText({ text }: { text: string }) {
                     key={index}
                     className="animated-text__letter"
                 >
-                    {char}
+                    {char === " " ? "\u00A0" : char}
                 </span>
             ))}
         </>

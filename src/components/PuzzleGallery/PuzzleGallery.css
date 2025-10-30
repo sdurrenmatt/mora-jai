@@ -136,38 +136,38 @@
     transition-delay: 0ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(2) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(2) {
     transition-delay: 100ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(3) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(3) {
     transition-delay: 200ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(4) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(4) {
     transition-delay: 300ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(5) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(5) {
     transition-delay: 400ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(6) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(6) {
     transition-delay: 150ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(7) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(7) {
     transition-delay: 250ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(8) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(8) {
     transition-delay: 350ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(9) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(9) {
     transition-delay: 450ms;
 }
 
-.puzzle-gallery__rewards>.puzzle-gallery__reward--pop-in-appear:nth-child(10) {
+.puzzle-gallery__reward--pop-in-appear:nth-child(10) {
     transition-delay: 550ms;
 }

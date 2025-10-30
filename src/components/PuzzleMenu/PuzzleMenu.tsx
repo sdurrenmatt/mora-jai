@@ -9,10 +9,10 @@ export default function PuzzleMenu() {
                     <NavLink to="/play" className="puzzle-menu__link">Play</NavLink>
                 </li>
                 <li className="puzzle-menu__item">
-                    <NavLink to="/rules" className="puzzle-menu__link">Rules</NavLink>
+                    <NavLink to="/gallery" className="puzzle-menu__link">Gallery</NavLink>
                 </li>
                 <li className="puzzle-menu__item">
-                    <NavLink to="/gallery" className="puzzle-menu__link">Gallery</NavLink>
+                    <NavLink to="/rules" className="puzzle-menu__link">Rules</NavLink>
                 </li>
                 <li className="puzzle-menu__item">
                     <NavLink to="/credits" className="puzzle-menu__link">Credits</NavLink>
