@@ -14,7 +14,7 @@ export default function PuzzleScroll({ world }: PuzzleScrollProps) {
     const handleLevelClick = useCallback((level: Level) => {
         setCurrentWorld(world.name)
         setCurrentLevel(level)
-    }, [world])
+    }, [])
 
     return (
         <div className={`puzzle-scroll puzzle-scroll--${world.id}`}>
