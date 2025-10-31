@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { GameContext } from "../../context/GameContext"
 import { usePuzzleState } from "../../hooks/usePuzzleState"
 import PuzzleCorners from "../PuzzleCorners/PuzzleCorners"
@@ -10,6 +10,7 @@ import "./PuzzleBox.css"
 export default function PuzzleBox() {
     const { currentLevel } = useContext(GameContext)
     const { puzzle, onCornerClick, onTileClick } = usePuzzleState()
+    const [rewardCollected, setRewardCollected] = useState(false)
 
     return (
         <div
@@ -22,7 +23,13 @@ export default function PuzzleBox() {
         >
             <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
             <div className="puzzle-box__base wood-texture wood-filter--light">
-                <div className="puzzle-box__puzzle-reward">
+                <div
+                    className={clsx(
+                        "puzzle-box__puzzle-reward",
+                        { "puzzle-box__puzzle-reward--collected": rewardCollected }
+                    )}
+                    onClick={() => setRewardCollected(true)}
+                >
                     <PuzzleReward reward={currentLevel.reward} />
                 </div>
                 <div className="puzzle-box__puzzle-grid wood-texture wood-filter--dim">

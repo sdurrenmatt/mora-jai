@@ -5,7 +5,6 @@
 }
 
 .puzzle-box--solved * {
-    cursor: none;
     pointer-events: none;
 }
 
@@ -40,6 +39,21 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transform-origin: center;
     transform: rotateZ(-2deg) rotateX(2deg);
+    cursor: pointer;
+    pointer-events: auto;
+    transition:
+        transform 0.3s ease,
+        opacity 0.6s ease;
+}
+
+.puzzle-box__puzzle-reward:hover {
+    transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
+}
+
+.puzzle-box__puzzle-reward--collected {
+    opacity: 0;
+    transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
+    pointer-events: none;
 }
 
 .puzzle-box__puzzle-grid {
