@@ -47,6 +47,15 @@
         0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
+.puzzle-menu__item:hover,
+.puzzle-menu__item:focus {
+    transform: scale(1.025);
+}
+
+.puzzle-menu__item:active {
+    transform: scale(0.975);
+}
+
 .puzzle-menu__list>li:first-child {
     margin-bottom: 3rem;
 }
