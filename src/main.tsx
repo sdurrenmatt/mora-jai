@@ -2,15 +2,15 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 import App from './App.tsx'
-import { GameContext, useGameState } from './context/GameContext.ts'
+import { GameContext, getGameContextValue } from './context/GameContext.ts'
 import './styles/fonts.css'
 import './styles/index.css'
 import './styles/textures.css'
 
 function Root() {
-    const gameState = useGameState()
+    const gameContextValue = getGameContextValue()
     return (
-        <GameContext value={gameState}>
+        <GameContext value={gameContextValue}>
             <BrowserRouter>
                 <App />
             </BrowserRouter>

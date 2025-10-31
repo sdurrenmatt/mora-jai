@@ -21,7 +21,7 @@ export const GameContext = createContext<GameContextType>({
     addSolvedPuzzle: () => { },
 })
 
-export function useGameState() {
+export function getGameContextValue() {
     const [currentWorld, setCurrentWorld] = useLocalStorage<string>("currentWorld", worlds[0].name)
     const [currentLevel, setCurrentLevel] = useLocalStorage<Level>("currentLevel", worlds[0].levels[0])
     const [solvedPuzzles, setSolvedPuzzles] = useLocalStorage<Set<string>>("solvedPuzzles", new Set(), {
@@ -30,7 +30,7 @@ export function useGameState() {
     })
 
     const addSolvedPuzzle = useCallback((levelId: string) => {
-        setSolvedPuzzles(prev => new Set(prev).add(levelId))
+        setSolvedPuzzles(prev => new Set([...prev, levelId]))
     }, [])
 
     return useMemo(() => ({
