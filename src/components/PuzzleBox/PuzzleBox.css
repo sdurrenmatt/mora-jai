@@ -39,6 +39,9 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transform-origin: center;
     transform: rotateZ(-2deg) rotateX(2deg);
+}
+
+.puzzle-box--solved .puzzle-box__puzzle-reward {
     cursor: pointer;
     pointer-events: auto;
     transition:
@@ -46,11 +49,11 @@
         opacity 0.6s ease;
 }
 
-.puzzle-box__puzzle-reward:hover {
+.puzzle-box--solved .puzzle-box__puzzle-reward:hover {
     transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
 }
 
-.puzzle-box__puzzle-reward--collected {
+.puzzle-box--solved .puzzle-box__puzzle-reward--collected {
     opacity: 0;
     transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
     pointer-events: none;

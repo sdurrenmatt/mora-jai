@@ -1,22 +1,8 @@
-import { useCallback, useContext, useEffect, useState } from "react"
-import clickSound from "../assets/sounds/click.mp3"
-import lightSwitchSound from "../assets/sounds/light-switch.mp3"
-import openingLittleBoxSound from "../assets/sounds/opening-little-box.mp3"
+import { useCallback, useContext, useState } from "react"
 import { GameContext } from "../context/GameContext"
 import { pressCorner, pressTile } from "../lib/puzzle"
 import type { CornerPosition, Puzzle } from "../lib/puzzle/types"
-
-function usePuzzleAudio() {
-    const clickAudio = new Audio(clickSound)
-    const lightSwitchAudio = new Audio(lightSwitchSound)
-    const openingLittleBoxAudio = new Audio(openingLittleBoxSound)
-
-    const playTileClick = useCallback(() => clickAudio.play(), [clickAudio])
-    const playCornerClick = useCallback(() => lightSwitchAudio.play(), [lightSwitchAudio])
-    const playSolved = useCallback(() => openingLittleBoxAudio.play(), [openingLittleBoxAudio])
-
-    return { playTileClick, playCornerClick, playSolved }
-}
+import { usePuzzleAudio } from "./usePuzzleAudio"
 
 export function usePuzzleState() {
     const { currentLevel, addSolvedPuzzle } = useContext(GameContext)
@@ -38,11 +24,11 @@ export function usePuzzleState() {
                     playSolved()
                     break
                 case "reset":
-                    setPuzzle(structuredClone(currentLevel.puzzle))
+                    setPuzzle(currentLevel.puzzle)
                     break
             }
         },
-        [puzzle, currentLevel.id, currentLevel.puzzle, addSolvedPuzzle, playCornerClick, playSolved]
+        [puzzle, currentLevel.id, playCornerClick, playSolved]
     )
 
     const onTileClick = useCallback(
