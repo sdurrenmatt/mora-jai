@@ -20,14 +20,7 @@ function usePuzzleAudio() {
 
 export function usePuzzleState() {
     const { currentLevel, addSolvedPuzzle } = useContext(GameContext)
-    const levelId = currentLevel.id
-
-    const [puzzle, setPuzzle] = useState<Puzzle>(structuredClone(currentLevel.puzzle))
-
-    useEffect(() => {
-        setPuzzle(structuredClone(currentLevel.puzzle))
-    }, [currentLevel])
-
+    const [puzzle, setPuzzle] = useState<Puzzle>(currentLevel.puzzle)
     const { playTileClick, playCornerClick, playSolved } = usePuzzleAudio()
 
     const onCornerClick = useCallback(
@@ -41,7 +34,7 @@ export function usePuzzleState() {
                     break
                 case "solved":
                     setPuzzle(result.puzzle)
-                    addSolvedPuzzle(levelId)
+                    addSolvedPuzzle(currentLevel.id)
                     playSolved()
                     break
                 case "reset":
@@ -49,7 +42,7 @@ export function usePuzzleState() {
                     break
             }
         },
-        [puzzle, levelId, currentLevel.puzzle, addSolvedPuzzle, playCornerClick, playSolved]
+        [puzzle, currentLevel.id, currentLevel.puzzle, addSolvedPuzzle, playCornerClick, playSolved]
     )
 
     const onTileClick = useCallback(
