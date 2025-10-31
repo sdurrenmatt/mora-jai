@@ -6,11 +6,14 @@
         "puzzle-box puzzle-level-map"
         "puzzle-box puzzle-level-info";
     gap: 1rem;
-    background: rgba(12, 12, 12, 0.45);
-    backdrop-filter: blur(4px);
+    background: linear-gradient(135deg,
+            rgba(18, 16, 14, 0.95) 0%,
+            rgba(26, 25, 23, 0.85) 50%,
+            rgba(18, 16, 14, 0.95) 100%);
     box-shadow:
-        0 0 12px rgba(0, 0, 0, 0.3),
-        inset 0 0 10px rgba(255, 215, 150, 0.05);
+        0 8px 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 15px rgba(230, 195, 106, 0.05);
+    backdrop-filter: blur(2px);
 }
 
 .puzzle-game__puzzle-box {
@@ -41,6 +44,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    margin-top: -8px;
 }
 
 .puzzle-game__puzzle-level-info {
