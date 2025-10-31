@@ -4,11 +4,12 @@ import { rules } from "../../data/rules"
 import { ColorHexCodes } from "../../styles/colors"
 import AnimatedText from "../common/AnimatedText/AnimatedText"
 import "./PuzzleRules.css"
+import SectionSeparator from "../common/SectionSeparator/SectionSeparator"
 
 export default function PuzzleRules() {
     return (
         <div className="puzzle-rules">
-            <section className="puzzle-rules__intro">
+            <section className="puzzle-rules__intro" aria-label="How To Play">
                 <div className="puzzle-rules__title">
                     <AnimatedText text="How To Play" />
                 </div>
@@ -19,9 +20,9 @@ export default function PuzzleRules() {
                 </p>
             </section>
 
-            <div className="puzzle-rules__separator" />
+            <SectionSeparator />
 
-            <section className="puzzle-rules__moves">
+            <section className="puzzle-rules__moves" aria-label="Moves">
                 <div className="puzzle-rules__title">
                     <AnimatedText text="Moves" />
                 </div>

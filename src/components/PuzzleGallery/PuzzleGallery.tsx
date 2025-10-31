@@ -23,7 +23,7 @@ export default function PuzzleGallery() {
             </div>
 
             <div className="puzzle-gallery__rewards">
-                {world.levels.map(level => {
+                {world.levels.map((level, index) => {
                     const nodeRef = useRef<HTMLDivElement>(null)
                     const locked = !solvedPuzzles.has(level.id)
 
@@ -35,6 +35,7 @@ export default function PuzzleGallery() {
                             in
                             timeout={400}
                             classNames="puzzle-gallery__reward--pop-in"
+                            style={{ '--i': index }}
                         >
                             <div ref={nodeRef} className="puzzle-gallery__reward">
                                 <PuzzleReward reward={level.reward} locked={locked} />
