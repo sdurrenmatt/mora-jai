@@ -1,6 +1,6 @@
 .puzzle-game {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas:
         "puzzle-box puzzle-level-map"
@@ -18,11 +18,12 @@
 
 .puzzle-game__puzzle-box {
     grid-area: puzzle-box;
+    container: puzzle-box / inline-size;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1200px;
-    padding: 0 100px;
+    padding: 0 12.5%;
 }
 
 .puzzle-game__puzzle-box--lift-appear {

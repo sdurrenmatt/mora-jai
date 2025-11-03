@@ -1,8 +1,6 @@
 .puzzle-reward {
     width: 100%;
     height: auto;
-    max-width: 280px;
-    max-height: 225px;
 }
 
 .puzzle-reward--locked {

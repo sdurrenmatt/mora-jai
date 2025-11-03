@@ -1,6 +1,8 @@
 .puzzle-grid {
+    --item-size: calc(125 * var(--cqw-per-px));
+
     display: grid;
-    grid-template-columns: repeat(3, 125px);
-    grid-template-rows: repeat(3, 125px);
-    gap: 30px;
+    grid-template-columns: repeat(3, var(--item-size));
+    grid-template-rows: repeat(3, var(--item-size));
+    gap: calc(30 * var(--cqw-per-px));
 }

@@ -1,7 +1,18 @@
 .puzzle-box {
+    --cqw-per-px: calc(100cqw / 613);
+    --padding: calc(45 * var(--cqw-per-px));
+
+    aspect-ratio: 1/1;
     position: relative;
-    padding: 45px;
-    clip-path: polygon(45px 0%, calc(100% - 45px) 0%, 100% 45px, 100% calc(100% - 45px), calc(100% - 45px) 100%, 45px 100%, 0% calc(100% - 45px), 0% 45px);
+    padding: var(--padding);
+    clip-path: polygon(var(--padding) 0cqw,
+            calc(100cqw - var(--padding)) 0cqw,
+            100cqw var(--padding),
+            100cqw calc(100cqw - var(--padding)),
+            calc(100cqw - var(--padding)) 100cqw,
+            var(--padding) 100cqw,
+            0cqw calc(100cqw - var(--padding)),
+            0cqw var(--padding));
 }
 
 .puzzle-box--solved * {
@@ -12,15 +23,19 @@
     content: "";
     position: absolute;
     inset: 0;
-    box-shadow: inset -5px -5px 5px #1a1305, inset 5px 5px 5px #1a1305;
+    box-shadow:
+        inset calc(-5 * var(--cqw-per-px)) calc(-5 * var(--cqw-per-px)) calc(5 * var(--cqw-per-px)) #1a1305,
+        inset calc(5 * var(--cqw-per-px)) calc(5 * var(--cqw-per-px)) calc(5 * var(--cqw-per-px)) #1a1305;
     box-sizing: border-box;
 }
 
 .puzzle-box__base {
     perspective: 3500px;
     perspective-origin: center top;
-    border: 4px solid #12110f;
-    box-shadow: inset -3px -3px 40px black, inset 3px 3px 40px black;
+    border: calc(4 * var(--cqw-per-px)) solid #12110f;
+    box-shadow:
+        inset calc(-3 * var(--cqw-per-px)) calc(-3 * var(--cqw-per-px)) calc(40 * var(--cqw-per-px)) black,
+        inset calc(3 * var(--cqw-per-px)) calc(3 * var(--cqw-per-px)) calc(40 * var(--cqw-per-px)) black;
     position: relative;
     display: inline-block;
     box-sizing: border-box;
@@ -32,11 +47,11 @@
     align-items: center;
     text-align: center;
     position: absolute;
-    bottom: 50px;
-    left: 120px;
-    width: 280px;
-    height: 225px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    bottom: calc(50 * var(--cqw-per-px));
+    left: calc(120 * var(--cqw-per-px));
+    width: calc(280 * var(--cqw-per-px));
+    height: calc(225 * var(--cqw-per-px));
+    box-shadow: 0 calc(2 * var(--cqw-per-px)) calc(5 * var(--cqw-per-px)) rgba(0, 0, 0, 0.5);
     transform-origin: center;
     transform: rotateZ(-2deg) rotateX(2deg);
 }
@@ -60,14 +75,14 @@
 }
 
 .puzzle-box__puzzle-grid {
-    padding: 40px;
+    padding: calc(40 * var(--cqw-per-px));
     position: relative;
     display: inline-block;
     box-sizing: border-box;
 }
 
 .puzzle-box--solved .puzzle-box__puzzle-grid {
-    box-shadow: 0 20px 40px black;
+    box-shadow: 0 calc(20 * var(--cqw-per-px)) calc(40 * var(--cqw-per-px)) black;
     transform-origin: center top;
     transition: transform 2s ease-out;
     transform: rotateX(70deg);
@@ -77,6 +92,6 @@
     content: "";
     position: absolute;
     inset: 0;
-    border: 8px solid #1a1305;
+    border: calc(8 * var(--cqw-per-px)) solid #1a1305;
     box-sizing: border-box;
 }
