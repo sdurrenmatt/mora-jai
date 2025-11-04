@@ -1,10 +1,8 @@
 .puzzle-tile {
-    --clip-size: calc(30 * var(--cqw-per-px));
-
     position: relative;
     box-shadow:
-        inset 0 calc(3 * var(--cqw-per-px)) calc(7 * var(--cqw-per-px)) rgba(255, 255, 255, 0.1),
-        inset 0 calc(-3 * var(--cqw-per-px)) calc(10 * var(--cqw-per-px)) rgba(0, 0, 0, 0.4);
+        inset 0 3px 7px rgba(255, 255, 255, 0.1),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     pointer-events: auto;
 }
@@ -12,63 +10,13 @@
 .puzzle-tile:active {
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     transform: scale(0.95);
-    box-shadow: 0 0 calc(4 * var(--cqw-per-px)) rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 .puzzle-tile::after {
     content: "";
     position: absolute;
-    inset: calc(4 * var(--cqw-per-px));
-    border: var(--cqw-per-px) solid black;
+    inset: 3%;
+    border: 1px solid black;
     box-sizing: border-box;
-}
-
-.puzzle-tile:nth-child(1),
-.puzzle-tile:nth-child(2),
-.puzzle-tile:nth-child(3) {
-    border-bottom: calc(10 * var(--cqw-per-px)) solid black;
-}
-
-.puzzle-tile:nth-child(4),
-.puzzle-tile:nth-child(5),
-.puzzle-tile:nth-child(6) {
-    border-bottom: calc(8 * var(--cqw-per-px)) solid black;
-}
-
-.puzzle-tile:nth-child(7),
-.puzzle-tile:nth-child(8),
-.puzzle-tile:nth-child(9) {
-    border-bottom: calc(6 * var(--cqw-per-px)) solid black;
-}
-
-.puzzle-tile:nth-child(1) {
-    clip-path: polygon(var(--clip-size) 0%,
-            100% 0%,
-            100% 100%,
-            0% 100%,
-            0% var(--clip-size));
-}
-
-.puzzle-tile:nth-child(3) {
-    clip-path: polygon(0% 0%,
-            calc(100% - var(--clip-size)) 0%,
-            100% var(--clip-size),
-            100% 100%,
-            0% 100%);
-}
-
-.puzzle-tile:nth-child(7) {
-    clip-path: polygon(0% 0%,
-            100% 0%,
-            100% 100%,
-            var(--clip-size) 100%,
-            0% calc(100% - var(--clip-size)));
-}
-
-.puzzle-tile:nth-child(9) {
-    clip-path: polygon(0% 0%,
-            100% 0%,
-            100% calc(100% - var(--clip-size)),
-            calc(100% - var(--clip-size)) 100%,
-            0% 100%);
 }

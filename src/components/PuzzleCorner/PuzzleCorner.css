@@ -1,9 +1,7 @@
 .puzzle-corner {
-    --size: calc(90 * var(--cqw-per-px));
-
     position: absolute;
-    width: var(--size);
-    height: var(--size);
+    width: 15%;
+    height: 15%;
     cursor: pointer;
     pointer-events: auto;
 }
