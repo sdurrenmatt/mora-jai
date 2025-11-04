@@ -17,7 +17,7 @@
 }
 
 .puzzle-gallery::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@
 }
 
 .puzzle-gallery::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;

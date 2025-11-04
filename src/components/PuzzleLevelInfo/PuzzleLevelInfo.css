@@ -1,11 +1,10 @@
 .puzzle-level-info {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
-    column-gap: 24px;
-    row-gap: 32px;
-    padding: 24px;
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+    padding: 1.5rem;
 }
 
 .puzzle-level-info>* {
@@ -31,7 +30,7 @@
 }
 
 .puzzle-level-info>*::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -44,7 +43,7 @@
 }
 
 .puzzle-level-info>*::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -64,7 +63,7 @@
 .puzzle-level-info__level {
     font-weight: 800;
     font-size: 1.5rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
 }
 
 .puzzle-level-info__difficulty {
@@ -73,5 +72,5 @@
     font-weight: 500;
     font-size: 1.25rem;
     font-style: italic;
-    letter-spacing: 3px;
+    letter-spacing: 0.1875rem;
 }

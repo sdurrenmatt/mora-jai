@@ -1,5 +1,6 @@
 .puzzle-level-map {
     position: relative;
+    width: fit-content;
     padding: 0 5rem 2.5rem;
     border-top: 0.5rem solid;
     border-image: linear-gradient(to right,
