@@ -6,8 +6,6 @@ export type World = {
     levels: Level[]
 }
 
-export type Difficulty = "Easy" | "Medium" | "Hard" | "Extreme"
-
 export type Reward = {
     image: string
     description: string
@@ -16,7 +14,6 @@ export type Reward = {
 export type Level = {
     id: string
     name: string
-    difficulty: Difficulty
     puzzle: Puzzle
     reward: Reward
 }

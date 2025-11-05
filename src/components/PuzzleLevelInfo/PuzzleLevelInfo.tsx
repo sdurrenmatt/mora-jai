@@ -15,10 +15,6 @@ export default function PuzzleLevelInfo() {
             <div className="puzzle-level-info__level">
                 <AnimatedText text={`Level ${currentLevel.name}`} />
             </div>
-
-            <div className="puzzle-level-info__difficulty">
-                <AnimatedText text={currentLevel.difficulty} />
-            </div>
         </div>
     )
 }

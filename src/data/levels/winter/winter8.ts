@@ -6,7 +6,6 @@ import type { Level } from "../../../types/level"
 export const winter8: Level = {
     id: "winter8",
     name: "八",
-    difficulty: "Hard",
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },

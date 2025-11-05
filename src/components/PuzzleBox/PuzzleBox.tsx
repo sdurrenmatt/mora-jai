@@ -1,5 +1,6 @@
 import clsx from "clsx"
-import { useContext, useState } from "react"
+import { useContext, useRef, useState } from "react"
+import { CSSTransition } from "react-transition-group"
 import { GameContext } from "../../context/GameContext"
 import { usePuzzleState } from "../../hooks/usePuzzleState"
 import PuzzleCorners from "../PuzzleCorners/PuzzleCorners"
@@ -11,31 +12,44 @@ export default function PuzzleBox() {
     const { currentLevel } = useContext(GameContext)
     const { puzzle, onCornerClick, onTileClick } = usePuzzleState()
     const [rewardCollected, setRewardCollected] = useState(false)
+    const nodeRef = useRef<HTMLDivElement>(null)
 
     return (
-        <div
-            className={clsx(
-                "puzzle-box",
-                "wood-texture",
-                "wood-filter--dark",
-                { "puzzle-box--solved": puzzle.solved }
-            )}
-        >
-            <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
-            <div className="puzzle-box__base wood-texture wood-filter--light">
+        <div className="puzzle-box-wrapper">
+            <CSSTransition
+                key={currentLevel.id}
+                nodeRef={nodeRef}
+                in
+                appear
+                timeout={3000}
+                classNames="puzzle-box--lift"
+            >
                 <div
+                    ref={nodeRef}
                     className={clsx(
-                        "puzzle-box__puzzle-reward",
-                        { "puzzle-box__puzzle-reward--collected": rewardCollected }
+                        "puzzle-box",
+                        "wood-texture",
+                        "wood-filter--dark",
+                        { "puzzle-box--solved": puzzle.solved }
                     )}
-                    onClick={() => setRewardCollected(true)}
                 >
-                    <PuzzleReward reward={currentLevel.reward} />
+                    <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
+                    <div className="puzzle-box__base wood-texture wood-filter--light">
+                        <div
+                            className={clsx(
+                                "puzzle-box__puzzle-reward",
+                                { "puzzle-box__puzzle-reward--collected": rewardCollected }
+                            )}
+                            onClick={() => setRewardCollected(true)}
+                        >
+                            <PuzzleReward reward={currentLevel.reward} />
+                        </div>
+                        <div className="puzzle-box__puzzle-grid wood-texture wood-filter--dim">
+                            <PuzzleGrid tiles={puzzle.tiles} onTileClick={onTileClick} />
+                        </div>
+                    </div>
                 </div>
-                <div className="puzzle-box__puzzle-grid wood-texture wood-filter--dim">
-                    <PuzzleGrid tiles={puzzle.tiles} onTileClick={onTileClick} />
-                </div>
-            </div>
+            </CSSTransition>
         </div>
     )
 }

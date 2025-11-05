@@ -6,7 +6,6 @@ import type { Level } from "../../../types/level"
 export const spring6: Level = {
     id: "spring6",
     name: "六",
-    difficulty: "Hard",
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },
