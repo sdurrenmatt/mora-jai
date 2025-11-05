@@ -1,10 +1,6 @@
 .puzzle-game {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    grid-template-areas:
-        "puzzle-box puzzle-level-map"
-        "puzzle-box puzzle-level-info";
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
     background: linear-gradient(135deg,
             rgba(18, 16, 14, 0.95) 0%,
@@ -17,11 +13,6 @@
 }
 
 .puzzle-game__puzzle-box {
-    grid-area: puzzle-box;
-    container: puzzle-box / inline-size;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     perspective: 1200px;
     padding: 0 12.5%;
 }
@@ -38,20 +29,4 @@
 
 .puzzle-game__puzzle-box--lift-appear-done {
     transform: rotateX(30deg) translateY(-4px) translateZ(0);
-}
-
-.puzzle-game__puzzle-level-map {
-    grid-area: puzzle-level-map;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    margin-top: -8px;
-}
-
-.puzzle-game__puzzle-level-info {
-    grid-area: puzzle-level-info;
-    display: flex;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
 }

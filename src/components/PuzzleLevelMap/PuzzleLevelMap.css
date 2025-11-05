@@ -1,21 +1,9 @@
 .puzzle-level-map {
-    position: relative;
-    width: fit-content;
-    padding: 0 5rem 2.5rem;
-    border-top: 0.5rem solid;
-    border-image: linear-gradient(to right,
-            transparent 0,
-            transparent 2.5rem,
-            rgba(140, 111, 47, 0.5) 2.5rem,
-            rgba(220, 180, 80, 0.6) 50%,
-            rgba(140, 111, 47, 0.5) calc(100% - 2.5rem),
-            transparent calc(100% - 2.5rem),
-            transparent 100%) 1;
-}
-
-.puzzle-level-map__scrolls {
     display: flex;
-    direction: rtl;
-    flex-direction: row;
-    gap: 5rem;
+    flex-direction: row-reverse;
+    border-top: 8px solid;
+    border-image: linear-gradient(to right,
+            rgba(140, 111, 47, 0.5) 0%,
+            rgba(220, 180, 80, 0.6) 50%,
+            rgba(140, 111, 47, 0.5) 100%) 1;
 }

@@ -13,6 +13,10 @@ export default function PuzzleGame() {
 
     return (
         <div className="puzzle-game">
+            <div className="puzzle-game__puzzle-level-map">
+                <PuzzleLevelMap />
+            </div>
+
             <div className="puzzle-game__puzzle-box">
                 <CSSTransition
                     key={currentLevel.id}
@@ -26,10 +30,6 @@ export default function PuzzleGame() {
                         <PuzzleBox />
                     </div>
                 </CSSTransition>
-            </div>
-
-            <div className="puzzle-game__puzzle-level-map">
-                <PuzzleLevelMap />
             </div>
 
             <div className="puzzle-game__puzzle-level-info">
