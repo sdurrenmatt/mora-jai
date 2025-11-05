@@ -19,26 +19,39 @@
 }
 
 .puzzle-scroll::after {
-    --rod: clamp(0.5rem, 2vmin, 1rem);
+    --rod-width: clamp(0.5rem, 2vmin, 1rem);
+    --rod-height: clamp(0.4rem, 1.6vmin, 0.8rem);
+    --rod-offset: clamp(0.05rem, 0.2vmin, 0.1rem);
+
     content: "";
     position: absolute;
-    left: calc(-1 * var(--rod));
-    right: calc(-1 * var(--rod));
-    bottom: clamp(-0.1rem, -0.2vmin, -0.05rem);
-    height: clamp(0.4rem, 1.6vmin, 0.8rem);
+    left: calc(-1 * var(--rod-width));
+    right: calc(-1 * var(--rod-width));
+    bottom: calc(-1 * var(--rod-offset));
+    height: var(--rod-height);
     background:
-        linear-gradient(to right, #381e01 0%, #1d1101 var(--rod), transparent var(--rod), transparent 100%),
-        linear-gradient(to right, transparent 0%, transparent calc(100% - var(--rod)), #1d1101 calc(100% - var(--rod)), #381e01 100%),
+        linear-gradient(to right,
+            #381e01 0%,
+            #1d1101 var(--rod-width),
+            transparent var(--rod-width),
+            transparent 100%),
+        linear-gradient(to right,
+            transparent 0%,
+            transparent calc(100% - var(--rod-width)),
+            #1d1101 calc(100% - var(--rod-width)),
+            #381e01 100%),
         linear-gradient(to right,
             rgba(80, 60, 30, 0.9) 0%,
-            rgba(140, 111, 47, 0.3) var(--rod),
-            rgba(140, 111, 47, 0.3) calc(100% - var(--rod)),
+            rgba(140, 111, 47, 0.3) var(--rod-width),
+            rgba(140, 111, 47, 0.3) calc(100% - var(--rod-width)),
             rgba(80, 60, 30, 0.9) 100%),
         linear-gradient(90deg,
             #e0c36a 0%,
             #8c6f2f 50%,
             #e0c36a 100%),
-        radial-gradient(ellipse at top center, rgba(255, 235, 180, 0.4) 0%, transparent 50%);
+        radial-gradient(ellipse at top center,
+            rgba(255, 235, 180, 0.4) 0%,
+            transparent 50%);
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 50%;
     border-radius: 3px;
@@ -50,9 +63,9 @@
 
 .puzzle-scroll__cord {
     position: absolute;
-    height: clamp(2.25rem, 10vmin, 4.5rem);
     top: 0;
     width: clamp(0.075rem, 0.3vmin, 0.15rem);
+    height: clamp(2.25rem, 9vmin, 4.5rem);
     background: #5c4518;
     box-shadow: inset 0 1px 0 rgba(255, 215, 150, 0.3);
 }
@@ -135,7 +148,7 @@
     font-family: "Kaisei Tokumin", serif;
     font-weight: 800;
     font-size: clamp(1.5rem, 6vmin, 3rem);
-    margin: clamp(1rem, 4vmin, 2rem) 0;
+    padding-inline: clamp(1rem, 4vmin, 2rem);
     writing-mode: vertical-rl;
     text-orientation: upright;
     align-self: center;
@@ -143,13 +156,13 @@
 
 .puzzle-scroll__levels {
     list-style: none;
-    padding: clamp(0.05rem, 0.2vmin, 0.1rem);
     margin: 0;
     display: grid;
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(2, auto);
     grid-auto-flow: column;
     gap: clamp(0.05rem, 0.2vmin, 0.1rem);
+    padding: clamp(0.05rem, 0.2vmin, 0.1rem);
 }
 
 .puzzle-scroll__level {
