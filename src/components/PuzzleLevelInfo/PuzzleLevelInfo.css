@@ -2,9 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
-    padding: 1.5rem;
+    gap: clamp(0.25rem, 2vmin, 0.5rem);
+    padding: clamp(0.25rem, 2vmin, 0.5rem);
 }
 
 .puzzle-level-info>* {
@@ -13,7 +12,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Kaisei Tokumin", serif;
-    padding: 1.5rem;
+    padding: clamp(0.75rem, 3vmin, 1.5rem);
     background: linear-gradient(135deg,
             #12100e 0%,
             #1a1917 50%,
@@ -57,20 +56,20 @@
 
 .puzzle-level-info__world {
     font-weight: 800;
-    font-size: 2rem;
+    font-size: clamp(1rem, 4vmin, 2rem);
 }
 
 .puzzle-level-info__level {
     font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: 0.0625rem;
+    font-size: clamp(0.875rem, 3vmin, 1.5rem);
+    letter-spacing: 1px;
 }
 
 .puzzle-level-info__difficulty {
     grid-column: 1 / span 2;
-    padding: 1rem 0;
+    padding-inline: clamp(0.5rem, 2vmin, 1rem);
     font-weight: 500;
-    font-size: 1.25rem;
+    font-size: clamp(0.875rem, 2.5vmin, 1.25rem);
     font-style: italic;
-    letter-spacing: 0.1875rem;
+    letter-spacing: 2px;
 }

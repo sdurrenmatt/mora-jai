@@ -168,7 +168,7 @@
 .puzzle-scroll__level {
     font-family: "Kaisei Tokumin", serif;
     font-weight: 500;
-    font-size: clamp(0.75rem, 2.5vmin, 1.25rem);
+    font-size: clamp(0.875rem, 2.5vmin, 1.25rem);
     text-align: center;
     padding: clamp(0.125rem, 0.5vmin, 0.25rem) clamp(0.25rem, 1vmin, 0.5rem);
     transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
