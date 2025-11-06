@@ -14,13 +14,25 @@
     }
 }
 
-.puzzle-menu__list {
+.puzzle-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puzzle-menu__logo {
+    width: clamp(15rem, 30vmin, 30rem);
+    filter: drop-shadow(0 0 5px rgba(180, 140, 50, 0.9));
+}
+
+.puzzle-menu__items {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: clamp(1rem, 4vmin, 2rem);
 }
 
 .puzzle-menu__item {
@@ -56,24 +68,24 @@
     transform: scale(0.975);
 }
 
-.puzzle-menu__list>li:first-child {
-    margin-bottom: 3rem;
+.puzzle-menu__items>li:first-child {
+    margin-bottom: clamp(1.5rem, 6vmin, 3rem);
 }
 
-.puzzle-menu__list:not(:has(.active))>li:first-child {
+.puzzle-menu__items:not(:has(.active))>li:first-child {
     animation: border-rotate 2.5s linear infinite;
 }
 
 .puzzle-menu__link {
     display: block;
-    padding: 0.85rem 1.75rem;
+    padding: clamp(0.5rem, 2vmin, 0.85rem) clamp(1.25rem, 5vmin, 1.75rem);
     cursor: pointer;
     pointer-events: auto;
     color: #c6a14b;
     font-family: "Kaisei Tokumin";
     font-weight: 800;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vmin, 1.5rem);
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
