@@ -44,7 +44,7 @@ export default function PuzzleRules() {
                                 style={{ "--i": index } as React.CSSProperties}
                             >
                                 <div
-                                    className="puzzle-rules__color wood-texture wood-filter--light"
+                                    className="puzzle-rules__color wood-texture wood-texture--light"
                                     style={{ backgroundColor: ColorHexCodes[rule.color] }}
                                 />
                                 <div className="puzzle-rules__text">{rule.text}</div>

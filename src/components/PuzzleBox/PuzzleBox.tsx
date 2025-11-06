@@ -29,12 +29,12 @@ export default function PuzzleBox() {
                     className={clsx(
                         "puzzle-box",
                         "wood-texture",
-                        "wood-filter--dark",
+                        "wood-texture--dark",
                         { "puzzle-box--solved": puzzle.solved }
                     )}
                 >
                     <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
-                    <div className="puzzle-box__base wood-texture wood-filter--light">
+                    <div className="puzzle-box__base wood-texture wood-texture--light">
                         <div
                             className={clsx(
                                 "puzzle-box__puzzle-reward",
@@ -44,7 +44,7 @@ export default function PuzzleBox() {
                         >
                             <PuzzleReward reward={currentLevel.reward} />
                         </div>
-                        <div className="puzzle-box__puzzle-grid wood-texture wood-filter--dim">
+                        <div className="puzzle-box__puzzle-grid wood-texture wood-texture--dim">
                             <PuzzleGrid tiles={puzzle.tiles} onTileClick={onTileClick} />
                         </div>
                     </div>

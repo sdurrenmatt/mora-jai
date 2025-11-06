@@ -17,7 +17,7 @@ export default function PuzzleCorner({ position, color, matched, onClick }: Puzz
                 "puzzle-corner",
                 `puzzle-corner--${position}`,
                 "wood-texture",
-                "wood-filter--light",
+                "wood-texture--light",
                 { "puzzle-corner--lit": matched }
             )}
             style={{ backgroundColor: ColorHexCodes[color] }}
