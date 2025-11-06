@@ -21,7 +21,7 @@
 }
 
 .puzzle-menu__logo {
-    width: clamp(15rem, 30vmin, 30rem);
+    width: clamp(15rem, 60vmin, 30rem);
     filter: drop-shadow(0 0 5px rgba(180, 140, 50, 0.9));
 }
 
@@ -29,7 +29,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 4vmin, 2rem);
