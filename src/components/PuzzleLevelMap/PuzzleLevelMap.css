@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-    border-top: 8px solid;
+    border-top: clamp(0.25rem, 1vmin, 0.5rem) solid;
     border-image: linear-gradient(to right,
             rgba(140, 111, 47, 0.5) 0%,
             rgba(220, 180, 80, 0.6) 50%,
