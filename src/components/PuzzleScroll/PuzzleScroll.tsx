@@ -30,7 +30,7 @@ export default function PuzzleScroll({ world }: PuzzleScrollProps) {
                                     key={level.id}
                                     className={clsx("puzzle-scroll__level", {
                                         "puzzle-scroll__level--selected": level.id === currentLevel.id,
-                                        "puzzle-scroll__level--solved": true,
+                                        "puzzle-scroll__level--solved": solvedPuzzles.has(level.id),
                                     })}
                                     onClick={() => handleLevelClick(level)}
                                 >

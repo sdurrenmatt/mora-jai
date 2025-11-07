@@ -4,10 +4,12 @@ import "./PuzzleLevelMap.css"
 
 export default function PuzzleLevelMap() {
     return (
-        <div className="puzzle-level-map">
-            {worlds.map((world) => (
-                <PuzzleScroll key={world.id} world={world} />
-            ))}
+        <div className="puzzle-level-map-container">
+            <div className="puzzle-level-map">
+                {worlds.map((world) => (
+                    <PuzzleScroll key={world.id} world={world} />
+                ))}
+            </div>
         </div>
     )
 }

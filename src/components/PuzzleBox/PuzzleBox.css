@@ -1,6 +1,8 @@
 .puzzle-box-container {
     container: puzzle-box / inline-size;
+    aspect-ratio: 1/1;
     max-width: 600px;
+    max-height: 100cqh;
     perspective: 1200px;
     perspective-origin: center;
     padding-inline: 2.5%;
@@ -92,7 +94,7 @@
     padding: 8%;
 }
 
-.puzzle-box__puzzle-grid>.puzzle-grid {
+.puzzle-box__puzzle-grid>* {
     flex: 1;
 }
 

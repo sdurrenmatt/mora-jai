@@ -10,29 +10,41 @@
     }
 }
 
+.puzzle-level-map-container {
+    container: puzzle-level-map / size;
+    aspect-ratio: 1/1;
+    max-width: 600px;
+    max-height: 100cqh;
+}
+
 .puzzle-level-map {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    border-top: clamp(0.25rem, 1vmin, 0.5rem) solid;
+    justify-content: center;
+    gap: 10cqw;
+    border-top: 1cqw solid;
     border-image: linear-gradient(to right,
             rgba(140, 111, 47, 0.5) 0%,
             rgba(220, 180, 80, 0.6) 50%,
             rgba(140, 111, 47, 0.5) 100%) 1;
 }
 
-.puzzle-level-map>.puzzle-scroll:nth-child(1) {
+.puzzle-level-map>* {
+    flex: 1;
+}
+
+.puzzle-level-map .puzzle-scroll:nth-child(1) {
     animation: scroll-sway 4.5s ease-in-out 0s infinite;
 }
 
-.puzzle-level-map>.puzzle-scroll:nth-child(2) {
+.puzzle-level-map .puzzle-scroll:nth-child(2) {
     animation: scroll-sway 4.1s ease-in-out 0.2s infinite;
 }
 
-.puzzle-level-map>.puzzle-scroll:nth-child(3) {
+.puzzle-level-map .puzzle-scroll:nth-child(3) {
     animation: scroll-sway 4.7s ease-in-out 0.1s infinite;
 }
 
-.puzzle-level-map>.puzzle-scroll:nth-child(4) {
+.puzzle-level-map .puzzle-scroll:nth-child(4) {
     animation: scroll-sway 4.4s ease-in-out 0.3s infinite;
 }

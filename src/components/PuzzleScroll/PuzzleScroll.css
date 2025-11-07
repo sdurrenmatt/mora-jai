@@ -1,11 +1,13 @@
 .puzzle-scroll-container {
     container: puzzle-scroll / inline-size;
+    aspect-ratio: 3/16;
     max-width: 100px;
+    max-height: 100cqh;
 }
 
 .puzzle-scroll {
     position: relative;
-    padding: 80% 0 50%;
+    padding: 80cqw 0 50cqw;
     display: flex;
     flex-direction: column;
     align-items: center;
