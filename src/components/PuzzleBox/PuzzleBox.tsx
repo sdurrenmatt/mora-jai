@@ -15,7 +15,7 @@ export default function PuzzleBox() {
     const nodeRef = useRef<HTMLDivElement>(null)
 
     return (
-        <div className="puzzle-box-wrapper">
+        <div className="puzzle-box-container">
             <CSSTransition
                 key={currentLevel.id}
                 nodeRef={nodeRef}

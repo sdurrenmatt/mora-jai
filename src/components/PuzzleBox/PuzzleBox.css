@@ -1,8 +1,9 @@
-.puzzle-box-wrapper {
+.puzzle-box-container {
     container: puzzle-box / inline-size;
+    max-width: 600px;
     perspective: 1200px;
     perspective-origin: center;
-    padding-inline: 5%;
+    padding-inline: 2.5%;
 }
 
 .puzzle-box {

@@ -1,6 +1,11 @@
+.puzzle-scroll-container {
+    container: puzzle-scroll / inline-size;
+    max-width: 100px;
+}
+
 .puzzle-scroll {
     position: relative;
-    padding: clamp(2.25rem, 9vmin, 4.5rem) 0 clamp(1.5rem, 6vmin, 3rem);
+    padding: 80% 0 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,40 +15,36 @@
         radial-gradient(ellipse at bottom center, rgba(0, 0, 0, 0.08) 0%, transparent 60%);
     background-blend-mode: overlay;
     box-shadow:
-        inset 0 2px 4px rgba(0, 0, 0, 0.15),
-        inset -4px 0 6px rgba(0, 0, 0, 0.08),
-        inset 0 0 15px rgba(0, 0, 0, 0.05),
-        0 8px 20px rgba(0, 0, 0, 0.15),
-        0 3px 6px rgba(0, 0, 0, 0.1);
+        inset 0 2cqw 4cqw rgba(0, 0, 0, 0.15),
+        inset -4cqw 0 6cqw rgba(0, 0, 0, 0.08),
+        inset 0 0 15cqw rgba(0, 0, 0, 0.05),
+        0 10cqw 20cqw rgba(0, 0, 0, 0.15),
+        0 3cqw 6cqw rgba(0, 0, 0, 0.1);
     transform-origin: top center;
 }
 
 .puzzle-scroll::after {
-    --rod-width: clamp(0.5rem, 2vmin, 1rem);
-    --rod-height: clamp(0.4rem, 1.6vmin, 0.8rem);
-    --rod-offset: clamp(0.05rem, 0.2vmin, 0.1rem);
-
     content: "";
     position: absolute;
-    left: calc(-1 * var(--rod-width));
-    right: calc(-1 * var(--rod-width));
-    bottom: calc(-1 * var(--rod-offset));
-    height: var(--rod-height);
+    left: -15cqw;
+    right: -15cqw;
+    bottom: -2cqw;
+    height: 15cqw;
     background:
         linear-gradient(to right,
             #381e01 0%,
-            #1d1101 var(--rod-width),
-            transparent var(--rod-width),
+            #1d1101 15cqw,
+            transparent 15cqw,
             transparent 100%),
         linear-gradient(to right,
             transparent 0%,
-            transparent calc(100% - var(--rod-width)),
-            #1d1101 calc(100% - var(--rod-width)),
+            transparent calc(100% - 15cqw),
+            #1d1101 calc(100% - 15cqw),
             #381e01 100%),
         linear-gradient(to right,
             rgba(80, 60, 30, 0.9) 0%,
-            rgba(140, 111, 47, 0.3) var(--rod-width),
-            rgba(140, 111, 47, 0.3) calc(100% - var(--rod-width)),
+            rgba(140, 111, 47, 0.3) 15cqw,
+            rgba(140, 111, 47, 0.3) calc(100% - 15cqw),
             rgba(80, 60, 30, 0.9) 100%),
         linear-gradient(90deg,
             #e0c36a 0%,
@@ -54,45 +55,38 @@
             transparent 50%);
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 50%;
-    border-radius: 3px;
+    border-radius: 2cqw;
     box-shadow:
-        inset 0 2px 2px rgba(0, 0, 0, 0.25),
-        inset 0 -1px 1px rgba(255, 255, 255, 0.15),
-        0 2px 4px rgba(0, 0, 0, 0.15);
+        inset 0 2cqw 2cqw rgba(0, 0, 0, 0.25),
+        inset 0 -1cqw 1cqw rgba(255, 255, 255, 0.15),
+        0 2cqw 4cqw rgba(0, 0, 0, 0.15);
 }
 
 .puzzle-scroll__cord {
     position: absolute;
     top: 0;
-    width: clamp(0.075rem, 0.3vmin, 0.15rem);
-    height: clamp(2.25rem, 9vmin, 4.5rem);
+    width: 2.5cqw;
+    height: 80cqw;
     background: #5c4518;
-    box-shadow: inset 0 1px 0 rgba(255, 215, 150, 0.3);
 }
 
 .puzzle-scroll__cord--left {
     left: 33%;
     transform: rotate(-3deg) skewY(-2deg);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 220, 160, 0.3),
-        0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .puzzle-scroll__cord--right {
     left: 67%;
     transform: rotate(2deg) skewY(1deg);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 210, 140, 0.3),
-        0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .puzzle-scroll__content-wrapper {
     position: relative;
-    padding: clamp(0.75rem, 3vmin, 1.5rem) clamp(0.125rem, 0.5vmin, 0.25rem) clamp(0.5rem, 2vmin, 1rem);
+    padding: 25% 5% 10%;
     box-shadow:
-        inset 0 0 8px rgba(255, 255, 255, 0.3),
-        inset 0 0 20px rgba(0, 0, 0, 0.1),
-        0 3px 6px rgba(0, 0, 0, 0.15);
+        inset 0 0 10cqw rgba(255, 255, 255, 0.3),
+        inset 0 0 20cqw rgba(0, 0, 0, 0.1),
+        0 3cqw 6cqw rgba(0, 0, 0, 0.15);
 }
 
 .puzzle-scroll--spring .puzzle-scroll__content-wrapper {
@@ -100,7 +94,7 @@
 }
 
 .puzzle-scroll--summer .puzzle-scroll__content-wrapper {
-    background: rgba(170, 210, 140, 0.85)
+    background: rgba(170, 210, 140, 0.85);
 }
 
 .puzzle-scroll--autumn .puzzle-scroll__content-wrapper {
@@ -116,12 +110,12 @@
     display: flex;
     flex-direction: column;
     direction: rtl;
-    border: 1px solid rgba(190, 160, 130, 0.1);
+    border: 1cqw solid rgba(190, 160, 130, 0.1);
     box-shadow:
-        inset 0 1px 2px rgba(255, 255, 255, 0.4),
-        inset 0 -1px 3px rgba(0, 0, 0, 0.1);
+        inset 0 1cqw 2cqw rgba(255, 255, 255, 0.4),
+        inset 0 -1cqw 3cqw rgba(0, 0, 0, 0.1);
     color: #3b2b1f;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 1cqw 1cqw rgba(255, 255, 255, 0.25);
 }
 
 .puzzle-scroll--spring .puzzle-scroll__content {
@@ -147,8 +141,8 @@
 .puzzle-scroll__title {
     font-family: "Kaisei Tokumin", serif;
     font-weight: 800;
-    font-size: clamp(1.5rem, 6vmin, 3rem);
-    padding-inline: clamp(1rem, 4vmin, 2rem);
+    font-size: 50cqw;
+    padding-inline: 35%;
     writing-mode: vertical-rl;
     text-orientation: upright;
     align-self: center;
@@ -161,16 +155,17 @@
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(2, auto);
     grid-auto-flow: column;
-    gap: clamp(0.05rem, 0.2vmin, 0.1rem);
-    padding: clamp(0.05rem, 0.2vmin, 0.1rem);
+    gap: 2cqw;
+    padding: 2cqw;
+    box-sizing: border-box;
 }
 
 .puzzle-scroll__level {
     font-family: "Kaisei Tokumin", serif;
     font-weight: 500;
-    font-size: clamp(0.875rem, 2.5vmin, 1.25rem);
+    font-size: 20cqw;
     text-align: center;
-    padding: clamp(0.125rem, 0.5vmin, 0.25rem) clamp(0.25rem, 1vmin, 0.5rem);
+    padding: 5cqw 10cqw;
     transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     pointer-events: auto;
@@ -180,55 +175,34 @@
     filter: brightness(0.6);
 }
 
-.puzzle-scroll__level:focus {
-    outline: 2px solid rgba(255, 215, 100, 0.8);
-    outline-offset: 2px;
-}
-
 .puzzle-scroll--spring .puzzle-scroll__level {
     background: rgba(248, 225, 215, 0.8);
-    border: 1px solid rgba(230, 200, 185, 0.6);
+    border: 0.5cqw solid rgba(230, 200, 185, 0.6);
 }
 
 .puzzle-scroll--summer .puzzle-scroll__level {
     background: rgba(170, 210, 140, 0.8);
-    border: 1px solid rgba(150, 190, 120, 0.6);
+    border: 0.5cqw solid rgba(150, 190, 120, 0.6);
 }
 
 .puzzle-scroll--autumn .puzzle-scroll__level {
     background: rgba(210, 140, 70, 0.8);
-    border: 1px solid rgba(190, 120, 50, 0.6);
+    border: 0.5cqw solid rgba(190, 120, 50, 0.6);
 }
 
 .puzzle-scroll--winter .puzzle-scroll__level {
     background: rgba(245, 250, 255, 0.8);
-    border: 1px solid rgba(220, 230, 245, 0.6);
+    border: 0.5cqw solid rgba(220, 230, 245, 0.6);
 }
 
 .puzzle-scroll .puzzle-scroll__level--selected {
     filter: brightness(0.6);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    transform: scale(0.95) translate(-0.5px, 0.5px);
-}
-
-.puzzle-scroll--spring .puzzle-scroll__level--selected {
-    border: 1px solid rgba(230, 200, 185, 0.5);
-}
-
-.puzzle-scroll--summer .puzzle-scroll__level--selected {
-    border: 1px solid rgba(150, 190, 120, 0.5);
-}
-
-.puzzle-scroll--autumn .puzzle-scroll__level--selected {
-    border: 1px solid rgba(190, 120, 50, 0.5);
-}
-
-.puzzle-scroll--winter .puzzle-scroll__level--selected {
-    border: 1px solid rgba(220, 230, 245, 0.5);
+    box-shadow: 0 2cqw 10cqw rgba(0, 0, 0, 0.25);
+    transform: scale(0.95) translate(-0.5cqw, 0.5cqw);
 }
 
 .puzzle-scroll .puzzle-scroll__level--solved {
     background: rgba(217, 184, 92, 0.6);
-    border: 1px solid rgba(180, 150, 60, 0.8);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    border: 0.5cqw solid rgba(180, 150, 60, 0.8);
+    box-shadow: 0 2cqw 10cqw rgba(0, 0, 0, 0.35);
 }
