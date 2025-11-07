@@ -1,4 +1,5 @@
 .puzzle-box-wrapper {
+    container: inline;
     perspective: 1200px;
     perspective-origin: center;
     padding-inline: 5%;
@@ -20,16 +21,16 @@
 
 .puzzle-box--lift-appear {
     transform-origin: center center;
-    transform: rotateX(50deg) translateY(-2px) translateZ(-120px);
+    transform: rotateX(50deg) translateY(-0.25cqw) translateZ(-20cqw);
 }
 
 .puzzle-box--lift-appear-active {
-    transform: rotateX(30deg) translateY(-4px) translateZ(0);
+    transform: rotateX(30deg) translateY(-0.5cqw) translateZ(0);
     transition: transform 3s cubic-bezier(0.11, 0.95, 0.24, 1);
 }
 
 .puzzle-box--lift-appear-done {
-    transform: rotateX(30deg) translateY(-4px) translateZ(0);
+    transform: rotateX(30deg) translateY(-0.5cqw) translateZ(0);
 }
 
 .puzzle-box--solved * {
@@ -41,8 +42,8 @@
     position: absolute;
     inset: 0;
     box-shadow:
-        inset -3px -3px 3px rgba(26, 19, 5, 0.5),
-        inset 3px 3px 3px rgba(26, 19, 5, 0.5);
+        inset -0.5cqw -0.5cqw 0.5cqw rgba(26, 19, 5, 0.5),
+        inset 0.5cqw 0.5cqw 0.5cqw rgba(26, 19, 5, 0.5);
 }
 
 .puzzle-box__base {
@@ -51,10 +52,10 @@
     margin: 7.5%;
     perspective: 3500px;
     perspective-origin: center top;
-    border: 4px solid #12110f;
+    border: 0.5cqw solid #12110f;
     box-shadow:
-        inset -3px -3px 40px black,
-        inset 3px 3px 40px black;
+        inset 0.5cqw -0.5cqw 6.5cqw black,
+        inset 0.5cqw 0.5cqw 6.5cqw black;
 }
 
 .puzzle-box__puzzle-reward {
@@ -63,7 +64,7 @@
     left: 25%;
     display: flex;
     width: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.25cqw 0.75cqw rgba(0, 0, 0, 0.5);
     transform-origin: center;
     transform: rotateZ(-2deg) rotateX(2deg);
 }
@@ -98,7 +99,7 @@
 }
 
 .puzzle-box--solved .puzzle-box__puzzle-grid {
-    box-shadow: 0 20px 40px black;
+    box-shadow: 0 3.25cqw 6.5cqw black;
     transform-origin: center top;
     transition: transform 2s ease-out;
     transform: rotateX(70deg);
@@ -108,5 +109,5 @@
     content: "";
     position: absolute;
     inset: 0;
-    border: 8px solid #1a1305;
+    border: 1.25cqw solid #1a1305;
 }
