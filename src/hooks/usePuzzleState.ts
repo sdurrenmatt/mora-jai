@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import { GameContext } from "../context/GameContext"
 import { pressCorner, pressTile } from "../lib/puzzle"
 import type { CornerPosition, Puzzle } from "../lib/puzzle/types"
@@ -6,8 +6,13 @@ import { usePuzzleAudio } from "./usePuzzleAudio"
 
 export function usePuzzleState() {
     const { currentLevel, addSolvedPuzzle } = useContext(GameContext)
-    const [puzzle, setPuzzle] = useState<Puzzle>(currentLevel.puzzle)
     const { playTileClick, playCornerClick, playSolved } = usePuzzleAudio()
+
+    const [puzzle, setPuzzle] = useState<Puzzle>(currentLevel.puzzle)
+    useEffect(() => setPuzzle(currentLevel.puzzle), [currentLevel])
+
+    const [rewardCollected, setRewardCollected] = useState(false)
+    useEffect(() => setRewardCollected(false), [currentLevel])
 
     const onCornerClick = useCallback(
         (position: CornerPosition) => {
@@ -42,5 +47,5 @@ export function usePuzzleState() {
         [puzzle, playTileClick]
     )
 
-    return { puzzle, onCornerClick, onTileClick }
+    return { puzzle, rewardCollected, onCornerClick, onTileClick, setRewardCollected }
 }

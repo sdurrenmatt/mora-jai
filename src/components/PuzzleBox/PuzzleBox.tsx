@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { useContext, useRef, useState } from "react"
+import { useContext, useRef } from "react"
 import { CSSTransition } from "react-transition-group"
 import { GameContext } from "../../context/GameContext"
 import { usePuzzleState } from "../../hooks/usePuzzleState"
@@ -10,8 +10,7 @@ import "./PuzzleBox.css"
 
 export default function PuzzleBox() {
     const { currentLevel } = useContext(GameContext)
-    const { puzzle, onCornerClick, onTileClick } = usePuzzleState()
-    const [rewardCollected, setRewardCollected] = useState(false)
+    const { puzzle, rewardCollected, onCornerClick, onTileClick, setRewardCollected } = usePuzzleState()
     const nodeRef = useRef<HTMLDivElement>(null)
 
     return (

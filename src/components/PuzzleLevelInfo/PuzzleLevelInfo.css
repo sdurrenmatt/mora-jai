@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto;
-    gap: 2vw;
+    gap: 2cqmin;
 }
 
 .puzzle-level-info>* {
@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Kaisei Tokumin", serif;
-    padding: 3vmin;
+    padding: 5cqmin;
     background: linear-gradient(135deg,
             #12100e 0%,
             #1a1917 50%,
