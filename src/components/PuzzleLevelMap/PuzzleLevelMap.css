@@ -11,10 +11,8 @@
 }
 
 .puzzle-level-map-container {
-    container: puzzle-level-map / size;
-    aspect-ratio: 1/1;
+    container: puzzle-level-map / inline-size;
     max-width: 600px;
-    max-height: 100cqh;
 }
 
 .puzzle-level-map {
@@ -22,6 +20,7 @@
     flex-direction: row-reverse;
     justify-content: center;
     gap: 10cqw;
+    padding: 0 5cqw;
     border-top: 1cqw solid;
     border-image: linear-gradient(to right,
             rgba(140, 111, 47, 0.5) 0%,

@@ -1,5 +1,6 @@
 .puzzle-level-info-container {
     container: puzzle-level-info / inline-size;
+    max-width: 600px;
 }
 
 .puzzle-level-info {
@@ -15,20 +16,20 @@
     align-items: center;
     justify-content: center;
     font-family: "Kaisei Tokumin", serif;
-    padding: 3vw;
+    padding: 3vmin;
     background: linear-gradient(135deg,
             #12100e 0%,
             #1a1917 50%,
             #12100e 100%);
     box-shadow:
-        0 0 2cqw rgba(191, 161, 74, 0.1),
-        inset 0 0 1.5cqw rgba(255, 230, 180, 0.1),
-        0 0.25cqw 1.5cqw rgba(0, 0, 0, 0.6);
+        0 0 2cqmin rgba(191, 161, 74, 0.1),
+        inset 0 0 1.5cqmin rgba(255, 230, 180, 0.1),
+        0 0.25cqmin 1.5cqmin rgba(0, 0, 0, 0.6);
     color: #d9b85c;
     text-align: center;
     text-shadow:
-        0 1px 1px rgba(0, 0, 0, 0.7),
-        0 0 4px rgba(243, 216, 124, 0.2);
+        0 0.25cqmin 0.25cqmin rgba(0, 0, 0, 0.7),
+        0 0 1cqmin rgba(243, 216, 124, 0.2);
 }
 
 .puzzle-level-info>*::before {
@@ -37,7 +38,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 0.5cqw;
+    height: 0.5cqmin;
     background: linear-gradient(to right,
             rgba(0, 0, 0, 0.3),
             rgba(217, 184, 92, 0.9) 45%,
@@ -50,7 +51,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 0.5cqw;
+    height: 0.5cqmin;
     background: linear-gradient(to right,
             rgba(0, 0, 0, 0.15),
             rgba(217, 184, 92, 0.6) 55%,
@@ -59,11 +60,11 @@
 
 .puzzle-level-info__world {
     font-weight: 800;
-    font-size: 4cqw;
+    font-size: 5cqmin;
 }
 
 .puzzle-level-info__level {
     font-weight: 800;
-    font-size: 3cqw;
-    letter-spacing: 0.25cqw;
+    font-size: 4cqmin;
+    letter-spacing: 0.25cqmin;
 }

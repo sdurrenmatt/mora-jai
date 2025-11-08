@@ -5,7 +5,7 @@
     max-height: 100cqh;
     perspective: 1200px;
     perspective-origin: center;
-    padding-inline: 2.5%;
+    padding: 5%;
 }
 
 .puzzle-box {

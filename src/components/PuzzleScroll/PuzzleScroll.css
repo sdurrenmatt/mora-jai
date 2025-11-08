@@ -84,7 +84,7 @@
 
 .puzzle-scroll__content-wrapper {
     position: relative;
-    padding: 25% 5% 10%;
+    padding: 25cqw 2cqw 10cqw;
     box-shadow:
         inset 0 0 10cqw rgba(255, 255, 255, 0.3),
         inset 0 0 20cqw rgba(0, 0, 0, 0.1),
