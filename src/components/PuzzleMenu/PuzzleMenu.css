@@ -1,102 +1,16 @@
-@property --border-angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes border-rotate {
-    0% {
-        --border-angle: 0deg;
-    }
-
-    100% {
-        --border-angle: 360deg;
-    }
-}
-
-.puzzle-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.puzzle-menu__logo {
-    width: clamp(15rem, 60vmin, 30rem);
-    filter: drop-shadow(0 0 5px rgba(180, 140, 50, 0.9));
-}
-
 .puzzle-menu__items {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 4vmin, 2rem);
+    gap: 10cqw;
 }
 
-.puzzle-menu__item {
-    position: relative;
-    display: inline-block;
-    border-radius: 6px;
-    border: 2px solid transparent;
-    background:
-        linear-gradient(135deg,
-            #0c0b0a 0%,
-            #0f0e0c 20%,
-            #11100e 40%,
-            #12110f 60%,
-            #141210 80%,
-            #12110f 100%) padding-box,
-        conic-gradient(from var(--border-angle),
-            #f3d87c, #e0c36a, #bfa14a, #8c6f2f, #5c4518, #3b2d0f,
-            #5c4518, #8c6f2f, #bfa14a, #e0c36a, #f3d87c, #f3d87c,
-            #e0c36a, #bfa14a, #8c6f2f, #5c4518, #3b2d0f, #5c4518,
-            #8c6f2f, #bfa14a, #e0c36a, #f3d87c) border-box;
-    box-shadow:
-        0 0 12px rgba(198, 161, 75, 0.15),
-        inset 0 0 8px rgba(255, 230, 180, 0.15),
-        0 2px 8px rgba(0, 0, 0, 0.8);
+.puzzle-menu__item>* {
+    flex: 1;
 }
 
-.puzzle-menu__item:hover,
-.puzzle-menu__item:focus {
-    transform: scale(1.025);
-}
-
-.puzzle-menu__item:active {
-    transform: scale(0.975);
-}
-
-.puzzle-menu__items>li:first-child {
-    margin-bottom: clamp(1.5rem, 6vmin, 3rem);
-}
-
-.puzzle-menu__items:not(:has(.active))>li:first-child {
-    animation: border-rotate 2.5s linear infinite;
-}
-
-.puzzle-menu__link {
-    display: block;
-    padding: clamp(0.5rem, 2vmin, 0.85rem) clamp(1.25rem, 5vmin, 1.75rem);
-    cursor: pointer;
-    pointer-events: auto;
-    color: #c6a14b;
-    font-family: "Kaisei Tokumin";
-    font-weight: 800;
-    font-style: normal;
-    font-size: clamp(1rem, 4vmin, 1.5rem);
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.9),
-        0 0 6px rgba(198, 161, 75, 0.25);
-    white-space: nowrap;
-    letter-spacing: 6px;
-}
-
-.puzzle-menu__link:hover,
-.puzzle-menu__link:focus,
-.puzzle-menu__link.active {
-    color: #ffd780;
+.puzzle-menu__items>*:nth-child(2) {
+    margin-top: 15cqw;
 }
