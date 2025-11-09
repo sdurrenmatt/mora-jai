@@ -1,33 +1,24 @@
 .main-layout {
+    container: main-layout / inline-size;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
     width: 100vw;
 }
 
 .main-layout__sidebar {
-    flex: 0 0 30rem;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(12, 12, 12, 0.45);
-    backdrop-filter: blur(8px);
-    box-shadow:
-        0 0 25px rgba(0, 0, 0, 0.6),
-        inset 0 0 20px rgba(255, 215, 150, 0.05);
+    container: sidebar / inline-size;
+    flex: 0 0 33cqmin;
 }
 
 .main-layout__content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    container: content / inline-size;
+    flex: 1 1 auto;
+}
+
+@container main-layout (width < 320px) {
+    .main-layout__sidebar {
+        width: 100cqw;
+    }
 }

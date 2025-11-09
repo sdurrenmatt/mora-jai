@@ -12,7 +12,6 @@
 
 .puzzle-level-map-container {
     container: puzzle-level-map / inline-size;
-    max-width: 600px;
 }
 
 .puzzle-level-map {
