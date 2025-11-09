@@ -12,6 +12,8 @@
 
 .puzzle-level-map-container {
     container: puzzle-level-map / inline-size;
+    aspect-ratio: 5/4;
+    max-height: 100cqh;
 }
 
 .puzzle-level-map {

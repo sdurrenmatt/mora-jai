@@ -1,8 +1,11 @@
 .puzzle-box-container {
     container: puzzle-box / inline-size;
+    aspect-ratio: 1/1;
+    max-height: 100cqh;
     perspective: 1750px;
     perspective-origin: center;
     padding: 5%;
+    box-sizing: border-box;
 }
 
 .puzzle-box {

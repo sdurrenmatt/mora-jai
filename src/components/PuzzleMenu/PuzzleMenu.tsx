@@ -3,7 +3,7 @@ import "./PuzzleMenu.css"
 
 export default function PuzzleMenu() {
     return (
-        <nav>
+        <nav className="puzzle-menu">
             <ul className="puzzle-menu__items">
                 <PuzzleMenuItem path="/play" text="Play" />
                 <PuzzleMenuItem path="/gallery" text="Gallery" />

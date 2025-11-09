@@ -1,4 +1,5 @@
 .puzzle-game {
+    container: puzzle-game / inline-size;
     display: grid;
     grid-template-areas:
         "puzzle-level-map"
@@ -6,7 +7,6 @@
         "puzzle-level-info";
     align-items: center;
     justify-items: center;
-    padding-inline: 5%;
 }
 
 .puzzle-game__puzzle-level-map {
@@ -21,7 +21,13 @@
 
 .puzzle-game__puzzle-level-info {
     grid-area: puzzle-level-info;
-    width: 100%;
+    width: 90%;
+}
+
+.puzzle-game__puzzle-level-map>*,
+.puzzle-game__puzzle-box>*,
+.puzzle-game__puzzle-level-info>* {
+    margin: 0 auto;
 }
 
 @media (min-aspect-ratio: 4/3) {
@@ -29,24 +35,19 @@
         grid-template-areas:
             "puzzle-box puzzle-level-map"
             "puzzle-box puzzle-level-info";
-        gap: 5%;
+        gap: 5cqh;
     }
 
-    .puzzle-game__puzzle-level-map {
-        width: 90%;
-        align-self: flex-start;
-        justify-self: right;
-    }
-
-    .puzzle-game__puzzle-box {
-        width: 100%;
-        align-self: center;
-        justify-self: center;
-    }
-
+    .puzzle-game__puzzle-level-map,
     .puzzle-game__puzzle-level-info {
-        width: 90%;
-        align-self: flex-start;
-        justify-self: right;
+        align-self: start;
+    }
+
+    .puzzle-game__puzzle-level-map>* {
+        max-height: 75cqh;
+    }
+
+    .puzzle-game__puzzle-level-info>* {
+        max-height: 15cqh;
     }
 }

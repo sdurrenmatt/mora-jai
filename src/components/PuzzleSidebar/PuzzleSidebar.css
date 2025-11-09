@@ -1,0 +1,16 @@
+.puzzle-sidebar {
+    aspect-ratio: 1/2;
+    max-width: 100cqw;
+    max-height: 100cqh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puzzle-sidebar>.puzzle-logo {
+    width: 100%;
+}
+
+.puzzle-sidebar>.puzzle-menu {
+    width: 50%;
+}

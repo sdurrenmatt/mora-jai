@@ -1,24 +1,33 @@
 .main-layout {
-    container: main-layout / inline-size;
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     width: 100vw;
+    height: 100vh;
+    display: flex;
 }
 
 .main-layout__sidebar {
-    container: sidebar / inline-size;
-    flex: 0 0 33cqmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.main-layout__sidebar,
 .main-layout__content {
-    container: content / inline-size;
-    flex: 1 1 auto;
+    width: 100%;
 }
 
-@container main-layout (width < 320px) {
-    .main-layout__sidebar {
-        width: 100cqw;
-    }
+.main-layout__toggle-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 15%;
+    color: #c6a14b;
+    font-size: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+    background: #12110f;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
