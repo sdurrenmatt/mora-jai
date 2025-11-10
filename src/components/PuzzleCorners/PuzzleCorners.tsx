@@ -15,7 +15,7 @@ export default function PuzzleCorners({ corners, onCornerClick }: PuzzleCornersP
                     position={position}
                     color={corners[position].color}
                     matched={corners[position].matched}
-                    onClick={onCornerClick ? () => onCornerClick(position) : undefined}
+                    onClick={() => onCornerClick?.(position)}
                 />
             ))}
         </>

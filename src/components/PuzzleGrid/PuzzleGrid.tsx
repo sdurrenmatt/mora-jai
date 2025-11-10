@@ -16,7 +16,7 @@ export default function PuzzleGrid({ tiles, onTileClick }: PuzzleGridProps) {
                     <PuzzleTile
                         key={`${i}-${j}`}
                         color={tile.color}
-                        onClick={onTileClick ? () => onTileClick(i, j) : undefined}
+                        onClick={() => onTileClick?.(i, j)}
                     />
                 ))
             )}

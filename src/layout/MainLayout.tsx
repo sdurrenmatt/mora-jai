@@ -28,7 +28,7 @@ export default function MainLayout() {
                         "main-layout__sidebar",
                         { "main-layout__sidebar--closed": !sidebarOpen }
                     )}>
-                    <PuzzleSidebar />
+                    <PuzzleSidebar onClick={toggleSidebar} />
                 </aside>
 
                 <main className="main-layout__content">
