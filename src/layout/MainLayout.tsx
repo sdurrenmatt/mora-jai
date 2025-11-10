@@ -9,13 +9,14 @@ import "./MainLayout.css"
 const LG_BREAKPOINT = 1024
 
 export default function MainLayout() {
-    const [sidebarOpen, setSidebarOpen] = useState(true)
-    const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
+    const [isSidebarOpen, setSidebarOpen] = useState(true)
+    const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
     const [ref, { width }] = useMeasure()
+    const isSidebarOverlay = (width ?? 0) < LG_BREAKPOINT;
 
     useEffect(() => {
-        if ((width ?? 0) >= LG_BREAKPOINT) setSidebarOpen(true)
-    }, [width])
+        if (!isSidebarOverlay) setSidebarOpen(true)
+    }, [isSidebarOverlay])
 
     return (
         <PuzzleBackground>
@@ -26,16 +27,19 @@ export default function MainLayout() {
                 <aside
                     className={clsx(
                         "main-layout__sidebar",
-                        { "main-layout__sidebar--closed": !sidebarOpen }
+                        {
+                            "main-layout__sidebar--overlay": isSidebarOverlay,
+                            "main-layout__sidebar--closed": !isSidebarOpen
+                        }
                     )}>
-                    <PuzzleSidebar onClick={toggleSidebar} />
+                    <PuzzleSidebar onClick={isSidebarOverlay ? toggleSidebar : undefined} />
                 </aside>
 
                 <main className="main-layout__content">
                     <Outlet />
                 </main>
 
-                {(width ?? 0) < LG_BREAKPOINT && (
+                {isSidebarOverlay && (
                     <button
                         className="main-layout__toggle-button"
                         onClick={() => toggleSidebar()}
