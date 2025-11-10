@@ -1,79 +1,41 @@
 .puzzle-gallery {
-    position: relative;
+    container: puzzle-gallery / inline-size;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 2.5rem 1.25rem;
-    gap: 1.25rem;
-    background: linear-gradient(135deg,
-            #12100e 0%,
-            #1a1917 50%,
-            #12100e 100%);
-    box-shadow:
-        0 0 20px rgba(215, 181, 107, 0.15),
-        0 8px 24px rgba(0, 0, 0, 0.55),
-        inset 0 0 10px rgba(230, 195, 106, 0.08),
-        inset 0 1px 4px rgba(255, 255, 255, 0.05);
-}
-
-.puzzle-gallery::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.3),
-            rgba(217, 184, 92, 0.9) 45%,
-            rgba(0, 0, 0, 0.3));
-}
-
-.puzzle-gallery::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.15),
-            rgba(217, 184, 92, 0.6) 55%,
-            rgba(0, 0, 0, 0.15));
 }
 
 .puzzle-gallery__world {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5cqw;
 }
 
 .puzzle-gallery__world-name {
+    padding: clamp(0.75rem, 2cqw, 1.5rem);
     font-family: "Kaisei Tokumin", serif;
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 4cqw, 3rem);
     font-weight: 800;
     color: #e6c36a;
-    text-shadow: 0 0 8px rgba(230, 195, 106, 0.3);
-    padding: 0 1rem;
+    text-shadow: 0 0 0.5cqw rgba(230, 195, 106, 0.3);
 }
 
 .puzzle-gallery__button {
-    background: transparent;
-    border: none;
-    color: #e6c36a;
-    font-family: "Kaisei Tokumin", serif;
-    font-size: 2.1rem;
-    font-weight: 800;
-    width: 2.8rem;
-    height: 2.8rem;
     display: flex;
+    width: clamp(1.25rem, 3cqw, 2.5rem);
+    height: clamp(1.25rem, 3cqw, 2.5rem);
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, color 0.3s ease;
-    text-shadow: 0 0 8px rgba(230, 195, 106, 0.3);
+    background: transparent;
+    border: none;
     cursor: pointer;
-    pointer-events: auto;
+    font-family: "Kaisei Tokumin", serif;
+    font-size: clamp(1.25rem, 3cqw, 2.5rem);
+    font-weight: 800;
+    color: #e6c36a;
+    text-shadow: 0 0 0.5cqw rgba(230, 195, 106, 0.3);
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .puzzle-gallery__button:hover {
@@ -86,12 +48,16 @@
 }
 
 .puzzle-gallery__rewards {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.25rem;
-    padding-top: 1.25rem 0;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: start;
+    padding: 2cqw;
+    gap: 2cqw;
 }
 
 .puzzle-gallery__reward {
@@ -100,42 +66,40 @@
     align-items: center;
 }
 
-.puzzle-gallery__description {
+.puzzle-gallery__reward-description {
     display: flex;
+    height: clamp(1.5rem, 4cqw, 3rem);
     justify-content: center;
     align-items: center;
-    height: 3rem;
     font-family: "Kaisei Tokumin", serif;
-    font-size: 1.15rem;
+    font-size: clamp(0.75rem, 1.75cqw, 1.5rem);
     font-weight: 500;
     color: #d7b56b;
     text-shadow:
-        0 0 6px rgba(215, 181, 107, 0.35),
-        0 0 12px rgba(215, 181, 107, 0.25);
-    letter-spacing: 0.15rem;
+        0 0 0.5cqw rgba(215, 181, 107, 0.35),
+        0 0 1cqw rgba(215, 181, 107, 0.25);
+    letter-spacing: clamp(0.1rem, 0.25cqw, 0.2rem);
 }
 
 .puzzle-gallery__reward--pop-in-appear {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: scale(0.95);
 }
 
 .puzzle-gallery__reward--pop-in-appear-active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1);
     transition: opacity 400ms ease-out, transform 400ms ease-out;
+    transition-delay: calc(mod(var(--i), 2) * 150ms + round(down, var(--i) / 2) * 100ms);
 }
 
-.puzzle-gallery__reward--pop-in-appear-done {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 400ms ease-out, transform 400ms ease-out;
-}
+@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
+    .puzzle-gallery__rewards {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+    }
 
-.puzzle-gallery__reward--pop-in-appear:nth-child(-n+5) {
-    transition-delay: calc(var(--i) * 100ms);
-}
-
-.puzzle-gallery__reward--pop-in-appear:nth-child(n+6):nth-child(-n+10) {
-    transition-delay: calc((var(--i) - 5) * 100ms + 150ms);
+    .puzzle-gallery__reward--pop-in-appear-active {
+        transition-delay: calc(mod(var(--i), 5) * 100ms + round(down, var(--i) / 5) * 150ms);
+    }
 }

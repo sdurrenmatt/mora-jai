@@ -1,7 +1,8 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useRef, useState, type CSSProperties } from "react"
 import { CSSTransition } from "react-transition-group"
 import { GameContext } from "../../context/GameContext"
 import { worlds } from "../../data/worlds"
+import { useArrowKeys } from "../../hooks/useArrowKeys"
 import AnimatedText from "../common/AnimatedText/AnimatedText"
 import PuzzleReward from "../PuzzleReward/PuzzleReward"
 import "./PuzzleGallery.css"
@@ -13,18 +14,33 @@ export default function PuzzleGallery() {
 
     const selectPreviousWorld = () => setCurrentWorldIndex((currentWorldIndex - 1 + worlds.length) % worlds.length)
     const selectNextWorld = () => setCurrentWorldIndex((currentWorldIndex + 1) % worlds.length)
+    useArrowKeys(selectPreviousWorld, selectNextWorld);
 
     return (
         <div className="puzzle-gallery">
             <div className="puzzle-gallery__world">
-                <button onClick={selectPreviousWorld} className="puzzle-gallery__button">&lt;</button>
-                <span className="puzzle-gallery__world-name"><AnimatedText text={world.name} /></span>
-                <button onClick={selectNextWorld} className="puzzle-gallery__button">&gt;</button>
+                <button
+                    onClick={selectPreviousWorld}
+                    className="puzzle-gallery__button"
+                    aria-label="Previous world"
+                >
+                    &lt;
+                </button>
+                <span className="puzzle-gallery__world-name" aria-live="polite">
+                    <AnimatedText text={world.name} />
+                </span>
+                <button
+                    onClick={selectNextWorld}
+                    className="puzzle-gallery__button"
+                    aria-label="Next world"
+                >
+                    &gt;
+                </button>
             </div>
 
-            <div className="puzzle-gallery__rewards">
+            <ul className="puzzle-gallery__rewards">
                 {world.levels.map((level, index) => {
-                    const nodeRef = useRef<HTMLDivElement>(null)
+                    const nodeRef = useRef<HTMLLIElement>(null)
                     const locked = !solvedPuzzles.has(level.id)
 
                     return (
@@ -33,20 +49,23 @@ export default function PuzzleGallery() {
                             nodeRef={nodeRef}
                             appear
                             in
-                            timeout={400}
+                            timeout={550}
                             classNames="puzzle-gallery__reward--pop-in"
-                            style={{ '--i': index }}
+                            style={{ '--i': index } as CSSProperties}
                         >
-                            <div ref={nodeRef} className="puzzle-gallery__reward">
+                            <li ref={nodeRef} className="puzzle-gallery__reward">
                                 <PuzzleReward reward={level.reward} locked={locked} />
-                                <div className="puzzle-gallery__description">
+                                <div
+                                    className="puzzle-gallery__reward-description"
+                                    aria-hidden="true"
+                                >
                                     {locked ? "???" : level.reward.description}
                                 </div>
-                            </div>
+                            </li>
                         </CSSTransition>
                     )
                 })}
-            </div>
+            </ul>
         </div>
     )
 }
