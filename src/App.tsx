@@ -10,12 +10,11 @@ export default function App() {
     return (
         <Routes>
             <Route element={<MainLayout />}>
-                <Route path="/" element={null} />
                 <Route path="/play" element={<PuzzleGame />} />
                 <Route path="/gallery" element={<PuzzleGallery />} />
                 <Route path="/rules" element={<PuzzleRules />} />
                 <Route path="/credits" element={<PuzzleCredits />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<Navigate to="/play" replace />} />
             </Route>
         </Routes>
     )

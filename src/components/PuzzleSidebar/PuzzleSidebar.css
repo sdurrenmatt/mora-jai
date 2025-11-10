@@ -12,5 +12,20 @@
 }
 
 .puzzle-sidebar>.puzzle-menu {
-    width: 50%;
+    width: 60%;
+}
+
+@media (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+    .puzzle-sidebar {
+        aspect-ratio: 2;
+        flex-direction: row;
+    }
+
+    .puzzle-sidebar>.puzzle-logo {
+        width: 65%;
+    }
+
+    .puzzle-sidebar>.puzzle-menu {
+        width: 25%;
+    }
 }

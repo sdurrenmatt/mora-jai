@@ -34,17 +34,19 @@
     .puzzle-game {
         grid-template-areas:
             "puzzle-box puzzle-level-map"
-            "puzzle-box puzzle-level-info";
-        gap: 5cqh;
+            "puzzle-level-info puzzle-map";
     }
 
-    .puzzle-game__puzzle-level-map,
-    .puzzle-game__puzzle-level-info {
+    .puzzle-game__puzzle-level-map {
         align-self: start;
     }
 
     .puzzle-game__puzzle-level-map>* {
         max-height: 75cqh;
+    }
+
+    .puzzle-game__puzzle-box>* {
+        max-height: 85cqh;
     }
 
     .puzzle-game__puzzle-level-info>* {

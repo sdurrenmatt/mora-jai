@@ -24,9 +24,9 @@
     padding: 0 5cqw;
     border-top: 1cqw solid;
     border-image: linear-gradient(to right,
-            rgba(140, 111, 47, 0.5) 0%,
-            rgba(220, 180, 80, 0.6) 50%,
-            rgba(140, 111, 47, 0.5) 100%) 1;
+            rgba(20, 12, 6, 0.8) 0%,
+            rgba(40, 30, 15, 0.9) 50%,
+            rgba(20, 12, 6, 0.8) 100%) 1;
 }
 
 .puzzle-level-map>* {
