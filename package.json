@@ -15,6 +15,7 @@
     "react-dom": "^19.1.0",
     "react-router": "^7.9.4",
     "react-transition-group": "^4.4.5",
+    "use-sound": "^5.0.0",
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {

@@ -9,10 +9,12 @@ export function usePuzzleState() {
     const { playTileClick, playCornerClick, playSolved } = usePuzzleAudio()
 
     const [puzzle, setPuzzle] = useState<Puzzle>(currentLevel.puzzle)
-    useEffect(() => setPuzzle(currentLevel.puzzle), [currentLevel])
-
     const [rewardCollected, setRewardCollected] = useState(false)
-    useEffect(() => setRewardCollected(false), [currentLevel])
+
+    useEffect(() => {
+        setPuzzle(currentLevel.puzzle)
+        setRewardCollected(false)
+    }, [currentLevel])
 
     const onCornerClick = useCallback(
         (position: CornerPosition) => {
@@ -33,7 +35,7 @@ export function usePuzzleState() {
                     break
             }
         },
-        [puzzle, currentLevel.id, playCornerClick, playSolved]
+        [puzzle, currentLevel, playCornerClick, playSolved]
     )
 
     const onTileClick = useCallback(
