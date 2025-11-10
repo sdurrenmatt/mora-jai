@@ -2,7 +2,7 @@
     container: puzzle-box / inline-size;
     aspect-ratio: 1/1;
     max-height: 100cqh;
-    perspective: 1750px;
+    perspective: 200vh;
     perspective-origin: center;
     padding: 5%;
     box-sizing: border-box;
@@ -50,7 +50,7 @@
     flex: 1;
     display: flex;
     margin: 7.5%;
-    perspective: 3500px;
+    perspective: 400vh;
     perspective-origin: center top;
     border: 0.5cqw solid #12110f;
     box-shadow:

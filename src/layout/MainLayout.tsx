@@ -7,16 +7,20 @@ import PuzzleSidebar from "../components/PuzzleSidebar/PuzzleSidebar"
 import "./MainLayout.css"
 
 const LG_BREAKPOINT = 1024
+const MIN_ASPECT_RATIO = 4 / 3
 
 export default function MainLayout() {
-    const [isSidebarOpen, setSidebarOpen] = useState(true)
-    const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
-    const [ref, { width }] = useMeasure()
-    const isSidebarOverlay = (width ?? 0) < LG_BREAKPOINT;
+    const [sidebarOpen, setSidebarOpen] = useState(true)
+    const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
+    const [ref, { width, height }] = useMeasure()
+
+    const sidebarOverlay = !!width && !!height && (
+        width < LG_BREAKPOINT || width / height < MIN_ASPECT_RATIO
+    )
 
     useEffect(() => {
-        if (!isSidebarOverlay) setSidebarOpen(true)
-    }, [isSidebarOverlay])
+        if (!sidebarOverlay) setSidebarOpen(true)
+    }, [sidebarOverlay])
 
     return (
         <PuzzleBackground>
@@ -28,21 +32,21 @@ export default function MainLayout() {
                     className={clsx(
                         "main-layout__sidebar",
                         {
-                            "main-layout__sidebar--overlay": isSidebarOverlay,
-                            "main-layout__sidebar--closed": !isSidebarOpen
+                            "main-layout__sidebar--overlay": sidebarOverlay,
+                            "main-layout__sidebar--closed": !sidebarOpen
                         }
                     )}>
-                    <PuzzleSidebar onClick={isSidebarOverlay ? toggleSidebar : undefined} />
+                    <PuzzleSidebar onClick={() => sidebarOverlay && toggleSidebar()} />
                 </aside>
 
                 <main className="main-layout__content">
                     <Outlet />
                 </main>
 
-                {isSidebarOverlay && (
+                {sidebarOverlay && (
                     <button
                         className="main-layout__toggle-button"
-                        onClick={() => toggleSidebar()}
+                        onClick={toggleSidebar}
                     >
                         ☰
                     </button>

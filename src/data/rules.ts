@@ -1,5 +1,5 @@
-import { Colors } from "../lib/puzzle";
-import type { Rule } from "../types/rule";
+import { Colors } from "../lib/puzzle"
+import type { Rule } from "../types/rule"
 
 export const rules: Rule[] = [
     { id: 1, color: Colors.Gray, text: "Has no effect" },

@@ -39,6 +39,7 @@
 
     .puzzle-game__puzzle-level-map {
         align-self: start;
+        width: 95%;
     }
 
     .puzzle-game__puzzle-level-map>* {
