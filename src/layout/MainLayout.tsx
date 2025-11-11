@@ -47,6 +47,7 @@ export default function MainLayout() {
 
                 {sidebarOverlay && (
                     <button
+                        type="button"
                         className="main-layout__toggle-button"
                         onClick={toggleSidebar}
                         aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}

@@ -13,6 +13,7 @@ type PuzzleCornerProps = {
 export default function PuzzleCorner({ position, color, matched, onClick }: PuzzleCornerProps) {
     return (
         <button
+            type="button"
             className={clsx(
                 "puzzle-corner",
                 `puzzle-corner--${position}`,

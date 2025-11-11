@@ -9,7 +9,8 @@ export type PuzzleRewardProps = {
 
 export default function PuzzleReward({ reward, locked = false }: PuzzleRewardProps) {
     return (
-        <img src={reward.image}
+        <img
+            src={reward.image}
             alt={locked ? "Locked" : reward.description}
             className={clsx("puzzle-reward", { "puzzle-reward--locked": locked })}
         />

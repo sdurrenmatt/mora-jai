@@ -11,6 +11,7 @@ type PuzzleTileProps = {
 export default function Tile({ color, onClick, ...rest }: PuzzleTileProps) {
     return (
         <button
+            type="button"
             className="puzzle-tile wood-texture wood-texture--light"
             aria-label={`${color} tile`}
             style={{ backgroundColor: ColorHexCodes[color] }}

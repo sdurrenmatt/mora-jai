@@ -37,6 +37,7 @@ export default function PuzzleBox() {
                     <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
                     <div className="puzzle-box__base wood-texture wood-texture--light">
                         <button
+                            type="button"
                             className={clsx(
                                 "puzzle-box__puzzle-reward",
                                 { "puzzle-box__puzzle-reward--collected": rewardCollected }

@@ -18,6 +18,7 @@ export default function PuzzleGallery() {
         <div className="puzzle-gallery">
             <div className="puzzle-gallery__world">
                 <button
+                    type="button"
                     onClick={selectPreviousWorld}
                     className="puzzle-gallery__button"
                     aria-label="Previous world"
@@ -28,6 +29,7 @@ export default function PuzzleGallery() {
                     <AnimatedText text={world.name} />
                 </span>
                 <button
+                    type="button"
                     onClick={selectNextWorld}
                     className="puzzle-gallery__button"
                     aria-label="Next world"

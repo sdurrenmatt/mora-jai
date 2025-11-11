@@ -8,12 +8,22 @@ export default function PuzzleLevelInfo() {
 
     return (
         <div className="puzzle-level-info-container">
-            <div className="puzzle-level-info">
-                <div className="puzzle-level-info__world">
+            <div
+                className="puzzle-level-info"
+                role="region"
+                aria-label="Level information"
+            >
+                <div
+                    className="puzzle-level-info__world"
+                    aria-label="Current world"
+                >
                     <AnimatedText text={currentWorld} />
                 </div>
 
-                <div className="puzzle-level-info__level">
+                <div
+                    className="puzzle-level-info__level"
+                    aria-label="Current level"
+                >
                     <AnimatedText text={`Level ${currentLevel.name}`} />
                 </div>
             </div>
