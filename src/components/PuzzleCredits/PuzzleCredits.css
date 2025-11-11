@@ -2,14 +2,6 @@
     display: flex;
     flex-direction: column;
     padding: 2.5rem;
-    background: linear-gradient(135deg,
-            rgba(18, 16, 14, 0.95) 0%,
-            rgba(26, 25, 23, 0.85) 50%,
-            rgba(18, 16, 14, 0.95) 100%);
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.5),
-        inset 0 0 15px rgba(230, 195, 106, 0.05);
-    backdrop-filter: blur(6px);
     gap: 1rem;
 }
 
@@ -34,12 +26,9 @@
     color: #e6c36a;
     letter-spacing: 0.1rem;
     text-shadow: 0 0 6px rgba(230, 195, 106, 0.3);
-    margin-bottom: 0.5rem;
 }
 
 .puzzle-credits__text {
-    max-width: 600px;
-    text-align: justify;
     font-family: "Kaisei Tokumin", serif;
     font-size: 1rem;
     font-weight: 400;
