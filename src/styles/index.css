@@ -9,3 +9,7 @@ body,
 img {
     pointer-events: none;
 }
+
+* {
+    scrollbar-color: #e0c36a #12110f;
+}
