@@ -12,7 +12,7 @@ type PuzzleCornerProps = {
 
 export default function PuzzleCorner({ position, color, matched, onClick }: PuzzleCornerProps) {
     return (
-        <div
+        <button
             className={clsx(
                 "puzzle-corner",
                 `puzzle-corner--${position}`,
@@ -20,6 +20,7 @@ export default function PuzzleCorner({ position, color, matched, onClick }: Puzz
                 "wood-texture--light",
                 { "puzzle-corner--lit": matched }
             )}
+            aria-label={`${color} corner at ${position}, ${matched ? "matched" : "not matched"}`}
             style={{ backgroundColor: ColorHexCodes[color] }}
             onClick={onClick}
         />

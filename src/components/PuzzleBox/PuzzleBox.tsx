@@ -31,18 +31,25 @@ export default function PuzzleBox() {
                         "wood-texture--dark",
                         { "puzzle-box--solved": puzzle.solved }
                     )}
+                    role="region"
+                    aria-label={`Puzzle box${puzzle.solved ? ", solved" : ""}`}
                 >
                     <PuzzleCorners corners={puzzle.corners} onCornerClick={onCornerClick} />
                     <div className="puzzle-box__base wood-texture wood-texture--light">
-                        <div
+                        <button
                             className={clsx(
                                 "puzzle-box__puzzle-reward",
                                 { "puzzle-box__puzzle-reward--collected": rewardCollected }
                             )}
                             onClick={() => setRewardCollected(true)}
+                            aria-label={
+                                rewardCollected
+                                    ? "Reward collected"
+                                    : "Collect your reward"
+                            }
                         >
                             <PuzzleReward reward={currentLevel.reward} />
-                        </div>
+                        </button>
                         <div className="puzzle-box__puzzle-grid wood-texture wood-texture--dim">
                             <PuzzleGrid tiles={puzzle.tiles} onTileClick={onTileClick} />
                         </div>

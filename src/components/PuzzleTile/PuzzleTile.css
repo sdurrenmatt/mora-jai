@@ -1,4 +1,7 @@
 .puzzle-tile {
+    border: none;
+    padding: 0;
+    margin: 0;
     position: relative;
     box-shadow:
         inset 0 0.5cqw 1cqw rgba(255, 255, 255, 0.1),

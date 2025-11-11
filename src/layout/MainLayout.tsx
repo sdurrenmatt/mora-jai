@@ -47,6 +47,7 @@ export default function MainLayout() {
                     <button
                         className="main-layout__toggle-button"
                         onClick={toggleSidebar}
+                        aria-label="Toggle sidebar"
                     >
                         ☰
                     </button>
