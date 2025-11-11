@@ -35,7 +35,10 @@ export default function MainLayout() {
                             "main-layout__sidebar--overlay": sidebarOverlay,
                             "main-layout__sidebar--closed": !sidebarOpen
                         }
-                    )}>
+                    )}
+                    aria-hidden={!sidebarOpen}
+                    tabIndex={sidebarOpen ? 0 : -1}
+                >
                     <PuzzleSidebar onClick={() => sidebarOverlay && toggleSidebar()} />
                 </aside>
 
@@ -47,7 +50,9 @@ export default function MainLayout() {
                     <button
                         className="main-layout__toggle-button"
                         onClick={toggleSidebar}
-                        aria-label="Toggle sidebar"
+                        aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+                        aria-expanded={sidebarOpen}
+                        aria-controls="sidebar"
                     >
                         ☰
                     </button>
