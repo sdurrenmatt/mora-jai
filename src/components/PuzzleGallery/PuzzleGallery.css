@@ -9,32 +9,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.5cqw;
+    gap: 2.5cqmax;
 }
 
 .puzzle-gallery__world-name {
-    padding: clamp(0.75rem, 2cqw, 1.5rem);
+    padding: 2cqmax;
     font-family: "Kaisei Tokumin", serif;
-    font-size: clamp(1.5rem, 4cqw, 3rem);
+    font-size: 4cqmax;
     font-weight: 800;
     color: #e6c36a;
-    text-shadow: 0 0 0.5cqw rgba(230, 195, 106, 0.3);
+    text-shadow: 0 0 0.5cqmax rgba(230, 195, 106, 0.3);
 }
 
 .puzzle-gallery__button {
     display: flex;
-    width: clamp(1.25rem, 3cqw, 2.5rem);
-    height: clamp(1.25rem, 3cqw, 2.5rem);
+    width: 3cqmax;
+    height: 3cqmax;
     align-items: center;
     justify-content: center;
     background: transparent;
     border: none;
     cursor: pointer;
     font-family: "Kaisei Tokumin", serif;
-    font-size: clamp(1.25rem, 3cqw, 2.5rem);
+    font-size: 3cqmax;
     font-weight: 800;
     color: #e6c36a;
-    text-shadow: 0 0 0.5cqw rgba(230, 195, 106, 0.3);
+    text-shadow: 0 0 0.5cqmax rgba(230, 195, 106, 0.3);
     transition: transform 0.2s ease, color 0.3s ease;
 }
 
@@ -56,8 +56,8 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: start;
-    padding: 2cqw;
-    gap: 2cqw;
+    padding: 2cqmax;
+    gap: 2cqmax;
 }
 
 .puzzle-gallery__reward {
@@ -68,17 +68,17 @@
 
 .puzzle-gallery__reward-description {
     display: flex;
-    height: clamp(1.5rem, 4cqw, 3rem);
     justify-content: center;
     align-items: center;
+    line-height: clamp(2rem, 4cqmax, 4rem);
     font-family: "Kaisei Tokumin", serif;
-    font-size: clamp(0.75rem, 1.75cqw, 1.5rem);
+    font-size: clamp(0.75rem, 1.5cqmax, 1.5rem);
     font-weight: 500;
     color: #d7b56b;
     text-shadow:
-        0 0 0.5cqw rgba(215, 181, 107, 0.35),
-        0 0 1cqw rgba(215, 181, 107, 0.25);
-    letter-spacing: clamp(0.1rem, 0.25cqw, 0.2rem);
+        0 0 0.5cqmax rgba(215, 181, 107, 0.35),
+        0 0 1cqmax rgba(215, 181, 107, 0.25);
+    letter-spacing: clamp(0.0625rem, 0.0625cqmax, 0.125rem);
 }
 
 .puzzle-gallery__reward--pop-in-appear {

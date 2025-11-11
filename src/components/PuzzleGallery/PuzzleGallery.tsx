@@ -2,7 +2,6 @@ import { useContext, useRef, useState, type CSSProperties } from "react"
 import { CSSTransition } from "react-transition-group"
 import { GameContext } from "../../context/GameContext"
 import { worlds } from "../../data/worlds"
-import { useArrowKeys } from "../../hooks/useArrowKeys"
 import AnimatedText from "../common/AnimatedText/AnimatedText"
 import PuzzleReward from "../PuzzleReward/PuzzleReward"
 import "./PuzzleGallery.css"
@@ -14,7 +13,6 @@ export default function PuzzleGallery() {
 
     const selectPreviousWorld = () => setCurrentWorldIndex((currentWorldIndex - 1 + worlds.length) % worlds.length)
     const selectNextWorld = () => setCurrentWorldIndex((currentWorldIndex + 1) % worlds.length)
-    useArrowKeys(selectPreviousWorld, selectNextWorld);
 
     return (
         <div className="puzzle-gallery">

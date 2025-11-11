@@ -37,7 +37,6 @@ export default function MainLayout() {
                         }
                     )}
                     aria-hidden={!sidebarOpen}
-                    tabIndex={sidebarOpen ? 0 : -1}
                 >
                     <PuzzleSidebar onClick={() => sidebarOverlay && toggleSidebar()} />
                 </aside>
