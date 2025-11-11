@@ -2,7 +2,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url("../assets/images/textures/wood.webp") no-repeat center center;
+    background: url("../assets/images/textures/wood.jpg") no-repeat center center;
     background-size: cover;
 }
 

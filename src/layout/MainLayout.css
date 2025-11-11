@@ -1,5 +1,4 @@
 .main-layout {
-    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -15,6 +14,7 @@
     justify-content: center;
     background-color: rgba(18, 17, 15, 0.95);
     z-index: 1;
+    overflow: hidden;
 }
 
 .main-layout__sidebar--overlay {
