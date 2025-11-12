@@ -48,6 +48,7 @@ export default function PuzzleBox() {
                                     ? "Reward collected"
                                     : "Collect your reward"
                             }
+                            aria-hidden={!puzzle.solved}
                         >
                             <PuzzleReward reward={currentLevel.reward} />
                         </button>
