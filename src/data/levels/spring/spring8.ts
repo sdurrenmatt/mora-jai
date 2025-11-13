@@ -8,15 +8,15 @@ export const spring8: Level = {
     name: "八",
     puzzle: {
         corners: {
-            tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
-            br: { color: Colors.Pink },
+            tl: { color: Colors.Violet },
+            tr: { color: Colors.White },
+            bl: { color: Colors.White },
+            br: { color: Colors.Violet },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
+            [{ color: Colors.Green }, { color: Colors.Gray }, { color: Colors.Violet }],
             [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.Violet }, { color: Colors.White }, { color: Colors.Pink }],
         ],
     },
     reward: {

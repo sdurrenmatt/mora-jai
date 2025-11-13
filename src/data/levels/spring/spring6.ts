@@ -9,14 +9,14 @@ export const spring6: Level = {
     puzzle: {
         corners: {
             tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
+            tr: { color: Colors.Yellow },
+            bl: { color: Colors.Yellow },
             br: { color: Colors.Pink },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
-            [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.Pink }, { color: Colors.Green }, { color: Colors.Gray }],
+            [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.Green }],
+            [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.Pink }],
         ],
     },
     reward: {
