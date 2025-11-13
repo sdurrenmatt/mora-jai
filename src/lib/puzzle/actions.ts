@@ -57,12 +57,15 @@ function pressBlackTile(p: Puzzle, i: number): Puzzle {
 }
 
 function pressBlueTile(p: Puzzle, i: number, j: number): Puzzle {
-    const middleTileColor = p.tiles[Math.floor(p.tiles.length / 2)][Math.floor(p.tiles[0].length / 2)].color
+    const center = Math.floor(p.tiles.length / 2)
+    const middleColor = p.tiles[center][center].color
 
-    if (middleTileColor === Colors.Blue) return p
-
-    const colorTileHandler = colorTileHandlers[middleTileColor]
-    return colorTileHandler ? colorTileHandler(p, i, j) : p
+    switch (middleColor) {
+        case Colors.Blue: return p
+        case Colors.Red: return pressRedTile(p, Colors.Blue)
+        case Colors.White: return pressWhiteTile(p, i, j, Colors.Blue)
+        default: return colorTileHandlers[middleColor]?.(p, i, j) ?? p
+    }
 }
 
 function pressGrayTile(p: Puzzle): Puzzle {
@@ -90,13 +93,14 @@ function pressPinkTile(p: Puzzle, i: number, j: number): Puzzle {
     return shiftTiles(p, positions)
 }
 
-function pressRedTile(p: Puzzle): Puzzle {
+function pressRedTile(p: Puzzle, mimicColor: Color = Colors.Red): Puzzle {
     const colorSwitch: Partial<Record<Color, Color>> = {
         [Colors.White]: Colors.Black,
-        [Colors.Black]: Colors.Red,
+        [Colors.Black]: mimicColor,
     }
-
-    const newTiles = p.tiles.map(row => row.map(tile => ({ ...tile, color: colorSwitch[tile.color] ?? tile.color })))
+    const newTiles = p.tiles.map(row =>
+        row.map(tile => ({ ...tile, color: colorSwitch[tile.color] ?? tile.color }))
+    )
     return { ...p, tiles: newTiles }
 }
 
@@ -105,17 +109,16 @@ function pressVioletTile(p: Puzzle, i: number, j: number): Puzzle {
     return swapTiles(p, i, j, i + 1, j)
 }
 
-function pressWhiteTile(p: Puzzle, i: number, j: number): Puzzle {
-    const newTiles = p.tiles.map((row) => [...row])
+function pressWhiteTile(p: Puzzle, i: number, j: number, mimicColor: Color = Colors.White): Puzzle {
+    const newTiles = p.tiles.map(row => [...row])
     newTiles[i][j] = { ...newTiles[i][j], color: Colors.Gray }
 
     const adjacentPositions = getAdjacentPositions(p, i, j)
     for (const [x, y] of adjacentPositions) {
-        if (newTiles[x][y].color === Colors.Gray) {
-            newTiles[x][y] = { ...newTiles[x][y], color: Colors.White }
-        } else if (newTiles[x][y].color === Colors.White) {
+        if (newTiles[x][y].color === Colors.Gray)
+            newTiles[x][y] = { ...newTiles[x][y], color: mimicColor }
+        else if (newTiles[x][y].color === mimicColor)
             newTiles[x][y] = { ...newTiles[x][y], color: Colors.Gray }
-        }
     }
 
     return { ...p, tiles: newTiles }
