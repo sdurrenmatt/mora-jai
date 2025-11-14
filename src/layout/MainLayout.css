@@ -73,7 +73,6 @@
         min-height: auto;
         height: fit-content;
         align-self: center;
-        margin: 0 auto;
         padding: 0 2% 1%;
         box-sizing: border-box;
         box-shadow:
@@ -82,5 +81,11 @@
             0 8px 16px rgba(0, 0, 0, 0.65),
             0 -8px 16px rgba(0, 0, 0, 0.65);
         overflow: hidden;
+    }
+}
+
+@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
+    .main-layout__content {
+        margin: 0 2.5vw;
     }
 }
