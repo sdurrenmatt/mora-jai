@@ -8,15 +8,15 @@ export const autumn2: Level = {
     name: "二",
     puzzle: {
         corners: {
-            tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
-            br: { color: Colors.Pink },
+            tl: { color: Colors.Red },
+            tr: { color: Colors.Red },
+            bl: { color: Colors.Red },
+            br: { color: Colors.Red },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
-            [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.White }, { color: Colors.Blue }, { color: Colors.Yellow }],
+            [{ color: Colors.Red }, { color: Colors.Black }, { color: Colors.Gray }],
+            [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.White }],
         ],
     },
     reward: {

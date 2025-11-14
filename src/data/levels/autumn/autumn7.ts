@@ -8,15 +8,15 @@ export const autumn7: Level = {
     name: "七",
     puzzle: {
         corners: {
-            tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
-            br: { color: Colors.Pink },
+            tl: { color: Colors.Black },
+            tr: { color: Colors.Black },
+            bl: { color: Colors.Orange },
+            br: { color: Colors.Orange },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
-            [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.White }, { color: Colors.Green }, { color: Colors.Orange }],
+            [{ color: Colors.Orange }, { color: Colors.Gray }, { color: Colors.Red }],
+            [{ color: Colors.Orange }, { color: Colors.Yellow }, { color: Colors.Gray }],
         ],
     },
     reward: {
