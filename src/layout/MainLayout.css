@@ -62,7 +62,7 @@
     z-index: 20;
 }
 
-@media (min-width: 1024px) or (min-aspect-ratio: 4/3) {
+@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
     .main-layout__sidebar {
         box-shadow:
             3px 0 4px rgba(180, 150, 40, 0.05),
@@ -73,6 +73,7 @@
         min-height: auto;
         height: fit-content;
         align-self: center;
+        margin: 0 2.5vw;
         padding: 0 2% 1%;
         box-sizing: border-box;
         box-shadow:
@@ -80,12 +81,6 @@
             0 -3px 8px rgba(180, 150, 40, 0.1),
             0 8px 16px rgba(0, 0, 0, 0.65),
             0 -8px 16px rgba(0, 0, 0, 0.65);
-    }
-}
-
-@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
-    .main-layout__content {
-        margin: 0 2.5vw;
         overflow: hidden;
     }
 }
