@@ -8,15 +8,15 @@ export const winter10: Level = {
     name: "十",
     puzzle: {
         corners: {
-            tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
-            br: { color: Colors.Pink },
+            tl: { color: Colors.White },
+            tr: { color: Colors.White },
+            bl: { color: Colors.White },
+            br: { color: Colors.White },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
-            [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.Orange }, { color: Colors.Green }, { color: Colors.Orange }],
+            [{ color: Colors.White }, { color: Colors.Blue }, { color: Colors.Red }],
+            [{ color: Colors.White }, { color: Colors.Yellow }, { color: Colors.Blue }],
         ],
     },
     reward: {
