@@ -1,5 +1,5 @@
 
-import rewardImage from "../../../assets/images/rewards/shodou.png"
+import rewardImage from "../../../assets/images/rewards/summer/hamabe.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -21,6 +21,6 @@ export const summer6: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "書道 (Shodou)",
+        description: "浜辺 (Hamabe)",
     }
 }

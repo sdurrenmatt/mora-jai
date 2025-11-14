@@ -1,5 +1,5 @@
 
-import rewardImage from "../../../assets/images/rewards/shodou.png"
+import rewardImage from "../../../assets/images/rewards/spring/shodou.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
