@@ -1,7 +1,7 @@
 import type { Color } from "../lib/puzzle/types"
 
 export const ColorHexCodes: Record<Color, string> = {
-    Black: "#1e252e",
+    Black: "#0f1217",
     Blue: "#1c71c2",
     Gray: "#687278",
     Green: "#1a9729",
