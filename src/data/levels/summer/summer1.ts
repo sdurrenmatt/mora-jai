@@ -8,15 +8,15 @@ export const summer1: Level = {
     name: "一",
     puzzle: {
         corners: {
-            tl: { color: Colors.Pink },
-            tr: { color: Colors.Pink },
-            bl: { color: Colors.Pink },
-            br: { color: Colors.Pink },
+            tl: { color: Colors.Green },
+            tr: { color: Colors.Green },
+            bl: { color: Colors.Blue },
+            br: { color: Colors.Blue },
         },
         tiles: [
-            [{ color: Colors.Pink }, { color: Colors.Pink }, { color: Colors.Gray }],
             [{ color: Colors.Gray }, { color: Colors.Gray }, { color: Colors.Gray }],
-            [{ color: Colors.Orange }, { color: Colors.Orange }, { color: Colors.Orange }],
+            [{ color: Colors.Green }, { color: Colors.Gray }, { color: Colors.Green }],
+            [{ color: Colors.Blue }, { color: Colors.Yellow }, { color: Colors.Blue }],
         ],
     },
     reward: {
