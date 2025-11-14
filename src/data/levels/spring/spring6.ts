@@ -15,7 +15,7 @@ export const spring6: Level = {
         },
         tiles: [
             [{ color: Colors.Pink }, { color: Colors.Green }, { color: Colors.Gray }],
-            [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.Green }],
+            [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.Gray }],
             [{ color: Colors.Gray }, { color: Colors.Yellow }, { color: Colors.Pink }],
         ],
     },
