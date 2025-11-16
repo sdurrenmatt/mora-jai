@@ -1,5 +1,5 @@
 
-import rewardImage from "../../../assets/images/rewards/autumn/roji.png"
+import rewardImage from "../../../assets/images/rewards/autumn/tsukimi.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -21,6 +21,6 @@ export const autumn1: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "露地 (Roji)",
+        description: "月見 (Tsukimi)",
     }
 }
