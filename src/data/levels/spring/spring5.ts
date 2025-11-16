@@ -1,5 +1,5 @@
 
-import rewardImage from "../../../assets/images/rewards/spring/haru.png"
+import rewardImage from "../../../assets/images/rewards/spring/sakura.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -21,6 +21,6 @@ export const spring5: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "春 (Haru)",
+        description: "桜 (Sakura)",
     }
 }
