@@ -81,25 +81,9 @@
     letter-spacing: clamp(0.0625rem, 0.0625cqmax, 0.125rem);
 }
 
-.puzzle-gallery__reward--pop-in-appear {
-    opacity: 0;
-    transform: scale(0.95);
-}
-
-.puzzle-gallery__reward--pop-in-appear-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 400ms ease-out, transform 400ms ease-out;
-    transition-delay: calc(mod(var(--i), 2) * 150ms + round(down, var(--i) / 2) * 100ms);
-}
-
 @media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
     .puzzle-gallery__rewards {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(5, 1fr);
-    }
-
-    .puzzle-gallery__reward--pop-in-appear-active {
-        transition-delay: calc(mod(var(--i), 5) * 100ms + round(down, var(--i) / 5) * 150ms);
     }
 }
