@@ -14,13 +14,13 @@ import {
     unmarkMatched
 } from "./utils"
 
-export type PuzzleActionResult =
+export type PuzzleMoveResult =
     | { type: "noop" }
     | { type: "updated"; puzzle: Puzzle }
     | { type: "solved"; puzzle: Puzzle }
     | { type: "reset" }
 
-export function pressCorner(puzzle: Puzzle, position: CornerPosition): PuzzleActionResult {
+export function pressCorner(puzzle: Puzzle, position: CornerPosition): PuzzleMoveResult {
     if (puzzle.corners[position].matched) return { type: "noop" }
 
     if (checkMatched(puzzle, position)) {
@@ -39,7 +39,7 @@ export function pressCorner(puzzle: Puzzle, position: CornerPosition): PuzzleAct
 
 type TilePressHandler = (p: Puzzle, i: number, j: number) => Puzzle
 
-const colorTileHandlers: Record<Color, TilePressHandler> = {
+const tilePressHandlers: Record<Color, TilePressHandler> = {
     [Colors.Black]: (p, i, _j) => pressBlackTile(p, i),
     [Colors.Blue]: (p, i, j) => pressBlueTile(p, i, j),
     [Colors.Gray]: (p, _i, _j) => pressGrayTile(p),
@@ -64,7 +64,7 @@ function pressBlueTile(p: Puzzle, i: number, j: number): Puzzle {
         case Colors.Blue: return p
         case Colors.Red: return pressRedTile(p, Colors.Blue)
         case Colors.White: return pressWhiteTile(p, i, j, Colors.Blue)
-        default: return colorTileHandlers[middleColor]?.(p, i, j) ?? p
+        default: return tilePressHandlers[middleColor]?.(p, i, j) ?? p
     }
 }
 
@@ -129,10 +129,10 @@ function pressYellowTile(p: Puzzle, i: number, j: number): Puzzle {
     return swapTiles(p, i, j, i - 1, j)
 }
 
-export function pressTile(p: Puzzle, i: number, j: number): PuzzleActionResult {
+export function pressTile(p: Puzzle, i: number, j: number): PuzzleMoveResult {
     const color = p.tiles[i][j].color
 
-    const afterTilePress = colorTileHandlers[color](p, i, j)
+    const afterTilePress = tilePressHandlers[color](p, i, j)
 
     const cornersToUpdate = Object.values(CornerPositions).filter(
         position => afterTilePress.corners[position].matched
