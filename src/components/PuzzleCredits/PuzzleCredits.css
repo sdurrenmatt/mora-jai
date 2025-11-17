@@ -5,20 +5,6 @@
     gap: 1rem;
 }
 
-.puzzle-credits--pop-in-appear {
-    transform: translateY(30px) scale(0.95);
-}
-
-.puzzle-credits--pop-in-appear-active {
-    transform: translateY(0) scale(1);
-    transition: transform 400ms ease-out;
-}
-
-.puzzle-credits--pop-in-appear-done {
-    transform: translateY(0) scale(1);
-    transition: transform 400ms ease-out;
-}
-
 .puzzle-credits__title {
     font-family: "Kaisei Tokumin", serif;
     font-size: 1.3rem;
