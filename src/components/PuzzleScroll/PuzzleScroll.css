@@ -120,22 +120,22 @@
 }
 
 .puzzle-scroll--spring .puzzle-scroll__content {
-    background: url("../../assets/images/scrolls/spring.png") no-repeat;
+    background: url("/images/scrolls/spring.png") no-repeat;
     background-size: cover;
 }
 
 .puzzle-scroll--summer .puzzle-scroll__content {
-    background: url("../../assets/images/scrolls/summer.png") no-repeat;
+    background: url("/images/scrolls/summer.png") no-repeat;
     background-size: cover;
 }
 
 .puzzle-scroll--autumn .puzzle-scroll__content {
-    background: url("../../assets/images/scrolls/autumn.png") no-repeat;
+    background: url("/images/scrolls/autumn.png") no-repeat;
     background-size: cover;
 }
 
 .puzzle-scroll--winter .puzzle-scroll__content {
-    background: url("../../assets/images/scrolls/winter.png") no-repeat;
+    background: url("/images/scrolls/winter.png") no-repeat;
     background-size: cover;
 }
 
