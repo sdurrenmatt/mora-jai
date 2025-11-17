@@ -1,5 +1,5 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/ryouri.png"
+import rewardImage from "../../../assets/images/rewards/winter/sou.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -21,6 +21,6 @@ export const winter3: Level = {
     },
     reward: {
         image: rewardImage,
-        description: "料理 (Ryouri)",
+        description: "僧 (Sou)",
     }
 }
