@@ -1,7 +1,7 @@
 .puzzle-sidebar {
     aspect-ratio: 1/2;
-    max-width: 100cqw;
-    max-height: 100cqh;
+    max-width: 100vw;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

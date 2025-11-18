@@ -1,7 +1,7 @@
 .puzzle-level-info-container {
     container: puzzle-level-info / inline-size;
     aspect-ratio: 5/1;
-    max-height: 100cqh;
+    max-height: 100vh;
 }
 
 .puzzle-level-info {

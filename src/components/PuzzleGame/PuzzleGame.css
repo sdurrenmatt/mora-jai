@@ -43,14 +43,14 @@
     }
 
     .puzzle-game__puzzle-level-map>* {
-        max-height: 75cqh;
+        max-height: 75vh;
     }
 
     .puzzle-game__puzzle-box>* {
-        max-height: 85cqh;
+        max-height: 85vh;
     }
 
     .puzzle-game__puzzle-level-info>* {
-        max-height: 15cqh;
+        max-height: 15vh;
     }
 }

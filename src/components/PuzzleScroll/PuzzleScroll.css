@@ -1,7 +1,7 @@
 .puzzle-scroll-container {
     container: puzzle-scroll / inline-size;
     aspect-ratio: 3/16;
-    max-height: 100cqh;
+    max-height: 100vh;
 }
 
 .puzzle-scroll {
