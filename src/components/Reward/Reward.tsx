@@ -10,7 +10,7 @@ export type RewardProps = {
 export default function Reward({ data, locked = false }: RewardProps) {
   return (
     <img
-      src={data.image}
+      src={`${import.meta.env.BASE_URL}${data.image}`}
       alt={locked ? "Locked" : data.description}
       className={clsx("reward", { "reward--locked": locked })}
     />
