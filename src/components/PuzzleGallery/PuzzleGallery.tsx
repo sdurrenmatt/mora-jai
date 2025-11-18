@@ -1,4 +1,5 @@
-import { useContext, useState } from "react"
+import { useContext, useRef, useState, type CSSProperties } from "react"
+import { CSSTransition } from "react-transition-group"
 import { GameContext } from "../../context/GameContext"
 import { worlds } from "../../data/worlds"
 import AnimatedText from "../common/AnimatedText/AnimatedText"
@@ -38,19 +39,30 @@ export default function PuzzleGallery() {
             </div>
 
             <ul className="puzzle-gallery__rewards">
-                {world.levels.map(level => {
+                {world.levels.map((level, index) => {
+                    const nodeRef = useRef<HTMLLIElement>(null)
                     const locked = !solvedPuzzles.has(level.id)
 
                     return (
-                        <li key={level.id} className="puzzle-gallery__reward">
-                            <PuzzleReward reward={level.reward} locked={locked} />
-                            <div
-                                className="puzzle-gallery__reward-description"
-                                aria-hidden="true"
-                            >
-                                {locked ? "???" : level.reward.description}
-                            </div>
-                        </li>
+                        <CSSTransition
+                            key={level.id}
+                            nodeRef={nodeRef}
+                            appear
+                            in
+                            timeout={550}
+                            classNames="puzzle-gallery__reward--pop-in"
+                            style={{ '--i': index } as CSSProperties}
+                        >
+                            <li ref={nodeRef} className="puzzle-gallery__reward">
+                                <PuzzleReward reward={level.reward} locked={locked} />
+                                <div
+                                    className="puzzle-gallery__reward-description"
+                                    aria-hidden="true"
+                                >
+                                    {locked ? "???" : level.reward.description}
+                                </div>
+                            </li>
+                        </CSSTransition>
                     )
                 })}
             </ul>
