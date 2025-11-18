@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router'
+import { HashRouter } from 'react-router'
 import App from './App.tsx'
 import { GameContext, getGameContextValue } from './context/GameContext.ts'
 import './styles/fonts.css'
@@ -11,9 +11,9 @@ function Root() {
   const gameContextValue = getGameContextValue()
   return (
     <GameContext value={gameContextValue}>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </GameContext>
   )
 }

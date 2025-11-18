@@ -1,4 +1,3 @@
-
 import { Navigate, Route, Routes } from "react-router"
 import Credits from "./components/Credits/Credits"
 import Gallery from "./components/Gallery/Gallery"
