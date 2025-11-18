@@ -46,7 +46,7 @@
 }
 
 .layout__toggle-button {
-  position: absolute;
+  position: fixed;
   left: 2.5vmax;
   top: 2.5vmax;
   width: 5vmax;
