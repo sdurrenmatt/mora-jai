@@ -1,8 +1,0 @@
-.puzzle-reward {
-    width: 100%;
-    height: auto;
-}
-
-.puzzle-reward--locked {
-    filter: grayscale(100%) brightness(0.1) blur(4px);
-}

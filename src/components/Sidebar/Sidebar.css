@@ -1,0 +1,31 @@
+.sidebar {
+  aspect-ratio: 1/2;
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar>.logo {
+  width: 100%;
+}
+
+.sidebar>.menu {
+  width: 60%;
+}
+
+@media (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+  .sidebar {
+    aspect-ratio: 2;
+    flex-direction: row;
+  }
+
+  .sidebar>.logo {
+    width: 65%;
+  }
+
+  .sidebar>.menu {
+    width: 25%;
+  }
+}

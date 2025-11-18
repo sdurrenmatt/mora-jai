@@ -1,0 +1,24 @@
+import { Colors } from "../../../lib/puzzle"
+import type { Level } from "../../../types/level"
+
+export default {
+  id: "summer08",
+  name: "八",
+  puzzle: {
+    corners: {
+      tl: { color: Colors.Yellow },
+      tr: { color: Colors.Yellow },
+      bl: { color: Colors.Yellow },
+      br: { color: Colors.Yellow },
+    },
+    tiles: [
+      [{ color: Colors.Yellow }, { color: Colors.Gray }, { color: Colors.Gray }],
+      [{ color: Colors.Orange }, { color: Colors.Black }, { color: Colors.Blue }],
+      [{ color: Colors.Yellow }, { color: Colors.Gray }, { color: Colors.Orange }],
+    ],
+  },
+  reward: {
+    image: "/images/rewards/summer/chouchin.png",
+    description: "提灯 (Chouchin)",
+  }
+} as Level

@@ -1,19 +1,19 @@
 .wood-texture::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("/images/textures/wood.jpg") no-repeat center center;
-    background-size: cover;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/textures/wood.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .wood-texture--dark::before {
-    filter: brightness(0.4);
+  filter: brightness(0.4);
 }
 
 .wood-texture--dim::before {
-    filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 .wood-texture--light::before {
-    filter: brightness(1.3) opacity(0.3);
+  filter: brightness(1.3) opacity(0.3);
 }

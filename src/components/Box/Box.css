@@ -1,0 +1,116 @@
+.box-container {
+  container: box / inline-size;
+  aspect-ratio: 1/1;
+  max-height: 100vh;
+  perspective: 200vh;
+  perspective-origin: center;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  aspect-ratio: 1/1;
+  clip-path: polygon(7.5% 0%,
+      92.5% 0%,
+      100% 7.5%,
+      100% 92.5%,
+      92.5% 100%,
+      7.5% 100%,
+      0% 92.5%,
+      0% 7.5%);
+  transform: rotateX(30deg) translateY(-0.5cqw) translateZ(0);
+}
+
+.box--lift-appear {
+  transform-origin: center center;
+  transform: rotateX(50deg) translateY(-0.25cqw) translateZ(-20cqw);
+}
+
+.box--lift-appear-active {
+  transform: rotateX(30deg) translateY(-0.5cqw) translateZ(0);
+  transition: transform 3s cubic-bezier(0.11, 0.95, 0.24, 1);
+}
+
+.box--solved * {
+  pointer-events: none;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow:
+    inset -0.5cqw -0.5cqw 0.5cqw rgba(26, 19, 5, 0.5),
+    inset 0.5cqw 0.5cqw 0.5cqw rgba(26, 19, 5, 0.5);
+}
+
+.box__base {
+  flex: 1;
+  display: flex;
+  margin: 7.5%;
+  perspective: 400vh;
+  perspective-origin: center top;
+  border: 0.5cqw solid #12110f;
+  box-shadow:
+    inset 0.5cqw -0.5cqw 6.5cqw black,
+    inset 0.5cqw 0.5cqw 6.5cqw black;
+}
+
+.box__reward {
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  display: flex;
+  width: 50%;
+  box-shadow: 0 0.25cqw 0.75cqw rgba(0, 0, 0, 0.5);
+  transform-origin: center;
+  transform: rotateZ(-2deg) rotateX(2deg);
+}
+
+.box--solved .box__reward {
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 0.3s ease,
+    opacity 0.6s ease;
+}
+
+.box--solved .box__reward:hover {
+  transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
+}
+
+.box--solved .box__reward--collected {
+  opacity: 0;
+  transform: rotateZ(-2deg) rotateX(2deg) scale(1.05);
+  pointer-events: none;
+}
+
+.box__grid {
+  position: relative;
+  flex: 1;
+  display: flex;
+  padding: 8%;
+}
+
+.box__grid>* {
+  flex: 1;
+}
+
+.box--solved .box__grid {
+  box-shadow: 0 3.25cqw 6.5cqw black;
+  transform-origin: center top;
+  transition: transform 2s ease-out;
+  transform: rotateX(70deg);
+}
+
+.box__grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.25cqw solid #1a1305;
+}

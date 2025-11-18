@@ -1,21 +1,21 @@
 
 import { Navigate, Route, Routes } from "react-router"
-import PuzzleCredits from "./components/PuzzleCredits/PuzzleCredits"
-import PuzzleGallery from "./components/PuzzleGallery/PuzzleGallery"
-import PuzzleGame from "./components/PuzzleGame/PuzzleGame"
-import PuzzleRules from "./components/PuzzleRules/PuzzleRules"
-import MainLayout from "./layout/MainLayout"
+import Credits from "./components/Credits/Credits"
+import Gallery from "./components/Gallery/Gallery"
+import Game from "./components/Game/Game"
+import Layout from "./components/Layout/Layout"
+import Rules from "./components/Rules/Rules"
 
 export default function App() {
-    return (
-        <Routes>
-            <Route element={<MainLayout />}>
-                <Route path="/play" element={<PuzzleGame />} />
-                <Route path="/gallery" element={<PuzzleGallery />} />
-                <Route path="/rules" element={<PuzzleRules />} />
-                <Route path="/credits" element={<PuzzleCredits />} />
-                <Route path="*" element={<Navigate to="/play" replace />} />
-            </Route>
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Game />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/credits" element={<Credits />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
+  )
 }

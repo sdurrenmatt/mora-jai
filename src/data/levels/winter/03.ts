@@ -1,0 +1,24 @@
+import { Colors } from "../../../lib/puzzle"
+import type { Level } from "../../../types/level"
+
+export default {
+  id: "winter03",
+  name: "三",
+  puzzle: {
+    corners: {
+      tl: { color: Colors.Blue },
+      tr: { color: Colors.Blue },
+      bl: { color: Colors.Blue },
+      br: { color: Colors.Blue },
+    },
+    tiles: [
+      [{ color: Colors.Orange }, { color: Colors.Gray }, { color: Colors.Black }],
+      [{ color: Colors.Green }, { color: Colors.Gray }, { color: Colors.Black }],
+      [{ color: Colors.White }, { color: Colors.Blue }, { color: Colors.White }],
+    ],
+  },
+  reward: {
+    image: "/images/rewards/winter/sou.png",
+    description: "僧 (Sou)",
+  }
+} as Level

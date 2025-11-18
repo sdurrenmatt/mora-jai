@@ -8,18 +8,18 @@ import './styles/index.css'
 import './styles/textures.css'
 
 function Root() {
-    const gameContextValue = getGameContextValue()
-    return (
-        <GameContext value={gameContextValue}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </GameContext>
-    )
+  const gameContextValue = getGameContextValue()
+  return (
+    <GameContext value={gameContextValue}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </GameContext>
+  )
 }
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-        <Root />
-    </StrictMode>
+  <StrictMode>
+    <Root />
+  </StrictMode>
 )

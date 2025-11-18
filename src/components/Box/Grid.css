@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 7%;
+}
+
+.grid>.tile:nth-child(1),
+.grid>.tile:nth-child(2),
+.grid>.tile:nth-child(3) {
+  border-bottom: 1.5cqw solid black;
+}
+
+.grid>.tile:nth-child(4),
+.grid>.tile:nth-child(5),
+.grid>.tile:nth-child(6) {
+  border-bottom: 1.25cqw solid black;
+}
+
+.grid>.tile:nth-child(7),
+.grid>.tile:nth-child(8),
+.grid>.tile:nth-child(9) {
+  border-bottom: 1cqw solid black;
+}
+
+.grid>.tile:nth-child(1) {
+  clip-path: polygon(25% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 25%);
+}
+
+.grid>.tile:nth-child(3) {
+  clip-path: polygon(0% 0%,
+      75% 0%,
+      100% 25%,
+      100% 100%,
+      0% 100%);
+}
+
+.grid>.tile:nth-child(7) {
+  clip-path: polygon(0% 0%,
+      100% 0%,
+      100% 100%,
+      25% 100%,
+      0% 75%);
+}
+
+.grid>.tile:nth-child(9) {
+  clip-path: polygon(0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 100%,
+      0% 100%);
+}

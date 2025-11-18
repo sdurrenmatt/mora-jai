@@ -1,0 +1,85 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.layout__sidebar {
+  flex: 1 1 0;
+  max-width: 480px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 17, 15, 0.95);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.layout__sidebar--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+.layout__sidebar--closed {
+  transform: translateX(-100%);
+}
+
+.layout__content {
+  flex: 3 1 0;
+  max-width: 1440px;
+  max-height: 100vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  background: linear-gradient(135deg,
+      rgba(18, 17, 15, 0.95) 0%,
+      rgba(20, 18, 15, 0.9) 50%,
+      rgba(18, 17, 15, 0.95) 100%);
+  backdrop-filter: blur(2px);
+}
+
+.layout__toggle-button {
+  position: absolute;
+  left: 2.5vmax;
+  top: 2.5vmax;
+  width: 5vmax;
+  height: 5vmax;
+  border: none;
+  border-radius: 15%;
+  color: #c6a14b;
+  font-size: 2.5vmax;
+  cursor: pointer;
+  pointer-events: auto;
+  background: #12110f;
+  box-shadow: 0 0.5vmax 1vmax rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
+  .layout__sidebar {
+    box-shadow:
+      3px 0 4px rgba(180, 150, 40, 0.05),
+      6px 0 8px rgba(0, 0, 0, 0.325);
+  }
+
+  .layout__content {
+    min-height: auto;
+    height: fit-content;
+    align-self: center;
+    margin: 0 5vw;
+    padding: 0 2% 1%;
+    box-sizing: border-box;
+    box-shadow:
+      0 3px 8px rgba(180, 150, 40, 0.1),
+      0 -3px 8px rgba(180, 150, 40, 0.1),
+      0 8px 16px rgba(0, 0, 0, 0.65),
+      0 -8px 16px rgba(0, 0, 0, 0.65);
+  }
+}

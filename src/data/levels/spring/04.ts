@@ -1,0 +1,24 @@
+import { Colors } from "../../../lib/puzzle"
+import type { Level } from "../../../types/level"
+
+export default {
+  id: "spring04",
+  name: "四",
+  puzzle: {
+    corners: {
+      tl: { color: Colors.Violet },
+      tr: { color: Colors.Violet },
+      bl: { color: Colors.Violet },
+      br: { color: Colors.Violet },
+    },
+    tiles: [
+      [{ color: Colors.Violet }, { color: Colors.Violet }, { color: Colors.Gray }],
+      [{ color: Colors.Pink }, { color: Colors.Green }, { color: Colors.Gray }],
+      [{ color: Colors.Violet }, { color: Colors.Violet }, { color: Colors.Gray }],
+    ],
+  },
+  reward: {
+    image: "/images/rewards/spring/kabuki.png",
+    description: "歌舞伎 (Kabuki)",
+  }
+} as Level

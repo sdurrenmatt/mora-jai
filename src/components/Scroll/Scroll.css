@@ -1,0 +1,209 @@
+.scroll-container {
+  container: scroll / inline-size;
+  aspect-ratio: 3/16;
+  max-height: 100vh;
+}
+
+.scroll {
+  position: relative;
+  padding: 80cqw 0 50cqw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:
+    linear-gradient(to bottom, #e0c36a 0%, #e0c36a 90%, #8c6f2f 100%),
+    radial-gradient(ellipse at top center, rgba(255, 245, 200, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse at bottom center, rgba(0, 0, 0, 0.08) 0%, transparent 60%);
+  background-blend-mode: overlay;
+  box-shadow:
+    inset 0 2cqw 4cqw rgba(0, 0, 0, 0.15),
+    inset -4cqw 0 6cqw rgba(0, 0, 0, 0.08),
+    inset 0 0 15cqw rgba(0, 0, 0, 0.05),
+    0 10cqw 20cqw rgba(0, 0, 0, 0.15),
+    0 3cqw 6cqw rgba(0, 0, 0, 0.1);
+  transform-origin: top center;
+}
+
+.scroll::after {
+  content: "";
+  position: absolute;
+  left: -15cqw;
+  right: -15cqw;
+  bottom: -2cqw;
+  height: 15cqw;
+  background:
+    linear-gradient(to right,
+      #381e01 0%,
+      #1d1101 15cqw,
+      transparent 15cqw,
+      transparent 100%),
+    linear-gradient(to right,
+      transparent 0%,
+      transparent calc(100% - 15cqw),
+      #1d1101 calc(100% - 15cqw),
+      #381e01 100%),
+    linear-gradient(to right,
+      rgba(80, 60, 30, 0.9) 0%,
+      rgba(140, 111, 47, 0.3) 15cqw,
+      rgba(140, 111, 47, 0.3) calc(100% - 15cqw),
+      rgba(80, 60, 30, 0.9) 100%),
+    linear-gradient(90deg,
+      #e0c36a 0%,
+      #8c6f2f 50%,
+      #e0c36a 100%),
+    radial-gradient(ellipse at top center,
+      rgba(255, 235, 180, 0.4) 0%,
+      transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 50%;
+  border-radius: 2cqw;
+  box-shadow:
+    inset 0 2cqw 2cqw rgba(0, 0, 0, 0.25),
+    inset 0 -1cqw 1cqw rgba(255, 255, 255, 0.15),
+    0 2cqw 4cqw rgba(0, 0, 0, 0.15);
+}
+
+.scroll__cord {
+  position: absolute;
+  top: 0;
+  width: 2.5cqw;
+  height: 80cqw;
+  background: #5c4518;
+}
+
+.scroll__cord--left {
+  left: 33%;
+  transform: rotate(-3deg) skewY(-2deg);
+}
+
+.scroll__cord--right {
+  left: 67%;
+  transform: rotate(2deg) skewY(1deg);
+}
+
+.scroll__content-wrapper {
+  position: relative;
+  padding: 25cqw 2cqw 10cqw;
+  box-shadow:
+    inset 0 0 10cqw rgba(255, 255, 255, 0.3),
+    inset 0 0 20cqw rgba(0, 0, 0, 0.1),
+    0 3cqw 6cqw rgba(0, 0, 0, 0.15);
+}
+
+.scroll--spring .scroll__content-wrapper {
+  background: rgba(248, 225, 215, 0.85);
+}
+
+.scroll--summer .scroll__content-wrapper {
+  background: rgba(170, 210, 140, 0.85);
+}
+
+.scroll--autumn .scroll__content-wrapper {
+  background: rgba(210, 140, 70, 0.85);
+}
+
+.scroll--winter .scroll__content-wrapper {
+  background: rgba(245, 250, 255, 0.85);
+}
+
+.scroll__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  border: 1cqw solid rgba(190, 160, 130, 0.1);
+  box-shadow:
+    inset 0 1cqw 2cqw rgba(255, 255, 255, 0.4),
+    inset 0 -1cqw 3cqw rgba(0, 0, 0, 0.1);
+  color: #3b2b1f;
+  text-shadow: 0 1cqw 1cqw rgba(255, 255, 255, 0.25);
+}
+
+.scroll--spring .scroll__content {
+  background: url("/images/scrolls/spring.png") no-repeat;
+  background-size: cover;
+}
+
+.scroll--summer .scroll__content {
+  background: url("/images/scrolls/summer.png") no-repeat;
+  background-size: cover;
+}
+
+.scroll--autumn .scroll__content {
+  background: url("/images/scrolls/autumn.png") no-repeat;
+  background-size: cover;
+}
+
+.scroll--winter .scroll__content {
+  background: url("/images/scrolls/winter.png") no-repeat;
+  background-size: cover;
+}
+
+.scroll__title {
+  font-family: "Kaisei Tokumin", serif;
+  font-weight: 800;
+  font-size: 50cqw;
+  padding-inline: 35%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  align-self: center;
+}
+
+.scroll__levels {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: 2cqw;
+  padding: 2cqw;
+  box-sizing: border-box;
+}
+
+.scroll__level {
+  font-family: "Kaisei Tokumin", serif;
+  font-weight: 500;
+  font-size: 20cqw;
+  text-align: center;
+  padding: 5cqw 10cqw;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.scroll__level:hover {
+  filter: brightness(0.6);
+}
+
+.scroll--spring .scroll__level {
+  background: rgba(248, 225, 215, 0.8);
+  border: 0.5cqw solid rgba(230, 200, 185, 0.6);
+}
+
+.scroll--summer .scroll__level {
+  background: rgba(170, 210, 140, 0.8);
+  border: 0.5cqw solid rgba(150, 190, 120, 0.6);
+}
+
+.scroll--autumn .scroll__level {
+  background: rgba(210, 140, 70, 0.8);
+  border: 0.5cqw solid rgba(190, 120, 50, 0.6);
+}
+
+.scroll--winter .scroll__level {
+  background: rgba(245, 250, 255, 0.8);
+  border: 0.5cqw solid rgba(220, 230, 245, 0.6);
+}
+
+.scroll .scroll__level--selected {
+  filter: brightness(0.6);
+  box-shadow: 0 2cqw 10cqw rgba(0, 0, 0, 0.25);
+  transform: scale(0.95) translate(-0.5cqw, 0.5cqw);
+}
+
+.scroll .scroll__level--solved {
+  background: rgba(217, 184, 92, 0.6);
+  border: 0.5cqw solid rgba(180, 150, 60, 0.8);
+  box-shadow: 0 2cqw 10cqw rgba(0, 0, 0, 0.35);
+}

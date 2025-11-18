@@ -1,0 +1,24 @@
+import { Colors } from "../../../lib/puzzle"
+import type { Level } from "../../../types/level"
+
+export default {
+  id: "summer10",
+  name: "十",
+  puzzle: {
+    corners: {
+      tl: { color: Colors.Green },
+      tr: { color: Colors.Green },
+      bl: { color: Colors.Green },
+      br: { color: Colors.Green },
+    },
+    tiles: [
+      [{ color: Colors.White }, { color: Colors.White }, { color: Colors.Red }],
+      [{ color: Colors.Black }, { color: Colors.Orange }, { color: Colors.Blue }],
+      [{ color: Colors.Green }, { color: Colors.Blue }, { color: Colors.Green }],
+    ],
+  },
+  reward: {
+    image: "/images/rewards/summer/inaho.png",
+    description: "稲穂 (Inaho)",
+  }
+} as Level

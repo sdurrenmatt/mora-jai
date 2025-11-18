@@ -1,0 +1,8 @@
+.reward {
+  width: 100%;
+  height: auto;
+}
+
+.reward--locked {
+  filter: grayscale(100%) brightness(0.1) blur(4px);
+}

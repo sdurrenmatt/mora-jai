@@ -1,0 +1,25 @@
+.tile {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-shadow:
+    inset 0 0.5cqw 1cqw rgba(255, 255, 255, 0.1),
+    inset 0 -0.5cqw 1.5cqw rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tile:active {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transform: scale(0.95);
+  box-shadow: 0 0 0.5cqw rgba(0, 0, 0, 0.5) inset;
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 3%;
+  border: 0.125cqw solid black;
+  box-sizing: border-box;
+}

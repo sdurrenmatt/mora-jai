@@ -1,0 +1,70 @@
+.corner {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 15%;
+  height: 15%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.corner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 1s ease;
+}
+
+.corner--lit::after {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.corner--tl {
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0,
+      75% 0,
+      100% 50%,
+      50% 50%,
+      50% 100%,
+      0 75%,
+      0 100%);
+}
+
+.corner--tr {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0,
+      25% 0,
+      0 50%,
+      50% 50%,
+      50% 100%,
+      100% 75%,
+      100% 100%);
+}
+
+.corner--bl {
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(0 100%,
+      75% 100%,
+      100% 50%,
+      50% 50%,
+      50% 0,
+      0 25%,
+      0 0);
+}
+
+.corner--br {
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 100%,
+      25% 100%,
+      0 50%,
+      50% 50%,
+      50% 0,
+      100% 25%,
+      100% 0);
+}
