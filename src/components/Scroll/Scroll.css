@@ -1,7 +1,7 @@
 .scroll-container {
   container: scroll / inline-size;
   aspect-ratio: 3/16;
-  max-height: 100vh;
+  max-height: 100dvh;
 }
 
 .scroll {

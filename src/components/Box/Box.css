@@ -1,7 +1,7 @@
 .box-container {
   container: box / inline-size;
   aspect-ratio: 1/1;
-  max-height: 100vh;
+  max-height: 100dvh;
   perspective: 200vh;
   perspective-origin: center;
   padding: 5%;

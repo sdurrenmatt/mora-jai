@@ -1,7 +1,7 @@
 .level-info-container {
   container: level-info / inline-size;
   aspect-ratio: 5/1;
-  max-height: 100vh;
+  max-height: 100dvh;
 }
 
 .level-info {
