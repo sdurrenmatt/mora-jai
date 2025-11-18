@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/setsugen.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const winter5: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/winter/setsugen.png",
         description: "雪原 (Setsugen)",
     }
 }

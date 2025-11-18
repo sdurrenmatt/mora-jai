@@ -1,5 +1,3 @@
-
-import rewardImage from "../../../assets/images/rewards/spring/kabuki.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +18,7 @@ export const spring4: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/spring/kabuki.png",
         description: "歌舞伎 (Kabuki)",
     }
 }

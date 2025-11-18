@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/spring/tanuki.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const spring3: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/spring/tanuki.png",
         description: "狸 (Tanuki)",
     }
 }

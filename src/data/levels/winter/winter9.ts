@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/ikebana.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const winter9: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/winter/ikebana.png",
         description: "生け花 (Ikebana)",
     }
 }

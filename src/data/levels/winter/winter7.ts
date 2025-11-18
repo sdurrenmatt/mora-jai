@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/shinobi.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const winter7: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/winter/shinobi.png",
         description: "忍び (Shinobi)",
     }
 }

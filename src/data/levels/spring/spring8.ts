@@ -1,5 +1,3 @@
-
-import rewardImage from "../../../assets/images/rewards/spring/samurai.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +18,7 @@ export const spring8: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/spring/samurai.png",
         description: "侍 (Samurai)",
     }
 }

@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/autumn/geisha.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const autumn3: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/autumn/geisha.png",
         description: "芸者 (Geisha)",
     }
 }

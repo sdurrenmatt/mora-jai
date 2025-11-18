@@ -1,5 +1,3 @@
-
-import rewardImage from "../../../assets/images/rewards/autumn/shigure.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +18,7 @@ export const autumn5: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/autumn/shigure.png",
         description: "時雨 (Shigure)",
     }
 }

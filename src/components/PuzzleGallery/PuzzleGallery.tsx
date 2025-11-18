@@ -42,7 +42,7 @@ export default function PuzzleGallery() {
                     const locked = !solvedPuzzles.has(level.id)
 
                     return (
-                        <li className="puzzle-gallery__reward">
+                        <li key={level.id} className="puzzle-gallery__reward">
                             <PuzzleReward reward={level.reward} locked={locked} />
                             <div
                                 className="puzzle-gallery__reward-description"

@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/spring/chikurin.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const spring10: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/spring/chikurin.png",
         description: "竹林 (Chikurin)",
     }
 }

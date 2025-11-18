@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/autumn/irori.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const autumn10: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/autumn/irori.png",
         description: "囲炉裏 (Irori)",
     }
 }

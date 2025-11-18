@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/ryuu.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const winter1: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/winter/ryuu.png",
         description: "竜 (Ryuu)",
     }
 }

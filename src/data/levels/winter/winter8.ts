@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/winter/jinja.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const winter8: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/winter/jinja.png",
         description: "神社 (Jinja)",
     }
 }

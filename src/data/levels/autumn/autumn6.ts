@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/autumn/kitsune.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const autumn6: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/autumn/kitsune.png",
         description: "狐 (Kitsune)",
     }
 }

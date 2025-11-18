@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/summer/chouchin.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const summer8: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/summer/chouchin.png",
         description: "提灯 (Chouchin)",
     }
 }

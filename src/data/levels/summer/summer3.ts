@@ -1,5 +1,4 @@
 
-import rewardImage from "../../../assets/images/rewards/summer/wagasa.png"
 import { Colors } from "../../../lib/puzzle"
 import type { Level } from "../../../types/level"
 
@@ -20,7 +19,7 @@ export const summer3: Level = {
         ],
     },
     reward: {
-        image: rewardImage,
+        image: "/images/rewards/summer/wagasa.png",
         description: "和傘 (Wagasa)",
     }
 }
