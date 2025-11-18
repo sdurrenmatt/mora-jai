@@ -165,6 +165,7 @@
   font-family: "Kaisei Tokumin", serif;
   font-weight: 500;
   font-size: 20cqw;
+  color: #000;
   text-align: center;
   padding: 5cqw 10cqw;
   transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
