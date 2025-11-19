@@ -16,12 +16,9 @@ img {
 }
 
 #bmc-wbtn {
-  right: clamp(10px, 2.5vmax, 18px);
-  bottom: clamp(10px, 2.5vmax, 18px);
   width: clamp(32px, 5vmax, 64px) !important;
   height: clamp(32px, 5vmax, 64px) !important;
   border-radius: 15% !important;
-  background: #c6a14b;
 }
 
 #bmc-wbtn img {
