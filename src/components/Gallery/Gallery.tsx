@@ -51,7 +51,7 @@ export default function Gallery() {
               in
               timeout={550}
               classNames="gallery__reward--pop-in"
-              style={{ '--i': index } as CSSProperties}
+              style={{ "--i": index } as CSSProperties}
             >
               <li ref={nodeRef} className="gallery__reward">
                 <Reward data={level.reward} locked={locked} />
