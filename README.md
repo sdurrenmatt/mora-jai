@@ -32,7 +32,7 @@ The tile rules mirror those in *Blue Prince*:
 * **Pink** – Rotates adjacent and diagonal tiles
 * **Orange** – Changes to the most common color among adjacent tiles
 * **Yellow** – Moves upward
-* **Green** – Swaps with the tile opposite it
+* **Green** – Swaps with the tile opposite
 * **Blue** – Copies the center tile
 * **Violet** – Moves downward
 
