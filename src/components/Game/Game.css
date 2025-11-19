@@ -43,14 +43,14 @@
   }
 
   .game__level-map>* {
-    max-height: 75vh;
+    max-height: 75dvh;
   }
 
   .game__box>* {
-    max-height: 85vh;
+    max-height: 85dvh;
   }
 
   .game__level-info>* {
-    max-height: 15vh;
+    max-height: 15dvh;
   }
 }
