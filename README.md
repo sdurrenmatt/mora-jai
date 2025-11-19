@@ -1,8 +1,8 @@
 # Mora Jai – Puzzle Game
 
-![Play Online](https://img.shields.io/badge/site-online-green)
-![Made with React](https://img.shields.io/badge/Made%20with-React-blue?logo=react)
-![License](https://img.shields.io/badge/license-Proprietary-lightgrey)
+[![Play Online](https://img.shields.io/badge/site-online-green)](https://sdurrenmatt.github.io/mora-jai/)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-blue?logo=react)](https://react.dev/)
+[![License](https://img.shields.io/badge/license-Proprietary-lightgrey)](#-licensing--feedback)
 
 <img src="/public/images/og-image.png" width="100%"/>
 
