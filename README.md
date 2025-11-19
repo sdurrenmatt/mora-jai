@@ -4,7 +4,7 @@
 [![Made with React](https://img.shields.io/badge/Made%20with-React-blue?logo=react)](https://react.dev/)
 [![License](https://img.shields.io/badge/license-Proprietary-lightgrey)](#-licensing--feedback)
 
-<img src="/public/images/og-image.png" width="100%"/>
+<picture><img src="/public/images/og-image.png" width="100%"/></picture>
 
 **Mora Jai** is a fan-made puzzle game inspired by *Blue Prince* and its iconic Mora Jai puzzle boxes. While preserving the original mechanics, this project introduces a **distinct visual style influenced by Japanese aesthetics**, combining minimalism, color symbolism, and a serene atmosphere.
 
@@ -27,16 +27,16 @@ The tile moves are the same as those in *Blue Prince*:
 
 | Color | Effect |
 |------|--------|
-| ![Gray](https://placehold.co/40x40/687278/687278.png) | Has no effect |
-| ![White](https://placehold.co/40x40/f5faff/f5faff.png) | Turns gray, toggles adjacent tiles white/gray |
-| ![Black](https://placehold.co/40x40/0f1217/0f1217.png) | Shifts the row to the right |
-| ![Red](https://placehold.co/40x40/9b252d/9b252d.png) | Turns black tiles red and white tiles black |
-| ![Pink](https://placehold.co/40x40/d486d8/d486d8.png) | Rotates adjacent and diagonal tiles |
-| ![Orange](https://placehold.co/40x40/c47d2F/c47d2F.png) | Changes to the majority color among adjacent tiles |
-| ![Yellow](https://placehold.co/40x40/b3b02f/b3b02f.png) | Moves upward |
-| ![Green](https://placehold.co/40x40/1a9729/1a9729.png) | Swaps with the opposite tile |
-| ![Blue](https://placehold.co/40x40/1c71c2/1c71c2.png) | Mimics the center tile |
-| ![Violet](https://placehold.co/40x40/892597/892597.png) | Moves downward |
+| <picture>![Gray](https://placehold.co/40x40/687278/687278.png)</picture> | Has no effect |
+| <picture>![White](https://placehold.co/40x40/f5faff/f5faff.png)</picture> | Turns gray, toggles adjacent tiles white/gray |
+| <picture>![Black](https://placehold.co/40x40/0f1217/0f1217.png)</picture> | Shifts the row to the right |
+| <picture>![Red](https://placehold.co/40x40/9b252d/9b252d.png)</picture> | Turns black tiles red and white tiles black |
+| <picture>![Pink](https://placehold.co/40x40/d486d8/d486d8.png)</picture> | Rotates adjacent and diagonal tiles |
+| <picture>![Orange](https://placehold.co/40x40/c47d2F/c47d2F.png)</picture> | Changes to the majority color among adjacent tiles |
+| <picture>![Yellow](https://placehold.co/40x40/b3b02f/b3b02f.png)</picture> | Moves upward |
+| <picture>![Green](https://placehold.co/40x40/1a9729/1a9729.png)</picture> | Swaps with the opposite tile |
+| <picture>![Blue](https://placehold.co/40x40/1c71c2/1c71c2.png)</picture> | Mimics the center tile |
+| <picture>![Violet](https://placehold.co/40x40/892597/892597.png)</picture> | Moves downward |
 
 #### Tip
 
@@ -52,7 +52,7 @@ Players can collect up to 10 illustrations per season, totaling 40 unique reward
 
 | Spring | Summer | Autumn | Winter |
 |--------|--------|--------|--------|
-| ![Hanami](/public/images/rewards/spring/hanami.png) | ![Hotaru](/public/images/rewards/summer/hotaru.png) | ![Tsukimi](/public/images/rewards/autumn/tsukimi.png) | ![Shinobi](/public/images/rewards/winter/shinobi.png) |
+| <picture>![Hanami](/public/images/rewards/spring/hanami.png)</picture> | <picture>![Hotaru](/public/images/rewards/summer/hotaru.png)</picture> | <picture>![Tsukimi](/public/images/rewards/autumn/tsukimi.png)</picture> | <picture>![Shinobi](/public/images/rewards/winter/shinobi.png)</picture> |
 
 ## 🛠️ Tech Stack
 
