@@ -4,7 +4,7 @@ body,
   margin: 0;
   font-size: 16px;
   user-select: none;
-  color-scheme: only dark;
+  color-scheme: light dark;
 }
 
 img {
