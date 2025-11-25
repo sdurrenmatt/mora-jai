@@ -59,6 +59,12 @@
 }
 
 .box__reward {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   position: absolute;
   bottom: 10%;
   left: 25%;
@@ -70,9 +76,8 @@
 }
 
 .box--solved .box__reward {
-  border: none;
-  padding: 0;
-  margin: 0;
+  visibility: visible;
+  opacity: 1;
   cursor: pointer;
   pointer-events: auto;
   transition:
